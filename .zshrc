@@ -38,6 +38,6 @@ fi
 alias zedit="vi ~/.zshrc"
 alias reload="source ~/.zshrc"
 
-for file in $(tree -if ~/dotfiles/custom-omz | grep .zsh); do
+for file in $(tree -if ~/.dotfiles/custom-omz | grep .zsh); do
   source $file
 done
