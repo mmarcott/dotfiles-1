@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+files=`ls -FA | grep '^\.' | grep -v '\/$'`
+dir=`pwd`
+
+for dotfile in $files; do
+  `ln -sf $dir/$dotfile $HOME`
+done
+
