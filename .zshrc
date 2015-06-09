@@ -39,6 +39,10 @@ fi
 alias zedit="vi ~/.zshrc"
 alias reload="source ~/.zshrc"
 
+PROMPT='
+$(_user_host)${_current_dir} $(git_prompt_info) $(_ruby_version)
+>> '
+
 for file in $(tree -if ~/.dotfiles/custom-omz | grep .zsh); do
   source $file
 done
