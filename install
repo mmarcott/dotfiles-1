@@ -1,9 +1,15 @@
 #!/usr/bin/env sh
 
-files=`ls -FA | grep '^\.' | grep -v '\/$'`
+files=`/bin/ls -FA | grep '^\.' | grep -v '\/$'`
+dirs=`/bin/ls -Fd .* | grep -e "/$" | grep -v git | grep -v "\.\/$"`
 dir=`pwd`
 
-for dotfile in $files; do
-  `ln -sf $dir/$dotfile $HOME`
-done
+symlink () { 
+  for dotfile in `seq 1 $#`; do
+    echo "Symlinking ${!dotfile}"
+    `ln -sf $dir/$dotfile $HOME`
+  done
+}
 
+symlink $files
+symlink $dirs

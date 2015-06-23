@@ -1,0 +1,19 @@
+"*":
+  "exception-reporting":
+    userId: "93e52cb5-dc76-0b00-f6a7-a8c879cb05a9"
+  welcome:
+    showOnStartup: false
+  editor:
+    invisibles: {}
+    fontFamily: "Inconsolata"
+    fontSize: 17
+  core:
+    themes: [
+      "one-light-ui"
+      "one-dark-syntax"
+    ]
+  "one-dark-ui": {}
+  "atom-beautify":
+    _analyticsUserId: "5ae3a896-ce1a-46b6-be5e-e6a10dcb0fa7"
+  autosave:
+    enabled: true
