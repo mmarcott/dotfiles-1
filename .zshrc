@@ -20,11 +20,12 @@ export PATH="/Users/alex/.rbenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sb
 # Preferred editor for local and remote sessions
 atom=`which atom`
   test $atom &&
-  export EDITOR="$atom --wait" &&
   alias e=atom
 
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vi'
+else
+  export EDITOR='vim'
 fi
 
 

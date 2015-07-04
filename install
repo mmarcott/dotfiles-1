@@ -1,13 +1,14 @@
 #!/usr/bin/env sh
 
 files=`/bin/ls -FA | grep '^\.' | grep -v '\/$'`
-dirs=`/bin/ls -Fd .* | grep -e "/$" | grep -v git | grep -v "\.\/$"`
+dirs=`/bin/ls -Fd .* | grep -e "/$" | grep -v git | grep -v "\.\/$" | sed 's:/$::'`
 dir=`pwd`
 
 symlink () { 
   for dotfile in `seq 1 $#`; do
     echo "Symlinking ${!dotfile}"
-    `ln -sf $dir/$dotfile $HOME`
+    echo "Running: ln -sf $dir/${!dotfile} $HOME"
+    `ln -sf $dir/${!dotfile} $HOME`
   done
 }
 
