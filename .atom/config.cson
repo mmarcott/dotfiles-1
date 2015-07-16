@@ -18,3 +18,9 @@
   autosave:
     enabled: true
   firepad: {}
+  "linter-gjslint":
+    gjslintExecutablePath: "/usr/local/bin/gjslint"
+  jslint:
+    validateOnSave: false
+  livereload:
+    exts: "slim, jade, haml, erb"
