@@ -15,6 +15,7 @@
 // style the background and foreground colors on the atom-text-editor-element
 // itself
 atom-text-editor {
+
 }
 
 // To style other content in the text editor's shadow DOM, use the ::shadow
@@ -25,4 +26,12 @@ atom-text-editor::shadow .cursor {
 
 atom-text-editor .gutter, atom-text-editor::shadow .gutter {
   background: transparent;
+}
+
+.tab, .tab-bar {
+  height: 2.3em;
+}
+
+.tab-bar .tab {
+  line-height: 2.3em;
 }
