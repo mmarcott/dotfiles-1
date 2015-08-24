@@ -1,10 +1,13 @@
 #dotfiles
 
-Clone to home directory.  
-
-Clone all submodules
+Clone to `~/.dotfiles`
 ```sh
-cd .dotfiles
+git clone --recursive git@github.com:audibleblink/dotfiles.git
+```
+
+If already cloned:
+```sh
+cd ~/.dotfiles
 git submodule update --init --recursive
 ```
 
