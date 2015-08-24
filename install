@@ -5,10 +5,10 @@ dirs=`/bin/ls -Fd .* | grep -e "/$" | grep -v git | grep -v "\.\/$" | sed 's:/$:
 dir=`pwd`
 
 symlink () { 
-  for dotfile in `seq 1 $#`; do
-    echo "Symlinking ${!dotfile}"
-    echo "Running: ln -sf $dir/${!dotfile} $HOME"
-    `ln -sf $dir/${!dotfile} $HOME`
+  for dotfile; do
+    echo "Symlinking $dotfile"
+#    echo "Running: ln -sf $dir/$dotfile $HOME"
+    `ln -sf $dir/$dotfile $HOME`
   done
 }
 
