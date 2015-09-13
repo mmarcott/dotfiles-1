@@ -5,8 +5,8 @@
     showOnStartup: false
   editor:
     invisibles: {}
-    fontFamily: "Inconsolata"
-    fontSize: 21
+    fontFamily: "Hack"
+    fontSize: 16
   core:
     themes: [
       "one-light-ui"
