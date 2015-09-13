@@ -15,7 +15,8 @@ plugins=(git history-substring-search)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-export PATH="/Users/alex/.rbenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+# export PATH="/Users/alex/.rbenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 # Preferred editor for local and remote sessions
 atom=`which atom`
