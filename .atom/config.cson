@@ -6,7 +6,8 @@
   editor:
     invisibles: {}
     fontFamily: "Hack"
-    fontSize: 16
+    fontSize: 15
+    preferredLineLength: 100
   core:
     themes: [
       "one-light-ui"
@@ -25,3 +26,9 @@
     validateOnSave: false
   livereload:
     exts: "slim, jade, haml, erb"
+  "ruby-test":
+    shell: "/usr/local/bin/zsh"
+    cucumberSingleCommand: "bundle exec cucumber --color {relative_path}:{line_number}"
+    cucumberAllCommand: "bundle exec cucumber --color features"
+    cucumberFileCommand: "bundle exec cucumber --color {relative_path}"
+    specFramework: "rspec"
