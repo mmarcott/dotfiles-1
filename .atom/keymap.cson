@@ -7,8 +7,8 @@
 
 'body':
   # Move pane focus around
-  'ctrl-a j': 'window:focus-pane-above'
-  'ctrl-a k': 'window:focus-pane-below'
+  'ctrl-a k': 'window:focus-pane-above'
+  'ctrl-a j': 'window:focus-pane-below'
   'ctrl-a h': 'window:focus-pane-on-left'
   'ctrl-a l': 'window:focus-pane-on-right'
 
