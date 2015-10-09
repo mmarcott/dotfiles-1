@@ -6,14 +6,13 @@
   editor:
     invisibles: {}
     fontFamily: "Hack"
-    fontSize: 15
-    preferredLineLength: 100
+    showIndentGuide: true
+    showInvisibles: true
   core:
     themes: [
       "one-light-ui"
       "one-dark-syntax"
     ]
-    destroyEmptyPanes: false
   "one-dark-ui": {}
   "atom-beautify":
     _analyticsUserId: "5ae3a896-ce1a-46b6-be5e-e6a10dcb0fa7"
@@ -27,8 +26,13 @@
   livereload:
     exts: "slim, jade, haml, erb"
   "ruby-test":
-    shell: "/usr/local/bin/zsh"
     cucumberSingleCommand: "bundle exec cucumber --color {relative_path}:{line_number}"
     cucumberAllCommand: "bundle exec cucumber --color features"
     cucumberFileCommand: "bundle exec cucumber --color {relative_path}"
     specFramework: "rspec"
+    shell: "/usr/local/bin/zsh"
+  whitespace:
+    removeTrailingWhitespace: false
+    ignoreWhitespaceOnlyLines: true
+  tabs:
+    usePreviewTabs: true
