@@ -23,3 +23,9 @@
 
 '.platform-darwin atom-workspace atom-text-editor:not([mini])':
   'ctrl-a z': 'maximize-panes:maximize'
+
+'.platform-darwin atom-workspace atom-text-editor:not(.mini)':
+  'alt-down': 'ctrl-dir-scroll:scroll-down'
+  'alt-up': 'ctrl-dir-scroll:scroll-up'
+  'alt-shift-down': 'ctrl-dir-scroll:scroll-down-big'
+  'alt-shift-up': 'ctrl-dir-scroll:scroll-up-big'
