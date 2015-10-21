@@ -10,7 +10,7 @@ COMPLETION_WAITING_DOTS="true"
 DISABLE_AUTO_TITLE="true"
 
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git history-substring-search)
+plugins=(git history-substring-search aws)
 
 source $ZSH/oh-my-zsh.sh
 
