@@ -8,6 +8,7 @@
     fontFamily: "Hack"
     showIndentGuide: true
     showInvisibles: true
+    fontSize: 12
   core:
     themes: [
       "one-light-ui"
@@ -31,8 +32,10 @@
     cucumberFileCommand: "bundle exec cucumber --color {relative_path}"
     specFramework: "rspec"
     shell: "/usr/local/bin/zsh"
+    rspecSingleCommand: "bundle exec rspec --tty {relative_path}:{line_number}"
+    rspecAllCommand: "bundle exec rspec --tty spec"
+    rspecFileCommand: "bundle exec rspec --tty {relative_path}"
   whitespace:
     removeTrailingWhitespace: false
-    ignoreWhitespaceOnlyLines: true
   tabs:
     usePreviewTabs: true
