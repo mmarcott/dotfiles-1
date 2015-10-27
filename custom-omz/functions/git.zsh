@@ -6,3 +6,7 @@ gcln () {
   cd $reponame
 }
 
+ignore () {
+  input=$1
+  echo $input >> .gitignore
+}
