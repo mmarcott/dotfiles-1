@@ -10,7 +10,7 @@ COMPLETION_WAITING_DOTS="true"
 DISABLE_AUTO_TITLE="true"
 
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git history-substring-search aws)
+plugins=(git history-substring-search aws docker zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -34,6 +34,9 @@ fi
 
 alias zedit="vi ~/.zshrc"
 alias reload="source ~/.zshrc"
+
+# loads docker-machine env variables
+eval "$(docker-machine env default)"
 
 # sources custom aliases and functions
 for file in $(tree -if ~/.dotfiles/custom-omz | grep .zsh); do
