@@ -8,12 +8,16 @@
     fontFamily: "Hack"
     showIndentGuide: true
     showInvisibles: true
-    fontSize: 12
+    fontSize: 13
   core:
     themes: [
       "one-light-ui"
       "one-dark-syntax"
     ]
+    disabledPackages: [
+      "livereload"
+    ]
+    excludeVcsIgnoredPaths: false
   "one-dark-ui": {}
   "atom-beautify":
     _analyticsUserId: "5ae3a896-ce1a-46b6-be5e-e6a10dcb0fa7"
