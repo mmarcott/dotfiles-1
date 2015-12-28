@@ -43,3 +43,6 @@
     removeTrailingWhitespace: false
   tabs:
     usePreviewTabs: true
+  "linter-eslint":
+    globalNodePath: "/usr/local"
+  linter: {}
