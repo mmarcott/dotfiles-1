@@ -14,9 +14,6 @@
       "one-light-ui"
       "one-dark-syntax"
     ]
-    disabledPackages: [
-      "livereload"
-    ]
     excludeVcsIgnoredPaths: false
   "one-dark-ui": {}
   "atom-beautify":
