@@ -1,1 +1,5 @@
 .tmux/resurrect
+.atom/storage
+.atom/compile-cache
+.atom/blob-store
+.atom/packages
