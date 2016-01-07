@@ -12,4 +12,20 @@ git submodule update --init --recursive
 ```
 
 Alias all files to home directory  
-`./install`
+
+```
+./install
+```
+
+Create backups of atom and brew packages
+
+```
+./backup
+```
+
+Atom and Cellar packages can be restored with:
+
+```
+cat .package-list | xargs apm install
+cat .cellar | xargs brew install # n/a in linux
+```
