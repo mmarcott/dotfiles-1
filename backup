@@ -1,0 +1,4 @@
+#! /bin/sh
+
+/bin/ls ~/.atom/packages | grep -v READ > ~/.atom/package-list
+/bin/ls /usr/local/Cellar > ~/.dotfiles/.cellar
