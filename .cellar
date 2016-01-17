@@ -1,3 +1,4 @@
+android-sdk
 arp-scan
 arping
 autoconf
@@ -6,9 +7,11 @@ boost
 cowsay
 curl
 ettercap
+fb-adb
 fortune
 freetype
 gdbm
+geoip
 git
 git-sh
 gmp
@@ -42,8 +45,10 @@ readline
 redis
 ruby-build
 sqlite
+ssh-copy-id
 the_silver_searcher
 thefuck
+tldr
 tmux
 tree
 unrar
