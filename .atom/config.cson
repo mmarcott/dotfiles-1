@@ -1,45 +1,45 @@
 "*":
-  "exception-reporting":
-    userId: "93e52cb5-dc76-0b00-f6a7-a8c879cb05a9"
-  welcome:
-    showOnStartup: false
-  editor:
-    invisibles: {}
-    fontFamily: "Hack"
-    showIndentGuide: true
-    showInvisibles: true
-    fontSize: 13
-  core:
-    themes: [
-      "one-light-ui"
-      "one-dark-syntax"
-    ]
-    excludeVcsIgnoredPaths: false
-  "one-dark-ui": {}
   "atom-beautify":
     _analyticsUserId: "5ae3a896-ce1a-46b6-be5e-e6a10dcb0fa7"
   autosave:
     enabled: true
+  core:
+    excludeVcsIgnoredPaths: false
+    themes: [
+      "one-light-ui"
+      "one-dark-syntax"
+    ]
+  editor:
+    fontFamily: "Hack"
+    fontSize: 13
+    invisibles: {}
+    showIndentGuide: true
+    showInvisibles: true
+  "exception-reporting":
+    userId: "93e52cb5-dc76-0b00-f6a7-a8c879cb05a9"
   firepad: {}
-  "linter-gjslint":
-    gjslintExecutablePath: "/usr/local/bin/gjslint"
   jslint:
     validateOnSave: false
-  livereload:
-    exts: "slim, jade, haml, erb"
-  "ruby-test":
-    cucumberSingleCommand: "bundle exec cucumber --color {relative_path}:{line_number}"
-    cucumberAllCommand: "bundle exec cucumber --color features"
-    cucumberFileCommand: "bundle exec cucumber --color {relative_path}"
-    specFramework: "rspec"
-    shell: "/usr/local/bin/zsh"
-    rspecSingleCommand: "bundle exec rspec --tty {relative_path}:{line_number}"
-    rspecAllCommand: "bundle exec rspec --tty spec"
-    rspecFileCommand: "bundle exec rspec --tty {relative_path}"
-  whitespace:
-    removeTrailingWhitespace: false
-  tabs:
-    usePreviewTabs: true
+  linter: {}
   "linter-eslint":
     globalNodePath: "/usr/local"
-  linter: {}
+  "linter-gjslint":
+    gjslintExecutablePath: "/usr/local/bin/gjslint"
+  livereload:
+    exts: "slim, jade, haml, erb"
+  "one-dark-ui": {}
+  "ruby-test":
+    cucumberAllCommand: "bundle exec cucumber --color features"
+    cucumberFileCommand: "bundle exec cucumber --color {relative_path}"
+    cucumberSingleCommand: "bundle exec cucumber --color {relative_path}:{line_number}"
+    rspecAllCommand: "bundle exec rspec --tty spec"
+    rspecFileCommand: "bundle exec rspec --tty {relative_path}"
+    rspecSingleCommand: "bundle exec rspec --tty {relative_path}:{line_number}"
+    shell: "/usr/local/bin/zsh"
+    specFramework: "rspec"
+  tabs:
+    usePreviewTabs: true
+  welcome:
+    showOnStartup: false
+  whitespace:
+    removeTrailingWhitespace: false

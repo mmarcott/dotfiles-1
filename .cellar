@@ -17,6 +17,7 @@ git-sh
 gmp
 go
 grc
+grep
 heroku-toolbelt
 highlight
 htop-osx
@@ -40,6 +41,7 @@ pkg-config
 postgresql
 protobuf
 pv
+python
 rbenv
 readline
 redis
