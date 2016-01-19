@@ -4,6 +4,7 @@ arping
 autoconf
 awscli
 boost
+corkscrew
 cowsay
 curl
 ettercap
@@ -22,6 +23,7 @@ heroku-toolbelt
 highlight
 htop-osx
 hub
+jq
 jsonpp
 libevent
 libnet
@@ -34,6 +36,7 @@ mysql
 n
 nmap
 node
+oniguruma
 openssl
 pandoc
 pcre
