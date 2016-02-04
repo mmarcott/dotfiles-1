@@ -1,6 +1,12 @@
 "*":
   "atom-beautify":
     _analyticsUserId: "5ae3a896-ce1a-46b6-be5e-e6a10dcb0fa7"
+  "autocomplete-plus":
+    fileBlacklist: [
+      ".md"
+      ".txt"
+    ]
+    minimumWordLength: 4
   autosave:
     enabled: true
   core:
@@ -22,11 +28,14 @@
     validateOnSave: false
   linter: {}
   "linter-eslint":
+    disableWhenNoEslintConfig: false
     globalNodePath: "/usr/local"
+    useGlobalEslint: true
   "linter-gjslint":
     gjslintExecutablePath: "/usr/local/bin/gjslint"
   livereload:
     exts: "slim, jade, haml, erb"
+  "markdown-preview": {}
   "one-dark-ui": {}
   "ruby-test":
     cucumberAllCommand: "bundle exec cucumber --color features"
@@ -41,5 +50,4 @@
     usePreviewTabs: true
   welcome:
     showOnStartup: false
-  whitespace:
-    removeTrailingWhitespace: false
+  whitespace: {}
