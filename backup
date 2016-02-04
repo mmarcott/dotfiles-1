@@ -2,3 +2,4 @@
 
 /bin/ls ~/.atom/packages | grep -v READ > ~/.atom/package-list
 /bin/ls /usr/local/Cellar > ~/.dotfiles/.cellar
+/bin/ls /usr/local/lib/node_modules > ~/.dotfiles/.node_modules
