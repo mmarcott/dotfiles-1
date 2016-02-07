@@ -14,9 +14,22 @@
 
 // style the background and foreground colors on the atom-text-editor-element
 // itself
-atom-text-editor {
+atom-text-editor::shadow {
+  .line.highlight-line-multi-line-solid-bottom {
+    border-bottom-color: #2962FF !important;
+  }
+  
+  .line-number.ruby-block-highlight {
+    color: white;
+  }
+
+  .line.highlight-line {
+    background: rgba(33, 150, 243, 0.1) !important;
+  }
+
 
 }
+
 
 // To style other content in the text editor's shadow DOM, use the ::shadow
 // expression
@@ -40,4 +53,10 @@ tab-bar .tab::before {
   width: 3px;
   border-radius: 3px 0;
   background: #0094FF;
+}
+
+:host, atom-text-editor, atom-text-editor::shadow {
+  .selection .region {
+    background-color: rgba(33, 150, 243, 0.4);
+  }
 }

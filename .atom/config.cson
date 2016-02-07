@@ -24,6 +24,9 @@
   "exception-reporting":
     userId: "93e52cb5-dc76-0b00-f6a7-a8c879cb05a9"
   firepad: {}
+  "highlight-line":
+    enableUnderline: true
+    hideHighlightOnSelect: true
   jslint:
     validateOnSave: false
   linter: {}
@@ -37,6 +40,8 @@
     exts: "slim, jade, haml, erb"
   "markdown-preview": {}
   "one-dark-ui": {}
+  "ruby-block":
+    highlightLineNumber: true
   "ruby-test":
     cucumberAllCommand: "bundle exec cucumber --color features"
     cucumberFileCommand: "bundle exec cucumber --color {relative_path}"
