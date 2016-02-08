@@ -5,20 +5,22 @@
   'cmd-k cmd-shift-left': 'move-panes:move-left'
   'cmd-k cmd-shift-right': 'move-panes:move-right'
 
-'body':
+'.editor:not([mini])':
   # Move pane focus around
   'ctrl-a k': 'window:focus-pane-above'
   'ctrl-a j': 'window:focus-pane-below'
   'ctrl-a h': 'window:focus-pane-on-left'
   'ctrl-a l': 'window:focus-pane-on-right'
-
+  # Vim style movement
+  'ctrl-k': 'core:move-up'
+  'ctrl-j': 'core:move-down'
+  'ctrl-h': 'core:move-left'
+  'ctrl-l': 'core:move-right'
   # tmux style pane control
   'ctrl-a o': 'window:focus-next-pane'
   'ctrl-a x': 'pane:close'
   'ctrl-a -': 'pane:split-down'
   'ctrl-a |': 'pane:split-right'
-
-'.platform-darwin atom-text-editor':
   'ctrl-cmd-a': 'aligner:align'
 
 '.platform-darwin atom-workspace atom-text-editor:not([mini])':
