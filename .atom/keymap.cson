@@ -31,3 +31,7 @@
   'alt-up': 'ctrl-dir-scroll:scroll-up'
   'alt-shift-down': 'ctrl-dir-scroll:scroll-down-big'
   'alt-shift-up': 'ctrl-dir-scroll:scroll-up-big'
+
+# overrides 'maximize-panes' default behaviour
+'.platform-darwin atom-workspace atom-text-editor:not([mini])':
+  'shift-cmd-enter': 'editor:newline-above'
