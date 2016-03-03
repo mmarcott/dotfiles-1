@@ -54,6 +54,8 @@
     specFramework: "rspec"
   tabs:
     usePreviewTabs: true
+  "tree-view":
+    hideVcsIgnoredFiles: true
   welcome:
     showOnStartup: false
   whitespace: {}
