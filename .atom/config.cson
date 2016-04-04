@@ -59,3 +59,7 @@
   welcome:
     showOnStartup: false
   whitespace: {}
+
+'.slim.text':
+  whitespace:
+    removeTrailingWhitespace: false
