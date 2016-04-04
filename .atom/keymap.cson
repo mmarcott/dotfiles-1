@@ -23,9 +23,6 @@
   'ctrl-a |': 'pane:split-right'
   'ctrl-cmd-a': 'aligner:align'
 
-'.platform-darwin atom-workspace atom-text-editor:not([mini])':
-  'ctrl-a z': 'maximize-panes:maximize'
-
 '.platform-darwin atom-workspace atom-text-editor:not(.mini)':
   'alt-down': 'ctrl-dir-scroll:scroll-down'
   'alt-up': 'ctrl-dir-scroll:scroll-up'
@@ -35,3 +32,4 @@
 # overrides 'maximize-panes' default behaviour
 '.platform-darwin atom-workspace atom-text-editor:not([mini])':
   'shift-cmd-enter': 'editor:newline-above'
+  'ctrl-a z': 'maximize-panes:maximize'
