@@ -1,32 +1,33 @@
-" Use synax highlighting
-syntax on
-
-" For any filetype plugin use plugin-defined indenting
+" Vundle Setup
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+source ~/.dotfiles/.vimrc.bundles
+call vundle#end()
 filetype plugin indent on
 
-" Line wrap at 79
-set textwidth=79
+" Leader
+let mapleader = " "
 
-" When using > or <, for indent / outdent, go this many spaces
+" Options
+syntax on
+set textwidth=100
 set shiftwidth=2
-
-" Automatically display line numbers
-set number
-
-" Tab is never \t, but always tabstop number of spaces
-set expandtab
-
-" Tab is 2 spaces
 set tabstop=2
-
-" Allow me to change buffers without saving
 set hidden
-
-" Do not create backup files
 set nobackup
-
-" Do not create swap files
 set noswapfile
+set tabstop=2
+set shiftround
+set expandtab
+set list listchars=tab:»·,trail:·,nbsp:·
+set numberwidth=4
+set splitbelow
+set splitright
+set number
+set relativenumber
+set cursorline
 
 " Be a good .git user
 augroup gitcommit
@@ -34,12 +35,34 @@ augroup gitcommit
   au FileType gitcommit set tw=50
 augroup END
 
-" Reload .vimrc
-nmap <Leader>s :exec "source ~/.vimrc\|echo 'Reloaded .vimrc'"<cr>
 
-" Beautiful Magic: "jk" i insert mode returns you to Normal
+" Mappings
 inoremap jk <ESC>
+cnoremap jk <ESC>
+nnoremap 0 ^
 
-" Toggle numbering modes
-nnoremap <C-n><C-n> :set number! number?<CR>
-nnoremap <C-n><C-r> :set relativenumber! relativenumber?<CR>
+" Quicker window movement
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
+" RSpec.vim mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
+
+" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
+if executable('ag')
+  set grepprg=ag\ --nogroup\ --nocolor
+  let g:ctrlp_user_command = 'ag -Q -l --nocolor --hidden -g "" %s'
+  let g:ctrlp_use_caching = 0
+endif
+
+" Remove Trailing Whitespace
+autocmd BufWritePre * :%s/\s\+$//e
+
+" YouCompleteMe Colors
+highlight Pmenu ctermfg=15 ctermbg=237
+highlight PmenuSel ctermfg=16 ctermbg=51

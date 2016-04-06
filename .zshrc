@@ -16,7 +16,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-# export PATH="/Users/alex/.rbenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 
 # Preferred editor for local and remote sessions
 atom=`which atom`
@@ -24,7 +24,7 @@ atom=`which atom`
   alias e=atom
 
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vi'
+  export EDITOR='vim'
 else
   export EDITOR='vim'
 fi
@@ -32,9 +32,9 @@ fi
 
 # Custom Edits
 
-alias zedit="vi ~/.zshrc"
+alias zedit="vim ~/.zshrc"
 alias reload="source ~/.zshrc"
-
+alias k="clear"
 # sources custom aliases and functions
 for file in $(tree -if ~/.dotfiles/custom-omz | grep .zsh); do
   source $file
