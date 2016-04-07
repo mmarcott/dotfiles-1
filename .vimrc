@@ -7,9 +7,10 @@ let mapleader = " "
 " Options
 syntax on
 set textwidth=100
+set colorcolumn=100
 set shiftwidth=2
-set tabstop=2
 set hidden
+set autoread
 set nobackup
 set noswapfile
 set tabstop=2
@@ -21,7 +22,7 @@ set splitbelow
 set splitright
 set number
 set relativenumber
-set cursorline
+" set cursorline
 set hlsearch
 
 " Be a good .git user
@@ -42,7 +43,7 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
 " RSpec.vim mappings
-let g:rspec_command = "Dispatch rspec {spec}" " Dispatch rspecruns to a tmux pane
+let g:rspec_command = 'call Send_to_Tmux("bundle exec spring rspec {spec} 2> /dev/null\n")'
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
@@ -62,11 +63,13 @@ autocmd BufWritePre !*.md :%s/\s\+$//e
 " YouCompleteMe Colors
 highlight Pmenu ctermfg=15 ctermbg=237
 highlight PmenuSel ctermfg=16 ctermbg=51
-
-" Save on Focus Lost
-au FocusLost * silent! wa
+highlight ColorColumn ctermbg=24
+highlight VertSplit ctermbg=0 ctermfg=0
 
 " Traitional Copy/Paste
 vnoremap <C-c> :w !pbcopy<CR><CR>
 noremap <C-v> :r !pbpaste<CR><CR>
 
+" Read/Save on Focus Change
+autocmd FocusLost,WinLeave * :silent! w
+autocmd FocusGained,BufEnter * :silent! !
