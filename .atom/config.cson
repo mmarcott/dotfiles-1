@@ -10,6 +10,9 @@
   autosave:
     enabled: true
   core:
+    disabledPackages: [
+      "vim-mode"
+    ]
     excludeVcsIgnoredPaths: false
     themes: [
       "one-light-ui"
@@ -56,10 +59,10 @@
     usePreviewTabs: true
   "tree-view":
     hideVcsIgnoredFiles: true
+  "vim-mode": {}
   welcome:
     showOnStartup: false
   whitespace: {}
-
-'.slim.text':
+".slim.text":
   whitespace:
     removeTrailingWhitespace: false

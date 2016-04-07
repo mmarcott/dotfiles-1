@@ -3,12 +3,9 @@ atom-beautify
 atom-monokai
 autosave
 ctrl-dir-scroll
-cucumber
 es6-javascript
 file-icons
-firepad
 highlight-line
-increment-selection
 jslint
 language-swift
 linter
@@ -17,6 +14,6 @@ maximize-panes
 move-panes
 ruby-block
 ruby-slim
-ruby-test
 seti-ui
 symbol-gen
+vim-mode
