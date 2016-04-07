@@ -16,7 +16,8 @@ Bundle 'jiangmiao/auto-pairs'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'slim-template/vim-slim.git'
 Bundle 'tpope/vim-dispatch'
-
+Bundle 'mattn/gist-vim'
+Bundle 'mattn/webapi-vim'
 call vundle#end()
 
 filetype plugin indent on
