@@ -19,22 +19,14 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 
 # Preferred editor for local and remote sessions
-atom=`which atom`
-  test $atom &&
-  alias e=atom
-
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='vim'
-fi
-
+export EDITOR='vim'
 
 # Custom Edits
-
 alias zedit="vim ~/.zshrc"
+alias vedit="vim ~/.vimrc"
 alias reload="source ~/.zshrc"
 alias k="clear"
+
 # sources custom aliases and functions
 for file in $(tree -if ~/.dotfiles/custom-omz | grep .zsh); do
   source $file

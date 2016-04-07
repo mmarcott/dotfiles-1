@@ -1,3 +1,8 @@
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
 Bundle 'VundleVim/Vundle.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'L9'
@@ -10,3 +15,8 @@ Bundle 'thoughtbot/vim-rspec'
 Bundle 'jiangmiao/auto-pairs'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'slim-template/vim-slim.git'
+Bundle 'tpope/vim-dispatch'
+
+call vundle#end()
+
+filetype plugin indent on

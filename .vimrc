@@ -1,11 +1,5 @@
 " Vundle Setup
-set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
 source ~/.dotfiles/.vimrc.bundles
-call vundle#end()
-filetype plugin indent on
 
 " Leader
 let mapleader = " "
@@ -22,19 +16,19 @@ set tabstop=2
 set shiftround
 set expandtab
 set list listchars=tab:»·,trail:·,nbsp:·
-set numberwidth=4
+set numberwidth=5
 set splitbelow
 set splitright
 set number
 set relativenumber
 set cursorline
+set hlsearch
 
 " Be a good .git user
 augroup gitcommit
   autocmd!
   au FileType gitcommit set tw=50
 augroup END
-
 
 " Mappings
 inoremap jk <ESC>
@@ -48,6 +42,7 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
 " RSpec.vim mappings
+let g:rspec_command = "Dispatch rspec {spec}" " Dispatch rspecruns to a tmux pane
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
@@ -61,7 +56,8 @@ if executable('ag')
 endif
 
 " Remove Trailing Whitespace
-autocmd BufWritePre * :%s/\s\+$//e
+autocmd BufWritePre !*.slim :%s/\s\+$//e
+autocmd BufWritePre !*.md :%s/\s\+$//e
 
 " YouCompleteMe Colors
 highlight Pmenu ctermfg=15 ctermbg=237
