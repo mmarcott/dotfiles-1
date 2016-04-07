@@ -62,3 +62,11 @@ autocmd BufWritePre !*.md :%s/\s\+$//e
 " YouCompleteMe Colors
 highlight Pmenu ctermfg=15 ctermbg=237
 highlight PmenuSel ctermfg=16 ctermbg=51
+
+" Save on Focus Lost
+au FocusLost * silent! wa
+
+" Traitional Copy/Paste
+vnoremap <C-c> :w !pbcopy<CR><CR>
+noremap <C-v> :r !pbpaste<CR><CR>
+
