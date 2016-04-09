@@ -34,7 +34,7 @@ nmap <Leader>v :vsp ~/.vimrc<CR>
 " CtrlP Options
 map  <Leader>r :CtrlPTag<CR>
 let g:ctrlp_cmd = 'CtrlPMRU'
-let g:ctrlp_match_window = 'top,order:ttp,min:1,max:6'
+let g:ctrlp_match_window = 'top,order:ttp,min:1,max:8'
 
 " Quicker window movement
 nnoremap <C-j> <C-w>j
@@ -66,6 +66,13 @@ highlight Pmenu ctermfg=15 ctermbg=237
 highlight PmenuSel ctermfg=16 ctermbg=51
 highlight ColorColumn ctermbg=24
 highlight VertSplit ctermbg=0 ctermfg=0
+let g:ctrlp_buffer_func = { 'enter': 'BrightHighlightOn', 'exit':  'BrightHighlightOff',  }
+function BrightHighlightOn()
+  hi CursorLine ctermbg=cyan ctermfg=16
+endfunction
+function BrightHighlightOff()
+  hi CursorLine ctermbg=none
+endfunction
 
 " Traitional Copy/Paste
 vnoremap <C-S-c> :w !pbcopy<CR><CR>
