@@ -19,6 +19,8 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
 Bundle 'godlygeek/tabular'
+Bundle 'mileszs/ack.vim'
+Bundle 'airblade/vim-gitgutter'
 
 call vundle#end()
 
