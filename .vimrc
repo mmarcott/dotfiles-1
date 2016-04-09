@@ -17,19 +17,23 @@ set tabstop=2
 set shiftround
 set expandtab
 set list listchars=tab:»·,trail:·,nbsp:·
-set numberwidth=4
+set numberwidth=3
 set splitbelow
 set splitright
 set number
 set relativenumber
 set ruler
 set hlsearch
+set laststatus=2
+
 
 " Custom Mappings
 inoremap jk <ESC>
 cnoremap jk <ESC>
 noremap 0 ^
 nmap <Leader>v :vsp ~/.vimrc<CR>
+noremap J jzz
+noremap K kzz
 
 " CtrlP Options
 map  <Leader>r :CtrlPTag<CR>
@@ -75,9 +79,20 @@ function BrightHighlightOff()
 endfunction
 
 " Traitional Copy/Paste
-vnoremap <C-S-c> :w !pbcopy<CR><CR>
-noremap <C-S-v> :r !pbpaste<CR><CR>
+map <Leader>c :w !pbcopy<CR><CR>
+map <Leader>v :r !pbpaste<CR><CR>
 
 " Read/Save on Focus Change
 autocmd FocusLost,WinLeave * :silent! w
 autocmd FocusGained,BufEnter * :silent! !
+
+" Airline
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'papercolor'
+let g:tmuxline_preset = {
+      \'a'    : '#S',
+      \'win'  : ['#I', '#W'],
+      \'cwin' : ['#I', '#W', '#F'],
+      \'x'    : '#(sh ~/.dotfiles/.tmux/functions/wifi.sh)',
+      \'y'    : '#(sh ~/.dotfiles/.tmux/functions/battery.sh)',
+      \'z'    : ['%R', '%a', '%Y']}

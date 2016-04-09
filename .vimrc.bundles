@@ -21,6 +21,9 @@ Bundle 'mattn/webapi-vim'
 Bundle 'godlygeek/tabular'
 Bundle 'mileszs/ack.vim'
 Bundle 'airblade/vim-gitgutter'
+Bundle 'vim-airline/vim-airline'
+Bundle 'vim-airline/vim-airline-themes'
+Bundle 'edkolev/tmuxline.vim'
 
 call vundle#end()
 
