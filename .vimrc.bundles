@@ -24,6 +24,8 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'vim-airline/vim-airline'
 Bundle 'vim-airline/vim-airline-themes'
 Bundle 'edkolev/tmuxline.vim'
+Bundle 'terryma/vim-multiple-cursors'
+Bundle 'vim-scripts/Solarized'
 
 call vundle#end()
 
