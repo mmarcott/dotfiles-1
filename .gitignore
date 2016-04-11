@@ -3,3 +3,4 @@
 .atom/compile-cache
 .atom/blob-store
 .atom/packages
+.vim/bundle

@@ -6,11 +6,6 @@ let mapleader = " "
 " Options
 syntax on
 
-if has('gui_running')
-  set background=dark
-  colorscheme solarized
-endif
-
 colorscheme alex
 set mouse=a
 set textwidth=100
@@ -35,34 +30,34 @@ set laststatus=2
 set autoread
 
 " Custom Mappings
-inoremap jk <ESC>
-cnoremap jk <ESC>
-noremap J jzz
-noremap K kzz
-noremap 0 ^
+  inoremap jk <ESC>
+  cnoremap jk <ESC>
+  noremap J jzz
+  noremap K kzz
+  noremap 0 ^
   " spec runners
-map  <Leader>t :call RunCurrentSpecFile()<CR>
-map  <Leader>s :call RunNearestSpec()<CR>
-map  <Leader>l :call RunLastSpec()<CR>
-map  <Leader>a :call RunAllSpecs()<CR>
+  map  <Leader> t :call RunCurrentSpecFile()<CR>
+  map  <Leader> s :call RunNearestSpec()<CR>
+  map  <Leader> l :call RunLastSpec()<CR>
+  map  <Leader> a :call RunAllSpecs()<CR>
   " vimrc edit/source
-nmap <Leader>e :vsp ~/.vimrc<CR>
-nmap <Leader>ee :source ~/.vimrc<CR>
+  nmap <Leader> e :vsp ~/.vimrc<CR>
+  nmap <Leader> ee :source ~/.vimrc<CR>
   " copy/paste
-map  <Leader>c :w !pbcopy<CR> <CR>
-map  <Leader>v :r !pbpaste<CR> <CR>
+  map  <Leader> c :w !pbcopy<CR> <CR>
+  map  <Leader> v :r !pbpaste<CR> <CR>
   " deafult ctrlp command
-map  <Leader>r :CtrlPTag<CR>
+  map  <Leader> r :CtrlPTag<CR>
+  " Quicker window movement
+  nnoremap <C-j> <C-w> j
+  nnoremap <C-k> <C-w> k
+  nnoremap <C-h> <C-w> h
+  nnoremap <C-l> <C-w> l
 
 " CtrlP Options
 let g:ctrlp_cmd = 'CtrlPMRU'
 let g:ctrlp_match_window = 'top,order:ttp,min:1,max:8'
 
-" Quicker window movement
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
 
 " RSpec.vim mappings
 let g:rspec_command = ':w | :call Send_to_Tmux("clear && spring rspec {spec}\n")'
@@ -81,7 +76,7 @@ autocmd BufWritePre !*.md :%s/\s\+$//e
 
 " Read/Save on Focus Change
 autocmd FocusLost,WinLeave * :silent! w
-au CursorHold * checktime
+autocmd CursorHold * checktime
 
 " Airline
 let g:airline_powerline_fonts = 1
