@@ -1,8 +1,9 @@
 " Vundle Setup
-source ~/.dotfiles/.vimrc.bundles
+source ~/.vim/.vimrc.bundles
 
 " Leader
-let mapleader = " " 
+let mapleader = " "
+
 " Options
 syntax on
 
@@ -29,30 +30,27 @@ set hlsearch
 set laststatus=2
 set autoread
 
-" Custom Mappings
+" " Custom Mappings
   inoremap jk <ESC>
   cnoremap jk <ESC>
   noremap J jzz
   noremap K kzz
   noremap 0 ^
-  " spec runners
-  map  <Leader> t :call RunCurrentSpecFile()<CR>
-  map  <Leader> s :call RunNearestSpec()<CR>
-  map  <Leader> l :call RunLastSpec()<CR>
-  map  <Leader> a :call RunAllSpecs()<CR>
-  " vimrc edit/source
-  nmap <Leader> e :vsp ~/.vimrc<CR>
-  nmap <Leader> ee :source ~/.vimrc<CR>
-  " copy/paste
-  map  <Leader> c :w !pbcopy<CR> <CR>
-  map  <Leader> v :r !pbpaste<CR> <CR>
-  " deafult ctrlp command
-  map  <Leader> r :CtrlPTag<CR>
-  " Quicker window movement
   nnoremap <C-j> <C-w> j
   nnoremap <C-k> <C-w> k
   nnoremap <C-h> <C-w> h
   nnoremap <C-l> <C-w> l
+
+  map  <Leader>a  :call RunAllSpecs()<CR>
+  map  <Leader>c  :w !pbcopy<CR> <CR>
+  nmap <Leader>e  :vsp ~/.vimrc<CR>
+  nmap <Leader>ee :source ~/.vimrc<CR>
+  map  <Leader>k  :noh<CR>
+  map  <Leader>l  :call RunLastSpec()<CR>
+  map  <Leader>r  :CtrlPTag<CR>
+  map  <Leader>s  :call RunNearestSpec()<CR>
+  map  <Leader>t  :call RunCurrentSpecFile()<CR>
+  map  <Leader>v  :r !pbpaste<CR> <CR>
 
 " CtrlP Options
 let g:ctrlp_cmd = 'CtrlPMRU'
@@ -88,3 +86,4 @@ let g:tmuxline_preset = {
       \'x'    : '#(sh ~/.dotfiles/.tmux/functions/wifi.sh)',
       \'y'    : '#(sh ~/.dotfiles/.tmux/functions/battery.sh)',
       \'z'    : ['%R', '%a', '%d.%b.%y']}
+
