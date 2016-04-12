@@ -6,29 +6,27 @@ let mapleader = " "
 
 " Options
 syntax on
-
 colorscheme alex
-set mouse=a
-set textwidth=100
-set colorcolumn=100
-set shiftwidth=2
-set hidden
 set autoread
-set nobackup
-set noswapfile
-set tabstop=2
-set shiftround
+set colorcolumn=100
 set expandtab
-set list listchars=tab:»·,trail:·,nbsp:·
-set numberwidth=3
-set splitbelow
-set splitright
-set number
-set relativenumber
-set ruler
+set hidden
 set hlsearch
 set laststatus=2
-set autoread
+set list listchars=tab:»·,trail:·,nbsp:·
+set mouse=a
+set nobackup
+set noswapfile
+set number
+set numberwidth=3
+set relativenumber
+set ruler
+set shiftround
+set shiftwidth=2
+set splitbelow
+set splitright
+set tabstop=2
+set textwidth=100
 
 " " Custom Mappings
   inoremap jk <ESC>
@@ -36,10 +34,10 @@ set autoread
   noremap J jzz
   noremap K kzz
   noremap 0 ^
-  nnoremap <C-j> <C-w> j
-  nnoremap <C-k> <C-w> k
-  nnoremap <C-h> <C-w> h
-  nnoremap <C-l> <C-w> l
+  nnoremap <C-j> <C-w>j
+  nnoremap <C-k> <C-w>k
+  nnoremap <C-h> <C-w>h
+  nnoremap <C-l> <C-w>l
 
   map  <Leader>a  :call RunAllSpecs()<CR>
   map  <Leader>c  :w !pbcopy<CR> <CR>
@@ -51,6 +49,9 @@ set autoread
   map  <Leader>s  :call RunNearestSpec()<CR>
   map  <Leader>t  :call RunCurrentSpecFile()<CR>
   map  <Leader>v  :r !pbpaste<CR> <CR>
+
+" Send :update when leaving vim for tmux
+let g:tmux_navigator_save_on_switch = 1
 
 " CtrlP Options
 let g:ctrlp_cmd = 'CtrlPMRU'
@@ -73,7 +74,7 @@ autocmd BufWritePre !*.slim :%s/\s\+$//e
 autocmd BufWritePre !*.md :%s/\s\+$//e
 
 " Read/Save on Focus Change
-autocmd FocusLost,WinLeave * :silent! w
+autocmd FocusLost,WinLeave * :silent! update
 autocmd CursorHold * checktime
 
 " Airline
