@@ -11,9 +11,12 @@ syntax on
 if has('mac')
   colorscheme alex
 else
+  set background=dark
   colorscheme mine
 endif
 
+scriptencoding utf-8
+set encoding=utf-8
 set autoread
 set colorcolumn=100
 set expandtab
