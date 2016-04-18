@@ -5,8 +5,15 @@ source ~/.vim/.vimrc.bundles
 let mapleader = " "
 
 " Options
+set t_Co=256
 syntax on
-colorscheme alex
+
+if has('mac')
+  colorscheme alex
+else
+  colorscheme mine
+endif
+
 set autoread
 set colorcolumn=100
 set expandtab
@@ -26,7 +33,7 @@ set shiftwidth=2
 set splitbelow
 set splitright
 set tabstop=2
-set textwidth=100
+set textwidth=110
 
 " Custom Mappings
 inoremap jk <ESC>
@@ -35,18 +42,25 @@ inoremap <C-a> <ESC>I
 inoremap <C-e> <ESC>A
 noremap <C-a> I
 noremap <C-e> A
+noremap J jzz
+noremap K kzz
 
-map  <Leader>a  :call RunAllSpecs()<CR>
-nmap <Leader>e  :vsp ~/.vimrc<CR>
-map  <Leader>c  :noh<CR>
-nmap <Leader>ee :source ~/.vimrc<CR>
-map  <Leader>l  :call RunLastSpec()<CR>
-map  <Leader>r  :CtrlPTag<CR>
-map  <Leader>s  :call RunNearestSpec()<CR>
-map  <Leader>t  :call RunCurrentSpecFile()<CR>
-map  <Leader>v  :r !pbpaste<CR> <CR>
-map  <Leader>/  gcc
-vmap <Leader>/  gc
+map     <Leader>a  :call RunAllSpecs()<CR>
+nmap    <Leader>e  :vsp ~/.vimrc<CR>
+map     <Leader>c  :noh<CR>
+nmap    <Leader>ee :source ~/.vimrc<CR>
+noremap <Leader>j  J
+map     <Leader>l  :call RunLastSpec()<CR>
+map     <Leader>r  :CtrlPTag<CR>
+map     <Leader>s  :call RunNearestSpec()<CR>
+map     <Leader>t  :call RunCurrentSpecFile()<CR>
+map     <Leader>/  gcc
+vmap    <Leader>/  gc
+if has('mac')
+  vmap  <Leader>y  "*y
+else
+  vmap  <Leader>y  "+y
+endif
 
 " Send :update when leaving vim for tmux
 let g:tmux_navigator_save_on_switch = 1
@@ -56,7 +70,8 @@ let g:ctrlp_cmd = 'CtrlPMRU'
 let g:ctrlp_match_window = 'top,order:ttp,min:1,max:10'
 
 " RSpec.vim mappings
-let g:rspec_command = ':w | :call Send_to_Tmux("clear && spring rspec {spec}\n")'
+let g:rspec_command = ":w | Dispatch rspec {spec}"
+" let g:rspec_command = ':w | :call Send_to_Tmux("clear && rspec {spec}\n")'
 
 " Use The Silver Searcher
 if executable('ag')
