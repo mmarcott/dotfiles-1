@@ -19,3 +19,5 @@ function BrightHighlightOff()
   hi CursorLine ctermbg=none
 endfunction
 
+" Search results and quickfix highlights
+highlight Search cterm=NONE ctermfg=grey ctermbg=blue
