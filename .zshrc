@@ -1,7 +1,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-if [[ uname -eq 'Linux' ]]; then
+if [[ uname == 'Linux' ]]; then
   ZSH_THEME="blinks"
 else
   ZSH_THEME="avit"

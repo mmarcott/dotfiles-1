@@ -1,16 +1,29 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash -e
 
-files=`/bin/ls -FA | grep '^\.' | grep -v '\/$'`
-dirs=`/bin/ls -Fd .* | grep -e "/$" | grep -v git | grep -v "\.\/$" | sed 's:/$::'`
+files=( '.vim*' '.rspec' '.tmux*' '.zshrc' '.gitignore_global' )
 dir=`pwd`
 
 symlink () { 
   for dotfile; do
+    # echo "Running: ln -sf $dir/$dotfile $HOME"
     echo "Symlinking $dotfile"
-#    echo "Running: ln -sf $dir/$dotfile $HOME"
     `ln -sf $dir/$dotfile $HOME`
   done
 }
 
-symlink $files
-symlink $dirs
+symlink ${files[@]}
+
+if ! [[ -e '.installed' ]]; then
+  # install oh-my-zsh
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+  # fetch submodules
+  git submodule update --init --recursive
+
+  # install vim plugins
+  vim +PluginInstall +qall
+
+  # set installation file so certain commands are skipped on the next run
+  touch .installed
+fi
+
