@@ -1,7 +1,11 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-ZSH_THEME="avit"
+if [[ uname -eq 'Linux' ]]; then
+  ZSH_THEME="blinks"
+else
+  ZSH_THEME="avit"
+fi
 
 # DISABLE_AUTO_UPDATE="true"
 # export UPDATE_ZSH_DAYS=13
