@@ -22,6 +22,7 @@ freetype
 fswatch
 gdbm
 geoip
+gettext
 git
 git-sh
 gmp
@@ -43,6 +44,7 @@ libpng
 libtool
 libzip
 lua
+lynx
 macvim
 memcached
 miniupnpc
@@ -52,6 +54,7 @@ mongodb
 mysql
 n
 namebench
+neovim
 nmap
 node
 oniguruma
