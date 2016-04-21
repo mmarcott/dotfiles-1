@@ -59,6 +59,9 @@ map     <Leader>s  :call RunNearestSpec()<CR>
 map     <Leader>t  :call RunCurrentSpecFile()<CR>
 map     <Leader>/  gcc
 vmap    <Leader>/  gc
+nmap    <Leader>z  :tab split<CR>
+nmap    <Leader><Tab> :b#<CR>
+
 if has('mac')
   vmap  <Leader>y  "*y
 else
