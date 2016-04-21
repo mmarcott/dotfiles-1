@@ -74,9 +74,10 @@ let g:tmux_navigator_save_on_switch = 1
 " CtrlP Options
 let g:ctrlp_cmd = 'CtrlPMRU'
 let g:ctrlp_match_window = 'top,order:ttp,min:1,max:10'
+let g:ctrlp_mruf_relative = 1
 
 " RSpec.vim mappings
-let g:rspec_command = ":w | Dispatch rspec {spec}"
+let g:rspec_command = ":w | compiler rspec | set makeprg=spring | Make rspec {spec}"
 " let g:rspec_command = ':w | :call Send_to_Tmux("clear && rspec {spec}\n")'
 
 " Use The Silver Searcher
