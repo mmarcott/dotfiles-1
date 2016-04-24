@@ -4,6 +4,7 @@ arping
 autoconf
 automake
 autossh
+avrdude
 awscli
 berkeley-db4
 boost
@@ -38,10 +39,14 @@ jq
 jsonpp
 keybase
 lame
+libelf
 libevent
+libftdi0
 libnet
 libpng
 libtool
+libusb
+libusb-compat
 libzip
 lua
 lynx
