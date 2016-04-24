@@ -1,6 +1,6 @@
 #!/usr/bin/env bash -e
 
-files=( '.vim*' '.rspec' '.tmux*' '.zshrc' '.gitignore_global' )
+files=( '.vim*' '.rspec' '.tmux*' '.zshrc' '.gitignore_global' '.gitconfig' '.git_template' )
 dir=`pwd`
 
 symlink () { 
