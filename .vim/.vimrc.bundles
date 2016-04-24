@@ -1,3 +1,5 @@
+runtime macros/matchit.vim
+
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -13,15 +15,18 @@ Bundle 'godlygeek/tabular'
 Bundle 'jgdavey/tslime.vim'
 Bundle 'AndrewRadev/splitjoin.vim'
 Bundle 'jiangmiao/auto-pairs'
+Bundle 'kana/vim-textobj-user'
 Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
 Bundle 'mileszs/ack.vim'
 Plugin 'mtth/scratch.vim'
+Plugin 'nelstrom/vim-textobj-rubyblock'
 Bundle 'roman/golden-ratio'
 " Bundle 'slim-template/vim-slim.git'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'thoughtbot/vim-rspec'
 Bundle 'tomtom/tcomment_vim'
+Bundle 'tpope/vim-bundler'
 Bundle 'tpope/vim-dispatch'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'

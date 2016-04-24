@@ -3,7 +3,7 @@
 files=( '.vim*' '.rspec' '.tmux*' '.zshrc' '.gitignore_global' '.gitconfig' '.git_template' )
 dir=`pwd`
 
-symlink () { 
+symlink () {
   for dotfile; do
     # echo "Running: ln -sf $dir/$dotfile $HOME"
     echo "Symlinking $dotfile"
@@ -25,5 +25,12 @@ if ! [[ -e '.installed' ]]; then
 
   # set installation file so certain commands are skipped on the next run
   touch .installed
-fi
 
+  # TODO automate these so they're not necesary
+  echo 'POST-INSTALL TODOs'
+  echo 'Install the rbenv CTags generator'
+  echo '  - https://github.com/tpope/rbenv-ctags'
+  echo 'Install Bundler's CTags generator
+  echo '  - https://github.com/tpope/vim-bundler'
+
+fi
