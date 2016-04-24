@@ -18,10 +18,13 @@ endif
 scriptencoding utf-8
 set encoding=utf-8
 set autoread
-set colorcolumn=100
+set autowrite
+set backspace=2
+set colorcolumn=+1
 set expandtab
 set hidden
 set hlsearch
+set incsearch
 set laststatus=2
 set list listchars=tab:»·,trail:·,nbsp:·
 set mouse=a
@@ -33,10 +36,12 @@ set relativenumber
 set ruler
 set shiftround
 set shiftwidth=2
+set showcmd
 set splitbelow
 set splitright
 set tabstop=2
 set textwidth=110
+set timeoutlen=1000 ttimeoutlen=10
 
 " Custom Mappings
 inoremap jk <ESC>
@@ -68,6 +73,9 @@ else
   vmap  <Leader>y  "+y
 endif
 
+
+let g:AutoPairsFlyMode = 1
+
 " Send :update when leaving vim for tmux
 let g:tmux_navigator_save_on_switch = 1
 
@@ -77,8 +85,9 @@ let g:ctrlp_match_window = 'top,order:ttp,min:1,max:10'
 let g:ctrlp_mruf_relative = 1
 
 " RSpec.vim mappings
-let g:rspec_command = ":w | compiler rspec | set makeprg=spring | Make rspec {spec}"
-" let g:rspec_command = ':w | :call Send_to_Tmux("clear && rspec {spec}\n")'
+" let g:rspec_command = "compiler rspec | set makeprg=spring | Make rspec {spec}"
+let g:rspec_command = "Dispatch rspec {spec}"
+" let g:rspec_command = ':call Send_to_Tmux("clear && rspec {spec}\n")'
 
 " Use The Silver Searcher
 if executable('ag')
