@@ -28,10 +28,13 @@ export EDITOR='vim'
 # Custom Edits
 alias zedit="vim ~/.zshrc"
 alias vedit="vim ~/.vimrc"
+alias tedit="vim ~/.tmux.conf"
+alias bedit="vim ~/.vim/.vimrc.bundles"
 alias reload="source ~/.zshrc"
-alias k="clear"
 
 # sources custom aliases and functions
 for file in $(tree -if ~/.dotfiles/custom-omz | grep .zsh); do
   source $file
 done
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

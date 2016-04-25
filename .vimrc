@@ -60,11 +60,13 @@ nmap    <Leader>ee :source ~/.vimrc<CR>
 noremap <Leader>j  J
 map     <Leader>l  :call RunLastSpec()<CR>
 map     <Leader>r  :CtrlPTag<CR>
+nnoremap <leader>sh :VtrOpenRunner {'orientation': 'v', 'percentage': 30}<cr>
 map     <Leader>s  :call RunNearestSpec()<CR>
 map     <Leader>t  :call RunCurrentSpecFile()<CR>
 map     <Leader>/  gcc
 vmap    <Leader>/  gc
-nmap    <Leader>z  :tab split<CR>
+nnoremap <leader>z :wincmd _<cr>:wincmd \|<cr>
+nnoremap <leader>Z :wincmd =<cr>
 nmap    <Leader><Tab> :b#<CR>
 
 if has('mac')
@@ -86,8 +88,8 @@ let g:ctrlp_mruf_relative = 1
 
 " RSpec.vim mappings
 " let g:rspec_command = "compiler rspec | set makeprg=spring | Make rspec {spec}"
-let g:rspec_command = "Dispatch rspec {spec}"
-" let g:rspec_command = ':call Send_to_Tmux("clear && rspec {spec}\n")'
+" let g:rspec_command = "Dispatch rspec {spec}"
+let g:rspec_command = ':call Send_to_Tmux("clear && rspec {spec}\n")'
 
 " Use The Silver Searcher
 if executable('ag')
