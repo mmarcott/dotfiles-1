@@ -34,12 +34,9 @@ set number
 set numberwidth=3
 set relativenumber
 set ruler
-set shiftround
-set shiftwidth=2
 set showcmd
 set splitbelow
 set splitright
-set tabstop=2
 set textwidth=110
 set timeoutlen=1000 ttimeoutlen=10
 
@@ -48,26 +45,29 @@ inoremap jk <ESC>
 cnoremap jk <ESC>
 inoremap <C-a> <ESC>I
 inoremap <C-e> <ESC>A
-noremap <C-a> I
-noremap <C-e> A
+" noremap <C-a> I
+" noremap <C-e> A
 noremap J jzz
 noremap K kzz
+nnoremap c* *Ncgn
+nnoremap <CR> :
 
-map     <Leader>a  :call RunAllSpecs()<CR>
-nmap    <Leader>e  :vsp ~/.vimrc<CR>
-map     <Leader>c  :noh<CR>
-nmap    <Leader>ee :source ~/.vimrc<CR>
-noremap <Leader>j  J
-map     <Leader>l  :call RunLastSpec()<CR>
-map     <Leader>r  :CtrlPTag<CR>
+map      <Leader>a  :call RunAllSpecs()<CR>
+nmap     <Leader>e  :vsp ~/.vimrc<CR>
+map      <Leader>c  :noh<CR>
+nmap     <Leader>ee :source ~/.vimrc<CR>
+nnoremap <Leader>gs :sp /tmp/scratch<CR>
+noremap  <Leader>j  J
+map      <Leader>l  :call RunLastSpec()<CR>
+map      <Leader>r  :CtrlPTag<CR>
 nnoremap <leader>sh :VtrOpenRunner {'orientation': 'v', 'percentage': 30}<cr>
-map     <Leader>s  :call RunNearestSpec()<CR>
-map     <Leader>t  :call RunCurrentSpecFile()<CR>
-map     <Leader>/  gcc
-vmap    <Leader>/  gc
-nnoremap <leader>z :wincmd _<cr>:wincmd \|<cr>
-nnoremap <leader>Z :wincmd =<cr>
-nmap    <Leader><Tab> :b#<CR>
+map      <Leader>s  :call RunNearestSpec()<CR>
+map      <Leader>t  :call RunCurrentSpecFile()<CR>
+map      <Leader>/  gcc
+vmap     <Leader>/  gc
+nnoremap <leader>z  :wincmd _<cr>:wincmd \|<cr>
+nnoremap <leader>Z  :wincmd =<cr>
+nmap     <Leader><Tab> :b#<CR>
 
 if has('mac')
   vmap  <Leader>y  "*y
@@ -77,6 +77,9 @@ endif
 
 
 let g:AutoPairsFlyMode = 1
+
+" Only quickscope when using f and t
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 " Send :update when leaving vim for tmux
 let g:tmux_navigator_save_on_switch = 1
@@ -93,7 +96,7 @@ vnoremap Y myY`y
 " RSpec.vim mappings
 " let g:rspec_command = "compiler rspec | set makeprg=spring | Make rspec {spec}"
 " let g:rspec_command = "Dispatch rspec {spec}"
-let g:rspec_command = ':call Send_to_Tmux("clear && rspec {spec}\n")'
+let g:rspec_command = ':call Send_to_Tmux("clear && spring rspec {spec}\n")'
 
 " Use The Silver Searcher
 if executable('ag')
