@@ -1,4 +1,4 @@
-#!/usr/bin/env bash -e
+#!/bin/bash -e
 
 files=( '.vim*' '.rspec' '.tmux*' '.zshrc' '.gitignore_global' '.gitconfig' '.git_template' )
 dir=`pwd`
@@ -14,11 +14,16 @@ symlink () {
 symlink ${files[@]}
 
 if ! [[ -e '.installed' ]]; then
-  # install homebrew
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-  # install the essentials
-  brew install zsh git tmux vim
+  if [[ `uname` == 'Darwin' ]]; then
+    # install homebrew
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+    # install the essentials
+    brew install zsh git tmux vim
+  else
+    sudo apt-get install zsh git tmux vim
+  fi
 
   # install oh-my-zsh
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
