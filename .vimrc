@@ -77,36 +77,9 @@ else
   vmap  <Leader>y  "+y
 endif
 
-
-" let g:AutoPairsFlyMode = 1
-
-" Only quickscope when using f and t
-let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
-
-" Send :update when leaving vim for tmux
-let g:tmux_navigator_save_on_switch = 1
-
-" CtrlP Options
-let g:ctrlp_cmd = 'CtrlPMRU'
-let g:ctrlp_match_window = 'top,order:ttp,min:1,max:10'
-let g:ctrlp_mruf_relative = 1
-
 " Make Yank behave
 vnoremap y myy`y
 vnoremap Y myY`y
-
-" RSpec.vim mappings
-" let g:rspec_command = "compiler rspec | set makeprg=spring | Make rspec {spec}"
-" let g:rspec_command = "Dispatch rspec {spec}"
-let g:rspec_command = ':call Send_to_Tmux("clear && spring rspec {spec}\n")'
-
-" Use The Silver Searcher
-if executable('ag')
-  set grepprg=ag\ --nogroup\ --nocolor
-  let g:ackprg = 'ag --vimgrep'
-  let g:ctrlp_user_command = 'ag -Q -l --nocolor --hidden -g "" %s'
-  let g:ctrlp_use_caching = 0
-endif
 
 " Remove Trailing Whitespace
 autocmd BufWritePre !*.slim :%s/\s\+$//e
@@ -116,13 +89,3 @@ autocmd BufWritePre !*.md :%s/\s\+$//e
 autocmd FocusLost,WinLeave * :silent! update
 autocmd CursorHold * checktime
 
-" Airline
-let g:airline_powerline_fonts = 1
-let g:airline_theme = 'papercolor'
-let g:tmuxline_preset = {
-      \'a'    : '#S',
-      \'win'  : ['#I', '#W'],
-      \'cwin' : ['#I', '#W', '#F'],
-      \'x'    : '#(sh ~/.dotfiles/.tmux/functions/wifi.sh)',
-      \'y'    : '#(sh ~/.dotfiles/.tmux/functions/battery.sh)',
-      \'z'    : ['%R', '%a', '%d.%b.%y']}
