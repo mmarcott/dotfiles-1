@@ -43,14 +43,16 @@ set timeoutlen=1000 ttimeoutlen=10
 " Custom Mappings
 inoremap jk <ESC>
 cnoremap jk <ESC>
-inoremap <C-a> <ESC>I
-inoremap <C-e> <ESC>A
-" noremap <C-a> I
-" noremap <C-e> A
 noremap J jzz
 noremap K kzz
 nnoremap c* *Ncgn
 nnoremap <CR> :
+vnoremap <CR> :
+
+" Store relative line number jumps in the jumplist.
+" Treat long lines as break lines (useful when moving around in them).
+noremap <expr> j v:count > 1 ? 'm`' . v:count . 'j' : 'gj'
+noremap <expr> k v:count > 1 ? 'm`' . v:count . 'k' : 'gk'
 
 map      <Leader>a  :call RunAllSpecs()<CR>
 nmap     <Leader>e  :vsp ~/.vimrc<CR>
@@ -70,13 +72,13 @@ nnoremap <leader>Z  :wincmd =<cr>
 nmap     <Leader><Tab> :b#<CR>
 
 if has('mac')
-  vmap  <Leader>y  "*y
+  vmap  <Leader>y :w !pbcopy<CR><CR>
 else
   vmap  <Leader>y  "+y
 endif
 
 
-let g:AutoPairsFlyMode = 1
+" let g:AutoPairsFlyMode = 1
 
 " Only quickscope when using f and t
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
