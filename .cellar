@@ -4,6 +4,9 @@ arping
 autoconf
 automake
 autossh
+avr-binutils
+avr-gcc
+avr-libc
 avrdude
 awscli
 berkeley-db4
@@ -14,6 +17,7 @@ cowsay
 cscope
 ctags
 curl
+dfu-programmer
 docker
 ettercap
 fb-adb
@@ -31,6 +35,7 @@ gmp
 go
 grc
 grep
+heroku
 heroku-toolbelt
 highlight
 htop-osx
@@ -43,6 +48,7 @@ lame
 libelf
 libevent
 libftdi0
+libmpc
 libnet
 libpng
 libtool
@@ -57,6 +63,7 @@ miniupnpc
 mitmproxy
 mobile-shell
 mongodb
+mpfr
 mysql
 n
 namebench
