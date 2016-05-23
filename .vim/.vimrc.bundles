@@ -77,4 +77,4 @@ let g:tmuxline_preset = {
       \'y'    : '#(sh ~/.dotfiles/.tmux/functions/battery.sh)',
       \'z'    : ['%R', '%a', '%d.%b.%y']}
 
-let g:fzf_layout = { 'up': '~40%'  }
+let g:fzf_layout = { 'down': '~30%'  }
