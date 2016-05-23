@@ -54,21 +54,25 @@ vnoremap <CR> :
 noremap <expr> j v:count > 1 ? 'm`' . v:count . 'j' : 'gj'
 noremap <expr> k v:count > 1 ? 'm`' . v:count . 'k' : 'gk'
 
-map      <Leader>a  :call RunAllSpecs()<CR>
-nmap     <Leader>e  :vsp ~/.vimrc<CR>
+map      <Leader>b  :Buffers<CR>
 map      <Leader>c  :noh<CR>
+nmap     <Leader>e  :vsp ~/.vimrc<CR>
 nmap     <Leader>ee :source ~/.vimrc<CR>
+map      <Leader>f  :Ag<CR>
 nnoremap <Leader>gs :sp /tmp/scratch<CR>
 noremap  <Leader>j  J
-map      <Leader>l  :call RunLastSpec()<CR>
-map      <Leader>r  :CtrlPTag<CR>
-nnoremap <leader>sh :VtrOpenRunner {'orientation': 'v', 'percentage': 30}<cr>
-map      <Leader>s  :call RunNearestSpec()<CR>
-map      <Leader>t  :call RunCurrentSpecFile()<CR>
+map      <Leader>p  :Files<CR>
+map      <Leader>r  :BTags<CR>
+map      <Leader>ra :call RunAllSpecs()<CR>
+map      <Leader>rl :call RunLastSpec()<CR>
+map      <Leader>rs :call RunNearestSpec()<CR>
+map      <Leader>rt :call RunCurrentSpecFile()<CR>
+nnoremap <Leader>sh :VtrOpenRunner {'orientation': 'v', 'percentage': 30}<cr>
+map      <Leader>t  :Tags<CR>
 map      <Leader>/  gcc
 vmap     <Leader>/  gc
-nnoremap <leader>z  :wincmd _<cr>:wincmd \|<cr>
-nnoremap <leader>Z  :wincmd =<cr>
+nnoremap <Leader>z  :wincmd _<cr>:wincmd \|<cr>
+nnoremap <Leader>Z  :wincmd =<cr>
 nmap     <Leader><Tab> :b#<CR>
 
 if has('mac')

@@ -10,7 +10,6 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'audibleblink/vim-airline-themes', { 'branch': 'papercolor-modes' }
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'edkolev/tmuxline.vim'
 Plug 'godlygeek/tabular'
 Plug 'jgdavey/tslime.vim'
@@ -53,11 +52,6 @@ filetype plugin indent on
 " let g:rspec_command = "Dispatch rspec {spec}"
 let g:rspec_command = ':call Send_to_Tmux("clear && spring rspec {spec}\n")'
 
-" CtrlP Options
-let g:ctrlp_cmd = 'CtrlPMRU'
-let g:ctrlp_match_window = 'top,order:ttp,min:1,max:10'
-let g:ctrlp_mruf_relative = 1
-
 " Only quickscope when using f and t
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
@@ -82,3 +76,5 @@ let g:tmuxline_preset = {
       \'x'    : '#(sh ~/.dotfiles/.tmux/functions/wifi.sh)',
       \'y'    : '#(sh ~/.dotfiles/.tmux/functions/battery.sh)',
       \'z'    : ['%R', '%a', '%d.%b.%y']}
+
+let g:fzf_layout = { 'up': '~40%'  }
