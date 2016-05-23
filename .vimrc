@@ -1,4 +1,4 @@
-" Vundle Setup
+" VimPlug Setup
 source ~/.vim/.vimrc.bundles
 
 " Leader

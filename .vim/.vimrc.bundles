@@ -2,54 +2,50 @@ runtime macros/matchit.vim
 
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
-Bundle 'VundleVim/Vundle.vim'
-Bundle 'L9'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'AndrewRadev/splitjoin.vim'
-Bundle 'audibleblink/vim-airline-themes'
-Bundle 'christoomey/vim-tmux-navigator'
-Bundle 'christoomey/vim-tmux-runner'
-Bundle 'ctrlpvim/ctrlp.vim'
-Bundle 'edkolev/tmuxline.vim'
-Bundle 'godlygeek/tabular'
-Bundle 'jgdavey/tslime.vim'
-Bundle 'jiangmiao/auto-pairs'
-Bundle 'justinmk/vim-sneak'
-Bundle 'kana/vim-textobj-user'
-Bundle 'mattn/gist-vim'
-Bundle 'mattn/webapi-vim'
-Bundle 'mileszs/ack.vim'
-Plugin 'nelstrom/vim-textobj-rubyblock'
-Bundle 'roman/golden-ratio'
-" Bundle 'slim-template/vim-slim.git'
-Bundle 'terryma/vim-multiple-cursors'
-Bundle 'thoughtbot/vim-rspec'
-Bundle 'tomtom/tcomment_vim'
-Bundle 'tpope/vim-bundler'
-Bundle 'tpope/vim-dispatch'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-rsi'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-sleuth'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'unblevable/quick-scope'
-Bundle 'vim-airline/vim-airline'
-Bundle 'vim-ruby/vim-ruby'
+Plug 'L9'
+Plug 'airblade/vim-gitgutter'
+Plug 'AndrewRadev/splitjoin.vim'
+Plug 'audibleblink/vim-airline-themes', { 'branch': 'papercolor-modes' }
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'christoomey/vim-tmux-runner'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'edkolev/tmuxline.vim'
+Plug 'godlygeek/tabular'
+Plug 'jgdavey/tslime.vim'
+Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'justinmk/vim-sneak'
+Plug 'kana/vim-textobj-user'
+Plug 'mileszs/ack.vim'
+Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby' }
+Plug 'roman/golden-ratio'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'thoughtbot/vim-rspec', { 'for': 'ruby' }
+Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-dispatch', { 'on': 'Dispatch' }
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rsi'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-unimpaired'
+Plug 'unblevable/quick-scope'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 
 let s:is_chrome = system("uname -a") =~ 'arm'
 if (s:is_chrome == 0)
-  Bundle 'Valloric/YouCompleteMe'
+  Plug 'Valloric/YouCompleteMe'
 endif
 
 if has('mac')
-  Bundle 'rizzatti/dash.vim'
+  Plug 'rizzatti/dash.vim'
   nmap <silent> <leader>d <Plug>DashSearch
 endif
-call vundle#end()
-
+call plug#end()
 filetype plugin indent on
 
 " RSpec.vim mappings
