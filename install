@@ -20,6 +20,7 @@ if ! [[ -e '.installed' ]]; then
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
     # install the essentials
+    brew tap caskroom/fonts
     brew install zsh git tmux vim
   else
     sudo apt-get install zsh git tmux vim
@@ -32,6 +33,7 @@ if ! [[ -e '.installed' ]]; then
   git submodule update --init --recursive
 
   # install vim plugins
+  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
   vim +PluginInstall +qall
 
   # set installation file so certain commands are skipped on the next run
