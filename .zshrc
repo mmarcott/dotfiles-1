@@ -28,6 +28,3 @@ alias reload="source ~/.zshrc"
 
 # sources custom aliases and functions
 for file in $(tree -if ~/.dotfiles/custom-omz | grep .zsh); do; source $file; done
-
-# source fzf if it's installed
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
