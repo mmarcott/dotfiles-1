@@ -20,7 +20,6 @@ Plug 'justinmk/vim-sneak'
 Plug 'kana/vim-textobj-user'
 Plug 'mileszs/ack.vim'
 Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby' }
-Plug 'roman/golden-ratio'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'thoughtbot/vim-rspec', { 'for': 'ruby' }
 Plug 'tomtom/tcomment_vim'

@@ -43,8 +43,6 @@ set timeoutlen=1000 ttimeoutlen=10
 " Custom Mappings
 inoremap jk <ESC>
 cnoremap jk <ESC>
-noremap J jzz
-noremap K kzz
 nnoremap c* *Ncgn
 nnoremap <CR> :
 vnoremap <CR> :
@@ -60,7 +58,6 @@ nmap     <Leader>e  :vsp ~/.vimrc<CR>
 nmap     <Leader>ee :source ~/.vimrc<CR>
 map      <Leader>f  :Ag<CR>
 nnoremap <Leader>gs :sp /tmp/scratch<CR>
-noremap  <Leader>j  J
 map      <Leader>p  :Files<CR>
 map      <Leader>r  :BTags<CR>
 map      <Leader>ra :call RunAllSpecs()<CR>
