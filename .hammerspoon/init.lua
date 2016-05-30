@@ -1,5 +1,6 @@
 hs.grid.setGrid('12x12')
 hs.window.animationDuration = 0
+hs.grid.setMargins({0,0})
 
 local screenCount = #hs.screen.allScreens()
 local logLevel = 'info'
