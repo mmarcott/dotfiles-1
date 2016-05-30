@@ -58,6 +58,7 @@ nmap     <Leader>e  :vsp ~/.vimrc<CR>
 nmap     <Leader>ee :source ~/.vimrc<CR>
 map      <Leader>f  :Ag<CR>
 nnoremap <Leader>gs :sp /tmp/scratch<CR>
+nnoremap <silent> <Leader>n :call mappings#cycle_numbering()<CR>
 map      <Leader>p  :Files<CR>
 map      <Leader>r  :BTags<CR>
 map      <Leader>ra :call RunAllSpecs()<CR>
@@ -68,6 +69,7 @@ nnoremap <Leader>sh :VtrOpenRunner {'orientation': 'v', 'percentage': 30}<cr>
 map      <Leader>t  :Tags<CR>
 map      <Leader>/  gcc
 vmap     <Leader>/  gc
+nnoremap <silent> <Leader>w :call mappings#zap()<CR>
 nnoremap <Leader>z  :wincmd _<cr>:wincmd \|<cr>
 nnoremap <Leader>Z  :wincmd =<cr>
 nmap     <Leader><Tab> :b#<CR>
