@@ -90,3 +90,7 @@ autocmd BufWritePre !*.md :%s/\s\+$//e
 autocmd FocusLost,WinLeave * :silent! update
 autocmd CursorHold * checktime
 
+if has('folding')
+  set foldmethod=indent
+  set foldlevelstart=99
+endif
