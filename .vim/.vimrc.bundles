@@ -4,7 +4,6 @@ set nocompatible
 filetype off
 call plug#begin('~/.vim/plugged')
 
-Plug 'L9'
 Plug 'airblade/vim-gitgutter'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'audibleblink/vim-airline-themes', { 'branch': 'papercolor-modes' }
@@ -18,18 +17,14 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'kana/vim-textobj-user'
-Plug 'mileszs/ack.vim'
 Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby' }
 Plug 'terryma/vim-multiple-cursors'
 Plug 'thoughtbot/vim-rspec', { 'for': 'ruby' }
 Plug 'tomtom/tcomment_vim'
-Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-dispatch', { 'on': 'Dispatch' }
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-sleuth'
-Plug 'tpope/vim-unimpaired'
 Plug 'unblevable/quick-scope'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }

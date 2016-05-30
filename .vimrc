@@ -46,6 +46,8 @@ cnoremap jk <ESC>
 nnoremap c* *Ncgn
 nnoremap <CR> :
 vnoremap <CR> :
+inoremap <c-a> <ESC>^i
+inoremap <c-e> <ESC>$i
 
 " Store relative line number jumps in the jumplist.
 " Treat long lines as break lines (useful when moving around in them).
