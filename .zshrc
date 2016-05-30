@@ -23,7 +23,7 @@ alias zedit="vim ~/.zshrc"
 alias vedit="vim ~/.vimrc"
 alias tedit="vim ~/.tmux.conf"
 alias bedit="vim ~/.vim/.vimrc.bundles"
-alias kedit="vim ~/Code/keyboards/atreus-firmware/atreus/keymap_alex.c"
+alias kedit="cd ~/Code/keyboards/atreus-firmware/atreus; vim keymap_alex.c"
 alias reload="source ~/.zshrc"
 
 # sources custom aliases and functions
