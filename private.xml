@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Right Shift is colon when pressed alone</name>
+    <identifier>private.swap_shift_and_colon</identifier>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::SHIFT_R,
+
+      @begin
+      KeyCode::SHIFT_R,
+      @end
+
+      @begin
+      KeyCode::SEMICOLON, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT
+      @end
+    </autogen>
+  </item>
+
+  <item>
+    <name>Left Command is  backspace when pressed alone</name>
+    <identifier>private.swap_cmd_bs</identifier>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::COMMAND_L,
+
+      @begin
+      KeyCode::COMMAND_L,
+      @end
+
+      @begin
+      KeyCode::DELETE, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT
+      @end
+    </autogen>
+  </item>
+
+  <item>
+    <name>Left Shift is ESC when pressed alone</name>
+    <identifier>private.swap_esc_and_shift_l</identifier>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::SHIFT_L,
+
+      @begin
+      KeyCode::SHIFT_L,
+      @end
+
+      @begin
+      KeyCode::ESCAPE,
+      @end
+    </autogen>
+  </item>
+
+  <item>
+    <name>Number Pad!</name>
+    <identifier>private.numberpad</identifier>
+    <appendix>Fn+LETTERS 1234567890</appendix>
+    <autogen>__KeyToKey__ KeyCode::N, ModifierFlag::FN, KeyCode::1</autogen>
+    <autogen>__KeyToKey__ KeyCode::M, ModifierFlag::FN, KeyCode::2</autogen>
+    <autogen>__KeyToKey__ KeyCode::COMMA, ModifierFlag::FN, KeyCode::3</autogen>
+    <autogen>__KeyToKey__ KeyCode::H, ModifierFlag::FN, KeyCode::4</autogen>
+    <autogen>__KeyToKey__ KeyCode::J, ModifierFlag::FN, KeyCode::5</autogen>
+    <autogen>__KeyToKey__ KeyCode::K, ModifierFlag::FN, KeyCode::6</autogen>
+    <autogen>__KeyToKey__ KeyCode::Y, ModifierFlag::FN, KeyCode::7</autogen>
+    <autogen>__KeyToKey__ KeyCode::U, ModifierFlag::FN, KeyCode::8</autogen>
+    <autogen>__KeyToKey__ KeyCode::I, ModifierFlag::FN, KeyCode::9</autogen>
+    <autogen>__KeyToKey__ KeyCode::SPACE, ModifierFlag::FN, KeyCode::0</autogen>
+  </item>
+</root>
