@@ -12,7 +12,7 @@ plugins=(git history-substring-search aws docker zsh-syntax-highlighting vi-mode
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
 [[ `uname` == 'Darwin'  ]] && export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 
 # Preferred editor for local and remote sessions
