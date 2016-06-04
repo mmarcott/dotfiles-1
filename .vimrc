@@ -54,6 +54,13 @@ inoremap <c-e> <ESC>$i
 noremap <expr> j v:count > 1 ? 'm`' . v:count . 'j' : 'gj'
 noremap <expr> k v:count > 1 ? 'm`' . v:count . 'k' : 'gk'
 
+if exists(":Tabularize")
+  nmap <Leader>a= :Tabularize /=<CR>
+  vmap <Leader>a= :Tabularize /=<CR>
+  nmap <Leader>a: :Tabularize /:\zs<CR>
+  vmap <Leader>a: :Tabularize /:\zs<CR>
+endif
+
 map      <Leader>b  :Buffers<CR>
 map      <Leader>c  :noh<CR>
 nmap     <Leader>e  :vsp ~/.vimrc<CR>
