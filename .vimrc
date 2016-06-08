@@ -16,6 +16,7 @@ else
 endif
 
 scriptencoding utf-8
+set mouse+=a
 set encoding=utf-8
 set autoread
 set autowrite
@@ -39,6 +40,11 @@ set splitbelow
 set splitright
 set textwidth=110
 set timeoutlen=1000 ttimeoutlen=10
+
+if &term =~ '^screen'
+  " tmux knows the extended mouse mode
+  set ttymouse=xterm2
+endif
 
 " Custom Mappings
 inoremap jk <ESC>
