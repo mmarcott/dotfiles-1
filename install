@@ -21,7 +21,7 @@ if ! [[ -e '.installed' ]]; then
 
     # install the essentials
     brew tap caskroom/fonts
-    brew install zsh git tmux vim
+    brew install zsh git tmux vim ctags
   else
     sudo apt-get install zsh git tmux vim
   fi
