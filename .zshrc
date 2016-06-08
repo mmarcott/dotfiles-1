@@ -22,7 +22,7 @@ export EDITOR='vim'
 alias zedit="vim ~/.zshrc"
 alias vedit="vim ~/.vimrc"
 alias tedit="vim ~/.tmux.conf"
-alias bedit="vim ~/.vim/.vimrc.bundles"
+alias bedit="vim ~/.vim/plugins.vim"
 alias kedit="cd ~/Code/keyboards/atreus-firmware/atreus; vim keymap_alex.c"
 alias reload="source ~/.zshrc"
 
