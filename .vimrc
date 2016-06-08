@@ -1,5 +1,5 @@
 " VimPlug Setup
-source ~/.vim/.vimrc.bundles
+source ~/.vim/plugins.vim
 
 " Leader
 let mapleader = " "
