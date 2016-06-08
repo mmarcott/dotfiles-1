@@ -23,6 +23,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'thoughtbot/vim-rspec', { 'for': 'ruby' }
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-dispatch', { 'on': 'Dispatch' }
+Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-sleuth'
