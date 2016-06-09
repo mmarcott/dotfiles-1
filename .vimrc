@@ -5,13 +5,11 @@ source ~/.vim/plugins.vim
 let mapleader = " "
 
 " Options
-set t_Co=256
 syntax on
 
 if has('mac')
   colorscheme alex
 else
-  set background=dark
   colorscheme mine
 endif
 
@@ -42,8 +40,7 @@ set textwidth=110
 set timeoutlen=1000 ttimeoutlen=10
 
 if &term =~ '^screen'
-  " tmux knows the extended mouse mode
-  set ttymouse=xterm2
+  set ttymouse=xterm2 " tmux knows the extended mouse mode
 endif
 
 " Custom Mappings
@@ -59,13 +56,6 @@ inoremap <c-e> <ESC>$i
 " Treat long lines as break lines (useful when moving around in them).
 noremap <expr> j v:count > 1 ? 'm`' . v:count . 'j' : 'gj'
 noremap <expr> k v:count > 1 ? 'm`' . v:count . 'k' : 'gk'
-
-if exists(":Tabularize")
-  nmap <Leader>a= :Tabularize /=<CR>
-  vmap <Leader>a= :Tabularize /=<CR>
-  nmap <Leader>a: :Tabularize /:\zs<CR>
-  vmap <Leader>a: :Tabularize /:\zs<CR>
-endif
 
 map      <Leader>b  :Buffers<CR>
 map      <Leader>c  :noh<CR>
@@ -111,3 +101,4 @@ if has('folding')
   set foldmethod=indent
   set foldlevelstart=99
 endif
+
