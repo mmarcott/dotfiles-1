@@ -7,15 +7,14 @@ let mapleader = " "
 " Options
 syntax on
 
-if has('mac')
-  " trucolor and italics info
-  " https://deductivelabs.com/en/2016/03/using-true-color-vim-tmux/
-  " https://alexpearce.me/2014/05/italics-in-iterm2-vim-tmux/
-  colorscheme onedark
-  colorscheme alex " sets ruler and highlight colors only
-else
-  colorscheme mine
+" trucolor and italics info
+" https://deductivelabs.com/en/2016/03/using-true-color-vim-tmux/
+" https://alexpearce.me/2014/05/italics-in-iterm2-vim-tmux/
+if has('termguicolors')
+  set termguicolors
 endif
+colorscheme onedark
+colorscheme alex " sets ruler and highlight colors only
 
 scriptencoding utf-8
 set mouse+=a
@@ -24,6 +23,8 @@ set autoread
 set autowrite
 set backspace=2
 set colorcolumn=+1
+set cursorcolumn
+set cursorline
 set expandtab
 set hidden
 set hlsearch
