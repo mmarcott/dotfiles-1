@@ -33,7 +33,7 @@ Plug 'unblevable/quick-scope'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-ruby/vim-ruby'               , { 'for': 'ruby' }
 
-" let g:onedark_terminal_italics = 1
+let g:onedark_terminal_italics = 1
 let s:is_chrome = system("uname -a") =~ 'arm'
 if (s:is_chrome == 0)
   Plug 'Valloric/YouCompleteMe'
@@ -41,7 +41,7 @@ endif
 
 if has('mac')
   Plug 'rizzatti/dash.vim'
-  nmap <silent> <leader>d <Plug>DashSearch
+  nmap <silent> <leader>d <Plug>Dash
 endif
 call plug#end()
 filetype plugin indent on

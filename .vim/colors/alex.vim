@@ -8,9 +8,6 @@ highlight PmenuSel      ctermfg=16 ctermbg=51
 highlight ColorColumn   ctermbg=24
 highlight VertSplit     ctermbg=0  ctermfg=0
 
-" CtrlP Menu
-let g:ctrlp_buffer_func = { 'enter': 'BrightHighlightOn', 'exit':  'BrightHighlightOff',  }
-
 function BrightHighlightOn()
   hi CursorLine ctermbg=cyan ctermfg=16
 endfunction

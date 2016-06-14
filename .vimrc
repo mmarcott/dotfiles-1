@@ -8,9 +8,8 @@ let mapleader = " "
 syntax on
 
 if has('mac')
-  " colorscheme colorsbox-material
   colorscheme onedark
-  colorscheme alex
+  colorscheme alex " sets ruler and highlight colors only
 else
   colorscheme mine
 endif
@@ -41,7 +40,7 @@ set splitright
 set textwidth=110
 set timeoutlen=1000 ttimeoutlen=10
 
-if &term =~ '^screen'
+if &term =~ '^xterm'
   set ttymouse=xterm2 " tmux knows the extended mouse mode
 endif
 
