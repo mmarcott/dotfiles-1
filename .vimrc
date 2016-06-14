@@ -8,6 +8,8 @@ let mapleader = " "
 syntax on
 
 if has('mac')
+  " colorscheme colorsbox-material
+  colorscheme onedark
   colorscheme alex
 else
   colorscheme mine

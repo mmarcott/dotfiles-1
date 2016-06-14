@@ -12,6 +12,7 @@ Plug 'christoomey/vim-tmux-runner'
 Plug 'edkolev/tmuxline.vim'
 Plug 'jgdavey/tslime.vim'
 Plug 'jiangmiao/auto-pairs'
+Plug 'joshdick/onedark.vim'
 Plug 'junegunn/fzf'                    , { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
@@ -19,6 +20,7 @@ Plug 'justinmk/vim-sneak'
 Plug 'kana/vim-textobj-user'
 Plug 'nelstrom/vim-textobj-rubyblock'  , { 'for': 'ruby' }
 Plug 'othree/yajs.vim'                 , { 'for': 'javascript' }
+Plug 'sheerun/vim-polyglot'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'thoughtbot/vim-rspec'            , { 'for': 'ruby' }
 Plug 'tomtom/tcomment_vim'
@@ -31,6 +33,7 @@ Plug 'unblevable/quick-scope'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-ruby/vim-ruby'               , { 'for': 'ruby' }
 
+" let g:onedark_terminal_italics = 1
 let s:is_chrome = system("uname -a") =~ 'arm'
 if (s:is_chrome == 0)
   Plug 'Valloric/YouCompleteMe'
@@ -45,8 +48,8 @@ filetype plugin indent on
 
 " RSpec.vim mappings
 " let g:rspec_command = "compiler rspec | set makeprg=spring | Make rspec {spec}"
-" let g:rspec_command = "Dispatch rspec {spec}"
-let g:rspec_command = ':call Send_to_Tmux("clear && spring rspec {spec}\n")'
+let g:rspec_command = "Dispatch rspec {spec}"
+" let g:rspec_command = ':call Send_to_Tmux("clear && spring rspec {spec}\n")'
 
 " Only quickscope when using f and t
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
