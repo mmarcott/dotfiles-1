@@ -34,6 +34,7 @@ set list listchars=tab:»·,trail:·,nbsp:·
 set mouse=a
 set nobackup
 set noswapfile
+set nowrap
 set number
 set numberwidth=3
 set relativenumber
@@ -85,9 +86,11 @@ nnoremap <Leader>Z  :wincmd =<cr>
 nmap     <Leader><Tab> :b#<CR>
 
 if has('mac')
-  vmap  <Leader>y :w !pbcopy<CR><CR>
+  vnoremap  <Leader>y "*y
+  vnoremap  <Leader>u "*p
 else
-  vmap  <Leader>y  "+y
+  vnoremap  <Leader>y  "+y
+  vnoremap  <Leader>u  "+u
 endif
 
 " Make Yank behave
