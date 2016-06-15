@@ -6,38 +6,35 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
 Plug 'AndrewRadev/splitjoin.vim'
-Plug 'audibleblink/vim-airline-themes' , { 'branch': 'papercolor-modes' }
+Plug 'audibleblink/vim-airline-themes', { 'branch': 'papercolor-modes' }
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
 Plug 'edkolev/tmuxline.vim'
 Plug 'jgdavey/tslime.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'joshdick/onedark.vim'
-Plug 'junegunn/fzf'                    , { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf',                    { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'justinmk/vim-sneak'
 Plug 'kana/vim-textobj-user'
-Plug 'nelstrom/vim-textobj-rubyblock'  , { 'for': 'ruby' }
-Plug 'othree/yajs.vim'                 , { 'for': 'javascript' }
+Plug 'nelstrom/vim-textobj-rubyblock',  { 'for': 'ruby' }
+Plug 'othree/yajs.vim',                 { 'for': 'javascript' }
 Plug 'sheerun/vim-polyglot'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'thoughtbot/vim-rspec'            , { 'for': 'ruby' }
+Plug 'thoughtbot/vim-rspec',            { 'for': 'ruby' }
 Plug 'tomtom/tcomment_vim'
-Plug 'tpope/vim-dispatch'              , { 'on': 'Dispatch' }
+Plug 'tpope/vim-dispatch',              { 'on': 'Dispatch' }
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-sleuth'
 Plug 'unblevable/quick-scope'
+Plug 'Valloric/YouCompleteMe',          { 'do': './install.py'  }
 Plug 'vim-airline/vim-airline'
-Plug 'vim-ruby/vim-ruby'               , { 'for': 'ruby' }
+Plug 'vim-ruby/vim-ruby',               { 'for': 'ruby' }
 
 let g:onedark_terminal_italics = 1
-let s:is_chrome = system("uname -a") =~ 'arm'
-if (s:is_chrome == 0)
-  Plug 'Valloric/YouCompleteMe'
-endif
 
 if has('mac')
   Plug 'rizzatti/dash.vim'
