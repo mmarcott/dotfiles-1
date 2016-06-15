@@ -8,11 +8,11 @@ highlight PmenuSel      ctermfg=16 ctermbg=51
 highlight ColorColumn   ctermbg=24
 highlight VertSplit     ctermbg=0  ctermfg=0 guifg=white guibg=white
 
-function BrightHighlightOn()
+function! BrightHighlightOn()
   hi CursorLine ctermbg=cyan ctermfg=16
 endfunction
 
-function BrightHighlightOff()
+function! BrightHighlightOff()
   hi CursorLine ctermbg=none
 endfunction
 
