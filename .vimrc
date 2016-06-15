@@ -107,3 +107,4 @@ if has('folding')
   set foldlevelstart=99
 endif
 
+let &colorcolumn="100,".join(range(120,999),",")
