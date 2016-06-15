@@ -6,10 +6,7 @@ highlight PmenuSel      ctermfg=16 ctermbg=51
 
 " Solid Split Bar
 highlight ColorColumn   ctermbg=24
-highlight VertSplit     ctermbg=0  ctermfg=0
-
-" CtrlP Menu
-let g:ctrlp_buffer_func = { 'enter': 'BrightHighlightOn', 'exit':  'BrightHighlightOff',  }
+highlight VertSplit     ctermbg=0  ctermfg=0 guifg=white guibg=white
 
 function BrightHighlightOn()
   hi CursorLine ctermbg=cyan ctermfg=16

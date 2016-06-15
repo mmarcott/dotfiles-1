@@ -12,7 +12,7 @@ plugins=(git history-substring-search aws docker zsh-syntax-highlighting vi-mode
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
 [[ `uname` == 'Darwin'  ]] && export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 
 # Preferred editor for local and remote sessions
@@ -22,12 +22,9 @@ export EDITOR='vim'
 alias zedit="vim ~/.zshrc"
 alias vedit="vim ~/.vimrc"
 alias tedit="vim ~/.tmux.conf"
-alias bedit="vim ~/.vim/.vimrc.bundles"
-alias kedit="vim ~/Code/keyboards/atreus-firmware/atreus/keymap_alex.c"
+alias bedit="vim ~/.vim/plugins.vim"
+alias kedit="cd ~/Code/keyboards/atreus-firmware/atreus; vim keymap_alex.c"
 alias reload="source ~/.zshrc"
 
 # sources custom aliases and functions
 for file in $(tree -if ~/.dotfiles/custom-omz | grep .zsh); do; source $file; done
-
-# source fzf if it's installed
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

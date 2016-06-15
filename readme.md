@@ -1,5 +1,7 @@
 #dotfiles
 
+![](http://i.imgur.com/5rTX9Ub.png)
+
 ### Installation
 Clone to `~/.dotfiles`
 ```sh

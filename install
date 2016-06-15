@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-files=( '.vim*' '.rspec' '.tmux*' '.zshrc' '.gitignore_global' '.gitconfig' '.git_template' )
+files=( '.vim*' '.rspec' '.tmux*' '.zshrc' '.gitignore_global' '.gitconfig' '.git_template' '.hammerspoon')
 dir=`pwd`
 
 symlink () {
@@ -21,7 +21,7 @@ if ! [[ -e '.installed' ]]; then
 
     # install the essentials
     brew tap caskroom/fonts
-    brew install zsh git tmux vim
+    brew install zsh git tmux vim ctags
   else
     sudo apt-get install zsh git tmux vim
   fi
@@ -33,8 +33,8 @@ if ! [[ -e '.installed' ]]; then
   git submodule update --init --recursive
 
   # install vim plugins
-  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-  vim +PluginInstall +qall
+  curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  vim +PlugInstall +qall
 
   # set installation file so certain commands are skipped on the next run
   touch .installed
