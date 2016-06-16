@@ -4,6 +4,13 @@ mkcd () {
   cd "$*"
 }
 
+# avit theme mods
+PROMPT='
+$(_user_host)${_current_dir} $(git_prompt_info) $(_vi_status)
+%{$fg[$CARETCOLOR]%}❯❯%{$resetcolor%} '
+RPROMPT='%{$(echotc UP 1)%}$(_git_time_since_commit) $(git_prompt_status) ${_return_status}%{$(echotc DO 1)%}'
+MODE_INDICATOR="%{$fg_bold[white]%}[NORMAL]%{$reset_color%}"
+
 # zsh vi mode timeout
 export KEYTIMEOUT=10
 
