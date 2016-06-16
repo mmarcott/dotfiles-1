@@ -52,6 +52,8 @@ endif
 " Custom Mappings
 inoremap jk <ESC>
 cnoremap jk <ESC>
+nnoremap qf :copen<CR>:wincmd _<CR>:wincmd \|<CR>
+nnoremap qc :cclose<CR>:wincmd =<CR>
 nnoremap c* *Ncgn
 nnoremap <CR> :
 vnoremap <CR> :
