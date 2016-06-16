@@ -15,15 +15,18 @@ symlink ${files[@]}
 
 if ! [[ -e '.installed' ]]; then
 
+  # loaded modded terminal
+  tic terminals/.xterm-256colors-italics.terminfo
+
   if [[ `uname` == 'Darwin' ]]; then
     # install homebrew
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
     # install the essentials
     brew tap caskroom/fonts
-    brew install zsh git tmux vim ctags
+    brew install zsh git tmux vim ctags cmake python-dev
   else
-    sudo apt-get install zsh git tmux vim
+    sudo apt-get install zsh git tmux vim cmake python-dev
   fi
 
   # install oh-my-zsh
