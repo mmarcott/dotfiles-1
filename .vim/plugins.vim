@@ -8,17 +8,14 @@ Plug 'airblade/vim-gitgutter'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'audibleblink/vim-airline-themes', { 'branch': 'papercolor-modes' }
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'christoomey/vim-tmux-runner'
 Plug 'edkolev/tmuxline.vim'
-Plug 'jgdavey/tslime.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'joshdick/onedark.vim'
 Plug 'junegunn/fzf',                    { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'justinmk/vim-sneak'
-Plug 'kana/vim-textobj-user'
-Plug 'nelstrom/vim-textobj-rubyblock',  { 'for': 'ruby' }
+Plug 'kana/vim-textobj-user' | Plug 'nelstrom/vim-textobj-rubyblock',  { 'for': 'ruby' }
 Plug 'othree/yajs.vim',                 { 'for': 'javascript' }
 Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot'
@@ -41,13 +38,13 @@ if has('mac')
   Plug 'rizzatti/dash.vim'
   nmap <silent> <leader>d <Plug>Dash
 endif
+
 call plug#end()
 filetype plugin indent on
 
 " RSpec.vim mappings
 " let g:rspec_command = "compiler rspec | set makeprg=spring | Make rspec {spec}"
 let g:rspec_command = "Dispatch rspec {spec}"
-" let g:rspec_command = ':call Send_to_Tmux("clear && spring rspec {spec}\n")'
 
 " Only quickscope when using f and t
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
