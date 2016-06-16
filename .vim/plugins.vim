@@ -20,6 +20,7 @@ Plug 'justinmk/vim-sneak'
 Plug 'kana/vim-textobj-user'
 Plug 'nelstrom/vim-textobj-rubyblock',  { 'for': 'ruby' }
 Plug 'othree/yajs.vim',                 { 'for': 'javascript' }
+Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'thoughtbot/vim-rspec',            { 'for': 'ruby' }
