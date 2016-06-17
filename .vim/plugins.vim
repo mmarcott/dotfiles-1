@@ -9,6 +9,7 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'audibleblink/vim-airline-themes', { 'branch': 'papercolor-modes' }
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'edkolev/tmuxline.vim'
+Plug 'ervandew/supertab'
 Plug 'jiangmiao/auto-pairs'
 Plug 'joshdick/onedark.vim'
 Plug 'junegunn/fzf',                    { 'dir': '~/.fzf', 'do': './install --all' }
@@ -19,6 +20,8 @@ Plug 'kana/vim-textobj-user' | Plug 'nelstrom/vim-textobj-rubyblock',  { 'for': 
 Plug 'othree/yajs.vim',                 { 'for': 'javascript' }
 Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot'
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'ternjs/tern_for_vim',             { 'for': 'javascript' }
 Plug 'terryma/vim-multiple-cursors'
 Plug 'thoughtbot/vim-rspec',            { 'for': 'ruby' }
 Plug 'tomtom/tcomment_vim'
@@ -78,3 +81,15 @@ xmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+
+" Ultisnips Configuration
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
