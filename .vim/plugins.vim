@@ -42,38 +42,16 @@ endif
 call plug#end()
 filetype plugin indent on
 
-" Startify
-  let g:startify_enable_special         = 0
-  let g:startify_files_number           = 5
-  let g:startify_relative_path          = 1
-  let g:startify_change_to_dir          = 1
-  let g:startify_update_oldfiles        = 1
-  let g:startify_session_autoload       = 1
-  let g:startify_session_persistence    = 1
-  let g:startify_session_delete_buffers = 1
+" trucolor and italics info
+" https://deductivelabs.com/en/2016/03/using-true-color-vim-tmux/
+" https://alexpearce.me/2014/05/italics-in-iterm2-vim-tmux/
+syntax on
+if has('termguicolors')
+  set termguicolors
+endif
+colorscheme onedark
+colorscheme alex " sets ruler and highlight colors only
 
-  let g:startify_list_order = [
-          \ ['    Sessions'], 'sessions',
-          \ ['    Bookmarks'], 'bookmarks',
-          \ ['    Recently Used Files'], 'files',
-          \ ]
-  " let g:startify_list_order = ['sessions', 'bookmarks', 'files', 'dir', 'commands']
-  let g:startify_skiplist = [ 'COMMIT_EDITMSG', ]
-  let g:startify_bookmarks = [
-              \ '~/Code/Medidata/dalton',
-              \ '~/Code/Medidata/the_policy_machine',
-              \ '~/.vimrc',
-              \ '~/.vim/plugins.vim',
-              \ '~/.zshrc',
-              \ ]
-  hi StartifyBracket ctermfg=240
-  hi StartifyFile    ctermfg=147
-  hi StartifyFooter  ctermfg=240
-  hi StartifyHeader  ctermfg=114
-  hi StartifyNumber  ctermfg=215
-  hi StartifyPath    ctermfg=245
-  hi StartifySlash   ctermfg=240
-  "
 " OneDark
   " enable italics
   let g:onedark_terminal_italics = 1
@@ -131,3 +109,35 @@ filetype plugin indent on
   let g:UltiSnipsExpandTrigger = "<tab>"
   let g:UltiSnipsJumpForwardTrigger = "<tab>"
   let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+" Startify
+  let g:startify_enable_special         = 0
+  let g:startify_files_number           = 5
+  let g:startify_relative_path          = 1
+  let g:startify_change_to_dir          = 1
+  let g:startify_update_oldfiles        = 1
+  let g:startify_session_autoload       = 1
+  let g:startify_session_persistence    = 1
+  let g:startify_session_delete_buffers = 1
+
+  let g:startify_list_order = [
+          \ [' Sessions'], 'sessions',
+          \ [' Bookmarks'], 'bookmarks',
+          \ [' Recently Used Files'], 'files',
+          \ ]
+  " let g:startify_list_order = ['sessions', 'bookmarks', 'files', 'dir', 'commands']
+  let g:startify_skiplist = [ 'COMMIT_EDITMSG', ]
+  let g:startify_bookmarks = [
+              \ '~/Code/Medidata/dalton',
+              \ '~/Code/Medidata/the_policy_machine',
+              \ '~/.vimrc',
+              \ '~/.vim/plugins.vim',
+              \ '~/.zshrc',
+              \ ]
+  hi StartifyBracket ctermfg=240 guifg=#ffffff
+  hi StartifyFile    ctermfg=147 guifg=#ffffff
+  hi StartifyHeader  ctermfg=114 guifg=#ffffff
+  hi StartifySlash   ctermfg=240 guifg=#ffffff
+  hi StartifyNumber  ctermfg=240 guifg=#30D6F0
+  hi StartifySection ctermfg=240 guifg=#30D6F0
+

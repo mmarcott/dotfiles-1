@@ -4,18 +4,6 @@ source ~/.vim/plugins.vim
 " Leader
 let mapleader = " "
 
-" Options
-syntax on
-
-" trucolor and italics info
-" https://deductivelabs.com/en/2016/03/using-true-color-vim-tmux/
-" https://alexpearce.me/2014/05/italics-in-iterm2-vim-tmux/
-if has('termguicolors')
-  set termguicolors
-endif
-colorscheme onedark
-colorscheme alex " sets ruler and highlight colors only
-
 scriptencoding utf-8
 set mouse+=a
 set encoding=utf-8
