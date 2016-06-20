@@ -2,3 +2,5 @@
 .vim/plugged
 .installed
 .atom/*
+.vim/session
+.vim/.netrwhist

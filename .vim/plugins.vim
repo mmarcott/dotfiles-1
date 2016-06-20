@@ -1,5 +1,3 @@
-runtime macros/matchit.vim
-
 set nocompatible
 filetype off
 call plug#begin('~/.vim/plugged')
@@ -17,6 +15,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'justinmk/vim-sneak'
 Plug 'kana/vim-textobj-user' | Plug 'nelstrom/vim-textobj-rubyblock',  { 'for': 'ruby' }
+Plug 'mhinz/vim-startify'
 Plug 'othree/yajs.vim',                 { 'for': 'javascript' }
 Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot'
@@ -35,61 +34,100 @@ Plug 'Valloric/YouCompleteMe',          { 'do': './install.py'  }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-ruby/vim-ruby',               { 'for': 'ruby' }
 
-let g:onedark_terminal_italics = 1
-
 if has('mac')
   Plug 'rizzatti/dash.vim'
-  nmap <silent> <leader>d <Plug>Dash
+  nmap <silent> <leader>d :Dash<CR>
 endif
 
 call plug#end()
 filetype plugin indent on
 
+" Startify
+  let g:startify_enable_special         = 0
+  let g:startify_files_number           = 5
+  let g:startify_relative_path          = 1
+  let g:startify_change_to_dir          = 1
+  let g:startify_update_oldfiles        = 1
+  let g:startify_session_autoload       = 1
+  let g:startify_session_persistence    = 1
+  let g:startify_session_delete_buffers = 1
+
+  let g:startify_list_order = [
+          \ ['    Sessions'], 'sessions',
+          \ ['    Bookmarks'], 'bookmarks',
+          \ ['    Recently Used Files'], 'files',
+          \ ]
+  " let g:startify_list_order = ['sessions', 'bookmarks', 'files', 'dir', 'commands']
+  let g:startify_skiplist = [ 'COMMIT_EDITMSG', ]
+  let g:startify_bookmarks = [
+              \ '~/Code/Medidata/dalton',
+              \ '~/Code/Medidata/the_policy_machine',
+              \ '~/.vimrc',
+              \ '~/.vim/plugins.vim',
+              \ '~/.zshrc',
+              \ ]
+  hi StartifyBracket ctermfg=240
+  hi StartifyFile    ctermfg=147
+  hi StartifyFooter  ctermfg=240
+  hi StartifyHeader  ctermfg=114
+  hi StartifyNumber  ctermfg=215
+  hi StartifyPath    ctermfg=245
+  hi StartifySlash   ctermfg=240
+  "
+" OneDark
+  " enable italics
+  let g:onedark_terminal_italics = 1
+
 " RSpec.vim mappings
-" let g:rspec_command = "compiler rspec | set makeprg=spring | Make rspec {spec}"
-let g:rspec_command = "Dispatch rspec {spec}"
+  " let g:rspec_command = "compiler rspec | set makeprg=spring | Make rspec {spec}"
+  let g:rspec_command = "Dispatch rspec {spec}"
 
-" Only quickscope when using f and t
-let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+" Quickscope
+  " Only quickscope when using f and t
+  let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
-" Send :update when leaving vim for tmux
-let g:tmux_navigator_save_on_switch = 1
+" Tmux Navigator
+  " Send :update when leaving vim for tmux
+  let g:tmux_navigator_save_on_switch = 1
 
-" Use The Silver Searcher
-if executable('ag')
-  set grepprg=ag\ --nogroup\ --nocolor
-  let g:ackprg = 'ag --vimgrep'
-  let g:ctrlp_user_command = 'ag -Q -l --nocolor --hidden -g "" %s'
-  let g:ctrlp_use_caching = 0
-endif
+" The Silver Searcher
+  if executable('ag')
+    set grepprg=ag\ --nogroup\ --nocolor
+    let g:ackprg = 'ag --vimgrep'
+    let g:ctrlp_user_command = 'ag -Q -l --nocolor --hidden -g "" %s'
+    let g:ctrlp_use_caching = 0
+  endif
 
 " Airline
-let g:airline_powerline_fonts = 1
-let g:airline_theme = 'papercolor'
-let g:tmuxline_preset = {
-      \'a'    : '#S',
-      \'win'  : ['#I', '#W'],
-      \'cwin' : ['#I', '#W', '#F'],
-      \'x'    : '#(sh ~/.dotfiles/.tmux/functions/wifi.sh)',
-      \'y'    : '#(sh ~/.dotfiles/.tmux/functions/battery.sh)',
-      \'z'    : ['%R', '%a', '%d.%b.%y']}
+  let g:airline_powerline_fonts = 1
+  let g:airline_theme = 'papercolor'
+  let g:tmuxline_preset = {
+        \'a'    : '#S',
+        \'win'  : ['#I', '#W'],
+        \'cwin' : ['#I', '#W', '#F'],
+        \'x'    : '#(sh ~/.dotfiles/.tmux/functions/wifi.sh)',
+        \'y'    : '#(sh ~/.dotfiles/.tmux/functions/battery.sh)',
+        \'z'    : ['%R', '%a', '%d.%b.%y']}
 
-let g:fzf_layout = { 'down': '~30%'  }
+" FZF
+  " Layout
+  let g:fzf_layout = { 'down': '~30%'  }
 
-" Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap ga <Plug>(EasyAlign)
+" EasyAlign
+  " Start interactive EasyAlign in visual mode (e.g. vipga)
+  xmap ga <Plug>(EasyAlign)
 
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
+  " Start interactive EasyAlign for a motion/text object (e.g. gaip)
+  nmap ga <Plug>(EasyAlign)
 
 " Ultisnips Configuration
-" make YCM compatible with UltiSnips (using supertab)
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
+  " make YCM compatible with UltiSnips (using supertab)
+  let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+  let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+  let g:SuperTabDefaultCompletionType = '<C-n>'
 
-" better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsEditSplit="vertical"
-let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+  " better key bindings for UltiSnipsExpandTrigger
+  let g:UltiSnipsEditSplit="vertical"
+  let g:UltiSnipsExpandTrigger = "<tab>"
+  let g:UltiSnipsJumpForwardTrigger = "<tab>"
+  let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"

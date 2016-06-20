@@ -57,8 +57,6 @@ nnoremap qc :cclose<CR>:wincmd =<CR>
 nnoremap c* *Ncgn
 nnoremap <CR> :
 vnoremap <CR> :
-inoremap <c-a> <ESC>^i
-inoremap <c-e> <ESC>$i
 
 " Unmap Enter in the quickfix window
 au BufReadPost quickfix nnoremap <buffer> <CR> <CR>
