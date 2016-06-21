@@ -6,6 +6,6 @@ echo 'Backing up package lists'
 if [[ `uname` == 'Darwin' ]]; then
   echo 'Backup up OSX specific package lists...'
   /bin/ls /usr/local/Cellar > ~/.dotfiles/.cellar
-  /bin/ls /opt/homebrew-cask/Caskroom > ~/.dotfiles/.casks
+  /bin/ls /usr/local/Caskroom > ~/.dotfiles/.casks
 fi
 
