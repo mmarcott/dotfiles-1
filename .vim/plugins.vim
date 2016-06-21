@@ -141,3 +141,6 @@ colorscheme alex " sets ruler and highlight colors only
   hi StartifyNumber  ctermfg=240 guifg=#30D6F0
   hi StartifySection ctermfg=240 guifg=#30D6F0
 
+" Syntastic
+" 
+  let g:syntastic_ruby_checkers = ['rubocop']
