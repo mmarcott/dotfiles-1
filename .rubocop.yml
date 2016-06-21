@@ -1,21 +1,19 @@
-# This is the configuration used to check the rubocop source code.
-
 AllCops:
+  TargetRubyVersion: 2.3
   Exclude:
     - 'vendor/**/*'
     - 'spec/fixtures/**/*'
     - 'tmp/**/*'
-  TargetRubyVersion: 2.3
 
 Metrics/LineLength:
   Max: 110
 
-Style/Encoding:
-  Enabled: true
+Style/SingleLineBlockParams:
+  Enabled: false
 
-Style/SpaceInsideHashLiteralBraces:
-  EnforcedStyle: space
-  EnforcedStyleForEmptyBraces: no_space
-  SupportedStyles:
-    - space
-    - no_space
+# Style/SpaceInsideHashLiteralBraces:
+#   EnforcedStyle: space
+#   EnforcedStyleForEmptyBraces: no_space
+#   SupportedStyles:
+#     - space
+#     - no_space

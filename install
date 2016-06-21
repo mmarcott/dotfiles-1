@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
 files=( '.vim*' '.rspec' '.tmux*' '.zshrc' '.gitignore_global' '.gitconfig' '.git_template' '.hammerspoon'
-'.agignore')
+'.agignore' '.rubocop.yml')
 dir=`pwd`
 
 symlink () {
