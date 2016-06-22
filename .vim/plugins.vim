@@ -19,11 +19,12 @@ Plug 'mhinz/vim-startify'
 Plug 'othree/yajs.vim',                 { 'for': 'javascript' }
 Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot'
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'      | Plug 'honza/vim-snippets'
 Plug 'ternjs/tern_for_vim',             { 'for': 'javascript' }
 Plug 'terryma/vim-multiple-cursors'
 Plug 'thoughtbot/vim-rspec',            { 'for': 'ruby' }
 Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-bundler',
 Plug 'tpope/vim-dispatch',              { 'on': 'Dispatch' }
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
@@ -42,15 +43,16 @@ endif
 call plug#end()
 filetype plugin indent on
 
-" trucolor and italics info
-" https://deductivelabs.com/en/2016/03/using-true-color-vim-tmux/
-" https://alexpearce.me/2014/05/italics-in-iterm2-vim-tmux/
-syntax on
-if has('termguicolors')
-  set termguicolors
-endif
-colorscheme onedark
-colorscheme alex " sets ruler and highlight colors only
+" Colorscheme
+  " trucolor and italics info
+  " https://deductivelabs.com/en/2016/03/using-true-color-vim-tmux/
+  " https://alexpearce.me/2014/05/italics-in-iterm2-vim-tmux/
+  syntax on
+  if has('termguicolors')
+    set termguicolors
+  endif
+  colorscheme onedark
+  colorscheme alex " sets ruler and highlight colors only
 
 " OneDark
   " enable italics
@@ -67,14 +69,6 @@ colorscheme alex " sets ruler and highlight colors only
 " Tmux Navigator
   " Send :update when leaving vim for tmux
   let g:tmux_navigator_save_on_switch = 1
-
-" The Silver Searcher
-  if executable('ag')
-    set grepprg=ag\ --nogroup\ --nocolor
-    let g:ackprg = 'ag --vimgrep'
-    let g:ctrlp_user_command = 'ag -Q -l --nocolor --hidden -g "" %s'
-    let g:ctrlp_use_caching = 0
-  endif
 
 " Airline
   let g:airline_powerline_fonts = 1
@@ -119,13 +113,11 @@ colorscheme alex " sets ruler and highlight colors only
   let g:startify_session_autoload       = 1
   let g:startify_session_persistence    = 1
   let g:startify_session_delete_buffers = 1
-
   let g:startify_list_order = [
           \ [' Sessions'], 'sessions',
           \ [' Bookmarks'], 'bookmarks',
           \ [' Recently Used Files'], 'files',
           \ ]
-  " let g:startify_list_order = ['sessions', 'bookmarks', 'files', 'dir', 'commands']
   let g:startify_skiplist = [ 'COMMIT_EDITMSG', ]
   let g:startify_bookmarks = [
               \ '~/Code/Medidata/dalton',
@@ -142,5 +134,5 @@ colorscheme alex " sets ruler and highlight colors only
   hi StartifySection ctermfg=240 guifg=#30D6F0
 
 " Syntastic
-" 
+  "
   let g:syntastic_ruby_checkers = ['rubocop']

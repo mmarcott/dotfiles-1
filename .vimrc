@@ -1,9 +1,6 @@
 " VimPlug Setup
 source ~/.vim/plugins.vim
 
-" Leader
-let mapleader = " "
-
 scriptencoding utf-8
 set mouse+=a
 set encoding=utf-8
@@ -55,6 +52,8 @@ noremap <expr> j v:count > 1 ? 'm`' . v:count . 'j' : 'gj'
 " Treat long lines as break lines (useful when moving around in them).
 noremap <expr> k v:count > 1 ? 'm`' . v:count . 'k' : 'gk'
 
+" Leader Mappings
+let mapleader = " "
 map      <Leader>b  :Buffers<CR>
 map      <Leader>c  :noh<CR>
 nmap     <Leader>e  :vsp ~/.vimrc<CR>
@@ -89,10 +88,6 @@ endif
 vnoremap y myy`y
 vnoremap Y myY`y
 
-" Remove Trailing Whitespace
-autocmd BufWritePre !*.slim :%s/\s\+$//e
-autocmd BufWritePre !*.md :%s/\s\+$//e
-
 " Read/Save on Focus Change
 autocmd FocusLost,WinLeave * :silent! update
 autocmd CursorHold * checktime
@@ -102,4 +97,4 @@ if has('folding')
   set foldlevelstart=99
 endif
 
-let &colorcolumn="100,".join(range(120,999),",")
+let &colorcolumn="110,".join(range(110,999),",")
