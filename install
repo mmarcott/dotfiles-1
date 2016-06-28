@@ -1,8 +1,17 @@
 #!/bin/bash -e
 
-files=( '.vim*' '.rspec' '.tmux*' '.zshrc' '.gitignore_global' '.gitconfig' '.git_template' '.hammerspoon'
-'.agignore' '.rubocop.yml')
 dir=`pwd`
+files=( '.vim*'
+  '.rspec'
+  '.tmux*'
+  '.zshrc'
+  '.gitignore_global'
+  '.gitconfig'
+  '.git_template'
+  '.hammerspoon'
+  '.agignore'
+  '.rubocop.yml'
+)
 
 symlink () {
   for dotfile; do

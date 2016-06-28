@@ -11,6 +11,8 @@ set colorcolumn=+1
 set cursorcolumn
 set cursorline
 set expandtab
+set foldlevelstart=99
+set foldmethod=indent
 set hidden
 set hlsearch
 set incsearch
@@ -27,8 +29,9 @@ set ruler
 set showcmd
 set splitbelow
 set splitright
-set textwidth=110
+set textwidth=109
 set timeoutlen=1000 ttimeoutlen=10
+set wiw=120
 
 if &term =~ '^xterm'
   set ttymouse=xterm2 " tmux knows the extended mouse mode
@@ -78,10 +81,10 @@ nmap     <Leader><Tab> :b#<CR>
 
 if has('mac')
   vnoremap  <Leader>y "*y
-  vnoremap  <Leader>u "*p
+  nnoremap  <Leader>u "*p
 else
   vnoremap  <Leader>y  "+y
-  vnoremap  <Leader>u  "+u
+  nnoremap  <Leader>u  "+u
 endif
 
 " Make Yank behave
@@ -92,9 +95,4 @@ vnoremap Y myY`y
 autocmd FocusLost,WinLeave * :silent! update
 autocmd CursorHold * checktime
 
-if has('folding')
-  set foldmethod=indent
-  set foldlevelstart=99
-endif
-
-let &colorcolumn="110,".join(range(110,999),",")
+let &colorcolumn="109,".join(range(109,999),",")

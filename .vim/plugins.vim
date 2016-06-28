@@ -9,7 +9,6 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'edkolev/tmuxline.vim'
 Plug 'ervandew/supertab'
 Plug 'jiangmiao/auto-pairs'
-Plug 'joshdick/onedark.vim'
 Plug 'junegunn/fzf',                    { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
@@ -53,10 +52,6 @@ filetype plugin indent on
   endif
   colorscheme onedark
   colorscheme alex " sets ruler and highlight colors only
-
-" OneDark
-  " enable italics
-  let g:onedark_terminal_italics = 1
 
 " RSpec.vim mappings
   " let g:rspec_command = "compiler rspec | set makeprg=spring | Make rspec {spec}"
