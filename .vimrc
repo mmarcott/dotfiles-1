@@ -40,8 +40,6 @@ endif
 " Custom Mappings
 inoremap jk <ESC>
 cnoremap jk <ESC>
-nnoremap qf :copen<CR>:wincmd _<CR>:wincmd \|<CR>
-nnoremap qc :cclose<CR>:wincmd =<CR>
 nnoremap c* *Ncgn
 nnoremap <CR> :
 vnoremap <CR> :
@@ -70,7 +68,6 @@ map      <Leader>ra :call RunAllSpecs()<CR>
 map      <Leader>rl :call RunLastSpec()<CR>
 map      <Leader>rs :call RunNearestSpec()<CR>
 map      <Leader>rt :call RunCurrentSpecFile()<CR>
-nnoremap <Leader>sh :VtrOpenRunner {'orientation': 'v', 'percentage': 30}<cr>
 map      <Leader>t  :Tags<CR>
 map      <Leader>/  gcc
 vmap     <Leader>/  gc
