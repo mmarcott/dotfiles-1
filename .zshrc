@@ -1,14 +1,13 @@
-# Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
+export ZSH_CUSTOM=$HOME/.dotfiles/custom-omz
+export UPDATE_ZSH_DAYS=3
+export skip_global_compinit=1
+
 ZSH_THEME="avit"
 COMPLETION_WAITING_DOTS="true"
 DISABLE_AUTO_TITLE="true"
 
-# DISABLE_AUTO_UPDATE="true"
-export UPDATE_ZSH_DAYS=13
-
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git history-substring-search aws docker zsh-syntax-highlighting vi-mode rbenv github docker-compose)
+plugins=(git history-substring-search docker zsh-syntax-highlighting vi-mode rbenv)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -26,5 +25,11 @@ alias bedit="vim ~/.vim/plugins.vim"
 alias kedit="cd ~/Code/keyboards/atreus-firmware/atreus; vim keymap_alex.c"
 alias reload="source ~/.zshrc"
 
+# zsh vi mode timeout
+export KEYTIMEOUT=10
+
+# enter vi mode
+bindkey -M viins 'jk' vi-cmd-mode
+
 # sources custom aliases and functions
-for file in $(tree -if ~/.dotfiles/custom-omz | grep .zsh); do; source $file; done
+# for file in $(tree -if ~/.dotfiles/custom-omz | grep .zsh); do; source $file; done
