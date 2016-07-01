@@ -1,8 +1,6 @@
-export ZSH=$HOME/.oh-my-zsh
-export ZSH_CUSTOM=$HOME/.dotfiles/custom-omz
-export UPDATE_ZSH_DAYS=3
-export skip_global_compinit=1
-
+ZSH=$HOME/.oh-my-zsh
+ZSH_CUSTOM=$HOME/.dotfiles/custom-omz
+UPDATE_ZSH_DAYS=7
 ZSH_THEME="avit"
 COMPLETION_WAITING_DOTS="true"
 DISABLE_AUTO_TITLE="true"
@@ -11,11 +9,9 @@ plugins=(git history-substring-search docker zsh-syntax-highlighting vi-mode rbe
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+export LS_COLORS="di=34:ln=35;40:so=32;40:pi=33;40:ex=31:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=0;42:ow=0;43:"
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
 [[ `uname` == 'Darwin'  ]] && export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
-
-# Preferred editor for local and remote sessions
-export EDITOR='vim'
 
 # Custom Edits
 alias zedit="vim ~/.zshrc"
@@ -25,11 +21,7 @@ alias bedit="vim ~/.vim/plugins.vim"
 alias kedit="cd ~/Code/keyboards/atreus-firmware/atreus; vim keymap_alex.c"
 alias reload="source ~/.zshrc"
 
-# zsh vi mode timeout
-export KEYTIMEOUT=10
+export EDITOR='vim'               # Preferred editor for local and remote sessions
+export KEYTIMEOUT=10              # zsh vi mode timeout
+bindkey -M viins 'jk' vi-cmd-mode # enter vi mode
 
-# enter vi mode
-bindkey -M viins 'jk' vi-cmd-mode
-
-# sources custom aliases and functions
-# for file in $(tree -if ~/.dotfiles/custom-omz | grep .zsh); do; source $file; done

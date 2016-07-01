@@ -41,7 +41,7 @@ if ! [[ -e '.installed' ]]; then
   fi
 
   # install oh-my-zsh
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/audibleblink/oh-my-zsh/master/tools/install.sh)"
 
   # fetch submodules
   git submodule update --init --recursive
