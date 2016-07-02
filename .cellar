@@ -28,6 +28,7 @@ fortune
 freetype
 fswatch
 fzf
+gcc-arm-none-eabi
 gcc-arm-none-eabi-49
 gdbm
 geoip
@@ -97,6 +98,7 @@ readline
 redis
 rsync
 ruby-build
+s3cmd
 sbt
 sqlite
 ssh-copy-id
