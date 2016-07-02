@@ -1,7 +1,8 @@
 #!/bin/bash -e
 
 dir=`pwd`
-files=( '.vim*'
+files=( 
+  '.vim*'
   '.rspec'
   '.tmux*'
   '.zshrc'
@@ -11,6 +12,7 @@ files=( '.vim*'
   '.hammerspoon'
   '.agignore'
   '.rubocop.yml'
+  '.gnupg'
 )
 
 symlink () {
