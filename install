@@ -25,6 +25,11 @@ symlink () {
 
 symlink ${files[@]}
 
+# updates /etc/hosts for ad blocking
+echo "Updating Hosts files..."
+echo "Running: sudo curl http://winhelp2002.mvps.org/hosts.txt > /etc/hosts"
+sudo curl http://winhelp2002.mvps.org/hosts.txt > /etc/hosts
+
 # only runs once
 if ! [[ -e '.installed' ]]; then
 
