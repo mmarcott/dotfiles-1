@@ -1,13 +1,11 @@
-# In order for gpg to find gpg-agent, gpg-agent must be running,
-# and there must be an env variable pointing GPG to the gpg-agent socket.
-# This little script, which must be sourced
-# in your shell's init script (ie, .bash_profile, .zshrc, whatever),
-# will either start gpg-agent or set up the
-# GPG_AGENT_INFO variable if it's already running.
+if [ $(uname) = 'Darwin' ]; then
+    AGENT="/Users/$USER/.gpg-agent-info"
+else
+    AGENT="/home/$USER/.gpg-agent-info"
+fi
 
-# Add the following
-if [ -f ~/.gnupg/.gpg-agent-info ] && [ -n "$(pgrep gpg-agent)" ]; then
-    source ~/.gnupg/.gpg-agent-info
+if [ -f "$AGENT" ] && [ -n "$(pgrep gpg-agent)" ]; then
+    source "$AGENT"
     export GPG_AGENT_INFO
 else
     eval $(gpg-agent --daemon --options ~/.gnupg/gpg-agent.conf)

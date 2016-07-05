@@ -11,3 +11,5 @@
 	templatedir = ~/.git_template
 [commit]
 	gpgsign = true
+[gpg]
+	program = /usr/local/bin/gpg2
