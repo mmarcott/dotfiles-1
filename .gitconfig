@@ -13,3 +13,5 @@
 	gpgsign = true
 [gpg]
 	program = /usr/local/bin/gpg2
+[alias]
+	pull = pull --rebase
