@@ -5,11 +5,13 @@ ZSH_THEME="avit"
 COMPLETION_WAITING_DOTS="true"
 DISABLE_AUTO_TITLE="true"
 
-plugins=(git history-substring-search docker zsh-syntax-highlighting vi-mode rbenv)
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
+
+plugins=(history-substring-search docker zsh-syntax-highlighting vi-mode)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
+which rbenv &>/dev/null && eval "$(rbenv init --no-rehash - zsh)"
 [[ `uname` == 'Darwin'  ]] && export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 
 # Custom Edits
