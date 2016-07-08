@@ -14,22 +14,23 @@ Plug 'junegunn/fzf',                    { 'dir': '~/.fzf', 'do': './install --al
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'justinmk/vim-sneak'
-Plug 'kana/vim-textobj-user' | Plug 'nelstrom/vim-textobj-rubyblock',  { 'for': 'ruby' }
+Plug 'kana/vim-textobj-user' 
+Plug 'nelstrom/vim-textobj-rubyblock',  { 'for': 'ruby' }
 Plug 'mhinz/vim-startify'
 Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot'
-Plug 'SirVer/ultisnips'      | Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'thoughtbot/vim-rspec',            { 'for': 'ruby' }
 Plug 'tomtom/tcomment_vim'
-Plug 'tpope/vim-bundler',
+Plug 'tpope/vim-bundler',               { 'for': 'ruby' }
+Plug 'tpope/vim-cucumber',              { 'for': 'ruby' }
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-sleuth'
 Plug 'Valloric/YouCompleteMe',          { 'do': './install.py --tern-completer'  }
 Plug 'vim-airline/vim-airline'
-" Plug 'vim-ruby/vim-ruby',               { 'for': 'ruby' }
 
 if has('mac')
   Plug 'rizzatti/dash.vim'
