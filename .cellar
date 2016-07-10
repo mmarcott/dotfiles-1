@@ -93,6 +93,7 @@ nmap
 node
 oniguruma
 openssl
+openvpn
 p7zip
 pandoc
 pass
