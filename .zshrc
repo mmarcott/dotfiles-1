@@ -7,7 +7,7 @@ DISABLE_AUTO_TITLE="true"
 
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
 
-plugins=(history-substring-search docker zsh-syntax-highlighting vi-mode)
+plugins=(git history-substring-search docker zsh-syntax-highlighting vi-mode)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
