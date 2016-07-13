@@ -1,8 +1,4 @@
-if [ $(uname) = 'Darwin' ]; then
-    AGENT="/Users/$USER/.gpg-agent-info"
-else
-    AGENT="/home/$USER/.gpg-agent-info"
-fi
+AGENT="$HOME/.gpg-agent-info"
 
 if [ -f "$AGENT" ] && [ -n "$(pgrep gpg-agent)" ]; then
     source "$AGENT"
