@@ -9,20 +9,13 @@ export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 plugins=(git history-substring-search docker zsh-syntax-highlighting vi-mode gpg fzf autopair)
 source $ZSH/oh-my-zsh.sh
+source <(cat $HOME/.dotfiles/custom-omz/{aliases,functions}/**/*.zsh)
 
-# User configuration
-which rbenv &>/dev/null && eval "$(rbenv init --no-rehash - zsh)"
 [[ `uname` == 'Darwin'  ]] && export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 
-# Custom Edits
 export EDITOR='vim'               # Preferred editor for local and remote sessions
 export KEYTIMEOUT=10              # zsh vi mode timeout
 bindkey -M viins 'jk' vi-cmd-mode # enter vi mode
 
-alias zedit="e ~/.zshrc"
-alias vedit="e ~/.vimrc"
-alias tedit="e ~/.tmux.conf"
-alias bedit="e ~/.vim/plugins.vim"
+# Temp aliases
 alias kedit="cd ~/Code/keyboards/atreus-firmware/atreus; e keymap_alex.c"
-alias reload="source ~/.zshrc"
-

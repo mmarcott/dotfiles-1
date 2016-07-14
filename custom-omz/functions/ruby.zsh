@@ -3,3 +3,5 @@ gemadd () {
   gem=$1
   echo "gem '$gem'" >> Gemfile
 }
+
+which rbenv &>/dev/null && eval "$(rbenv init --no-rehash - zsh)"
