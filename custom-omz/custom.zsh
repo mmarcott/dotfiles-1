@@ -1,3 +1,1 @@
-fns="$HOME/.dotfiles/custom-omz/functions"
-als="$HOME/.dotfiles/custom-omz/aliases"
-source <(cat {"$fns","$als"}/**/*.zsh)
+source <(cat $HOME/.dotfiles/custom-omz/{aliases,functions}/**/*.zsh)
