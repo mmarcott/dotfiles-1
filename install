@@ -47,9 +47,6 @@ if ! [[ -e '.installed' ]]; then
     sudo apt-get install zsh git tmux vim cmake python-dev
   fi
 
-  # install oh-my-zsh
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
   # fetch submodules
   git submodule update --init --recursive
 
