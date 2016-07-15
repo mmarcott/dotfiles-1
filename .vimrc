@@ -75,6 +75,7 @@ nnoremap <silent> <Leader>w :call mappings#zap()<CR>
 nnoremap <Leader>z  :wincmd _<cr>:wincmd \|<cr>
 nnoremap <Leader>Z  :wincmd =<cr>
 nmap     <Leader><Tab> :b#<CR>
+nnoremap <Leader><Up> :History:<CR>
 
 if has('mac')
   vnoremap  <Leader>y "*y
