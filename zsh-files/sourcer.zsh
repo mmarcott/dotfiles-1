@@ -1,5 +1,14 @@
+PLUGINS=$ZSH_CUSTOM/plugins/
 COMPLETION_WAITING_DOTS="true"
 mkdir $ZSH &>/dev/null
+
+function zinstall() {
+  cd $PLUGINS
+  git submodule add $1
+  git commit
+  echo "Don't forget to enable plugins in .zshrc"
+  cd -
+}
 
 function is_plugin() {
   local base_dir=$1
