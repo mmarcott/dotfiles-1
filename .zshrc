@@ -7,11 +7,12 @@ export EDITOR="$(which vim)"
 plugins=(
   vi-mode
   clipboard
-  docker-zsh-completion
+  # docker-zsh-completion
   gpg
   zsh-autopair
   fuck
   fzf
+  #must be last
   history-substring-search
   zsh-syntax-highlighting
 )
