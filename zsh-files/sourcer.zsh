@@ -5,8 +5,8 @@ mkdir $ZSH &>/dev/null
 function zinstall() {
   cd $PLUGINS
   git submodule add $1
+  zedit
   git commit
-  echo "Don't forget to enable plugins in .zshrc"
   cd -
 }
 

@@ -9,7 +9,7 @@ plugins=(
   clipboard
   docker
   gpg
-  autopair
+  zsh-autopair
   fuck
   fzf
   history-substring-search
