@@ -1,7 +1,7 @@
 # fzf shortcuts
-if [[ -f ~/.fzf.zsh ]]; then
+if [[ -f $HOME/.fzf.zsh ]]; then
   # source fzf if it's installed
-  source ~/.fzf.zsh
+  source $HOME/.fzf.zsh
   export FZF_DEFAULT_COMMAND='ag --hidden --path-to-agignore=~/.agignore -g ""'
   # fe [FUZZY PATTERN] - Open the selected file with the default editor
   #   - Bypass fuzzy finder if there's only one match (--select-1)

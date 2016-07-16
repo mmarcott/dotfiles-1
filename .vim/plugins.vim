@@ -5,6 +5,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'audibleblink/vim-airline-themes', { 'branch': 'papercolor-modes' }
+Plug 'chrisbra/vim-zsh', { 'for': 'zsh' }
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
 Plug 'edkolev/tmuxline.vim'
