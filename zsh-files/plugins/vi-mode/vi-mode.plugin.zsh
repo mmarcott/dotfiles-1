@@ -1,3 +1,5 @@
+export KEYTIMEOUT=20
+
 # Updates editor information when the keymap changes.
 function zle-keymap-select() {
   zle reset-prompt
@@ -27,6 +29,9 @@ bindkey '^N' down-history
 bindkey '^?' backward-delete-char
 bindkey '^h' backward-delete-char
 bindkey '^w' backward-kill-word
+bindkey -M viins "^A" beginning-of-line
+bindkey -M viins "^E" end-of-line
+bindkey -M viins 'jk' vi-cmd-mode
 
 # if mode indicator wasn't setup by theme, define default
 if [[ "$MODE_INDICATOR" == "" ]]; then
@@ -42,6 +47,4 @@ if [[ "$RPS1" == "" && "$RPROMPT" == "" ]]; then
   RPS1='$(vi_mode_prompt_info)'
 fi
 
-export KEYTIMEOUT=20
-bindkey -M viins 'jk' vi-cmd-mode
 
