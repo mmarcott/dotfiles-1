@@ -7,7 +7,7 @@ export EDITOR="$(which vim)"
 plugins=(
   vi-mode
   clipboard
-  docker
+  docker-zsh-completion
   gpg
   zsh-autopair
   fuck
