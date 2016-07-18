@@ -17,6 +17,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'justinmk/vim-sneak'
 Plug 'kana/vim-textobj-user' 
 Plug 'nelstrom/vim-textobj-rubyblock',  { 'for': 'ruby' }
+Plug 'mattn/emmet-vim',                 { 'for': ['jsx', 'html'] }
 Plug 'mhinz/vim-startify'
 Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot'

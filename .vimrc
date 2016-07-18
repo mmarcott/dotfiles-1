@@ -47,10 +47,9 @@ vnoremap <CR> :
 " Unmap Enter in the quickfix window
 au BufReadPost quickfix nnoremap <buffer> <CR> <CR>
 
-" Store relative line number jumps in the jumplist.
+" Store relative line number jumps in the jumplist. Also treat
+" long lines as break lines (useful when moving around in them).
 noremap <expr> j v:count > 1 ? 'm`' . v:count . 'j' : 'gj'
-"
-" Treat long lines as break lines (useful when moving around in them).
 noremap <expr> k v:count > 1 ? 'm`' . v:count . 'k' : 'gk'
 
 " Leader Mappings
