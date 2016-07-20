@@ -9,9 +9,9 @@
 	user = audibleblink
 [init]
 	templatedir = ~/.git_template
-[commit]
-	gpgsign = true
-[gpg]
-	program = /usr/local/bin/gpg2
+# [commit]
+# 	gpgsign = true
+# [gpg]
+# 	program = /usr/local/bin/gpg2
 [alias]
 	pull = pull --rebase
