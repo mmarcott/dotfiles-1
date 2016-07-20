@@ -30,7 +30,4 @@ alias aedit="e ~/.dotfiles/zsh-files/functions"
 alias reload="source ~/.zshrc"
 
 # Temp aliases
-[[ `uname` == 'Darwin'  ]] && export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
-alias kedit="cd ~/Code/keyboards/atreus-firmware/atreus; e keymap_alex.c"
-alias asi='tree -if | grep -v node_modules | grep -e .js$ | xargs fixmyjs --legacy'
-alias tree='LS_COLORS="di=34:ln=35:so=32;40:ex=31" tree'
+alias kedit="cd $HOME/Code/keyboards/atreus-firmware/atreus; e keymap_alex.c"

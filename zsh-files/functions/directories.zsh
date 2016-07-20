@@ -39,6 +39,8 @@ alias desktop='cd ~/Desktop'
 alias ls='ls -FGh'
 alias l='ls -lth'
 
+which tree >/dev/null && alias tree='LS_COLORS="di=34:ln=35:so=32;40:ex=31" tree'
+
 # mkdir, cd into it
 mkcd () {
   mkdir -p "$*"
