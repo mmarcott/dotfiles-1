@@ -10,6 +10,10 @@ function zinstall() {
   cd -
 }
 
+function zupdate {
+  git submodule update --recursive
+}
+
 function is_plugin() {
   local base_dir=$1
   local name=$2
