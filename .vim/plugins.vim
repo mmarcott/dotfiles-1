@@ -18,7 +18,7 @@ Plug 'justinmk/vim-sneak'
 Plug 'kana/vim-textobj-user' 
 Plug 'nelstrom/vim-textobj-rubyblock',  { 'for': 'ruby' }
 Plug 'mattn/emmet-vim',                 { 'for': ['html', 'javascript.jsx'] }
-Plug 'mhinz/vim-startify'
+" Plug 'mhinz/vim-startify'
 Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
@@ -151,3 +151,7 @@ filetype plugin indent on
 " Syntastic
   "
   let g:syntastic_ruby_checkers = ['rubocop']
+
+
+
+  let g:ycm_server_python_interpreter = '/usr/bin/python'
