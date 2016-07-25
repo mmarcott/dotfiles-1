@@ -26,15 +26,13 @@ symlink () {
 symlink ${files[@]}
 
 # updates /etc/hosts for ad blocking
-echo "Updating Hosts files..."
-echo "Running: sudo curl http://winhelp2002.mvps.org/hosts.txt > /etc/hosts"
-sudo curl http://winhelp2002.mvps.org/hosts.txt > /etc/hosts
+echo "Run: sudo curl http://winhelp2002.mvps.org/hosts.txt > /etc/hosts"
 
 # only runs once
 if ! [[ -e '.installed' ]]; then
 
   # loaded modded terminal
-  tic app_configs/terminals/xterm-256colors-italics.terminfo
+  tic $HOME/.dotfiles/app_configs/terminals/xterm-256color-italic.terminfo
 
   if [[ `uname` == 'Darwin' ]]; then
     # install homebrew
@@ -45,6 +43,7 @@ if ! [[ -e '.installed' ]]; then
     brew install zsh git tmux vim ctags cmake python-dev
   else
     sudo apt-get install zsh git tmux vim cmake python-dev
+    git clone git@github.com:powerline/fonts.git $HOME/.fonts
   fi
 
   # fetch submodules
