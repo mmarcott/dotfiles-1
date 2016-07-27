@@ -27,7 +27,8 @@ alias vedit="e ~/.vimrc"
 alias tedit="e ~/.tmux.conf"
 alias bedit="e ~/.vim/plugins.vim"
 alias aedit="e ~/.dotfiles/zsh-files/functions"
+alias iedit="e ~/.config/i3/config"
 alias reload="source ~/.zshrc"
 
 # Temp aliases
-alias kedit="cd $HOME/Code/keyboards/atreus-firmware/atreus; e keymap_alex.c"
+alias kedit="cd $HOME/code/keyboards/atreus-firmware/atreus; e keymap_alex.c"
