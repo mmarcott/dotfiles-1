@@ -13,7 +13,14 @@ files=(
   '.agignore'
   '.rubocop.yml'
   '.gnupg'
+  '.scripts'
+  'i3/.i3blocks.conf'
 )
+
+if [[ $(uname) = 'Linux' ]]; then
+  mkdir -p $HOME/.config/i3
+  ln -sf $dir/i3/config $HOME/.config/i3/
+fi
 
 symlink () {
   for dotfile; do

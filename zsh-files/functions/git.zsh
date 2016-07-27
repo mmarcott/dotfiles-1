@@ -9,6 +9,7 @@ alias gcam='git commit -am'
 alias gr='git remote'
 alias gb='git branch'
 alias gco='git checkout'
+alias gc='git commit'
 
 # clone a repo and cd into it
 function gcln () {
