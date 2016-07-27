@@ -21,7 +21,7 @@
   set $bg-color            #2f343f
   set $text-color          #f3f4f5
 
-  set $workspace1 "1: "
+  set $workspace1 "1: "
   set $workspace2 "2: "
   set $workspace3 "3: "
   set $workspace4 "4: "
@@ -43,6 +43,7 @@
 
 # Program Settings
   bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 400 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
+  bindsym $mod+p exec /home/alex/.scripts/lock
 
 
 # Window-Related Bindings
@@ -59,8 +60,8 @@
   bindsym $mod+f fullscreen toggle
 
 # Set orientation of next split
-  # bindsym $mod+v split v
-  # bindsym $mod+h split h
+  bindsym $mod+v split v
+  bindsym $mod+b split h
 
   bindsym $mod+space focus mode_toggle
 
@@ -110,9 +111,9 @@
 
 
 # Program Workspaces
+  assign [class="Spotify"] $workspace10
   assign [class="chromium-browser"] $workspace1
   assign [class="Slack"] $workspace9
-  assign [class="Spotify"] $workspace10
 
 # Floating
   for_window [class="Lxappearance"] floating enable
@@ -160,6 +161,7 @@
 # startup
   exec_always --no-startup-id feh --bg-scale /home/alex/.wallpaper.jpg
   exec_always --no-startup-id xrandr --output DP-3 --off --output DVI-I-1 --off --output DP-1 --off --output HDMI-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP-2 --off
+  exec --no-startup-id pkill gpg-agent
   exec --no-startup-id spotify
   exec --no-startup-id slack
   exec --no-startup-id compton -f
@@ -167,5 +169,4 @@
 # Keyboard
   exec_always xmodmap -e "clear lock" #disable caps lock switch
   exec_always xmodmap -e "keysym Caps_Lock = Control" #set caps_lock as escape
-
-
+  exec_always xmodmap -e "pointer = 1 2 3 5 4 7 6 8 9 10 11 12" # set 'natural' scrolling
