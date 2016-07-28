@@ -33,9 +33,9 @@ set textwidth=109
 set timeoutlen=1000 ttimeoutlen=10
 set wiw=120
 
-if &term =~ '^xterm'
-  set ttymouse=xterm2 " tmux knows the extended mouse mode
-endif
+" if &term =~ '^xterm'
+"   set ttymouse=xterm2 " tmux knows the extended mouse mode
+" endif
 
 " Custom Mappings
 inoremap jk <ESC>
