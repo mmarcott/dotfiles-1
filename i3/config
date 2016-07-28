@@ -21,6 +21,9 @@
   set $bg-color    #2f343f
   set $text-color  #f3f4f5
 
+  set $monitor1 "DVI-I-1"
+  set $monitor2 "HDMI-0"
+
 # Widow Colours
 #                         border  background text    indicator
   client.focused          $base01 $base01    $base07 $base0F
@@ -38,10 +41,12 @@
   bindsym $mod+b split h
 # Program Settings
   bindsym $mod+Return exec i3-sensible-terminal
-  bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 400 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "Soure Code Pro 18"
+  bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 400 -opacity "85" -bw 0 -bc \
+    "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "Soure Code Pro 18"
   bindsym $mod+p exec /home/alex/.scripts/lock
 # exit i3 (logs you out of your X session)
-  bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+  bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. \
+    Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 # Restart-Related Bindings
   bindsym $mod+Shift+c reload
   bindsym $mod+Shift+r restart
@@ -82,7 +87,7 @@
   set $workspace5 "5: "
   set $workspace6 "6: "
   set $workspace7 "7: "
-  set $workspace8 "8: "
+  set $workspace8 "8: "
   set $workspace9 "9: "
   set $workspace10 "10: "
 
@@ -108,10 +113,22 @@
   bindsym $mod+Shift+9 move container to workspace $workspace9
   bindsym $mod+Shift+0 move container to workspace $workspace10
 
+# Workspace Monitor Assignment
+  workspace $workspace1 output $monitor1
+  workspace $workspace2 output $monitor1
+  workspace $workspace3 output $monitor1
+  workspace $workspace4 output $monitor1
+  workspace $workspace5 output $monitor1
+  workspace $workspace6 output $monitor1
+  workspace $workspace8 output $monitor2
+  workspace $workspace9 output $monitor2
+  workspace $workspace10 output $monitor2
+
 # Program Workspace Assignments
-  assign [class="Spotify"] $workspace10
   assign [class="chromium-browser"] $workspace1
+  assign [class="Nylas N1"] $workspace8
   assign [class="Slack"] $workspace9
+  assign [class="Spotify"] $workspace10
 
 # Default to Floating
   for_window [class="Lxappearance"] floating enable
@@ -147,9 +164,19 @@
 
 # Startup
   exec_always --no-startup-id feh --bg-scale /home/alex/.wallpaper.jpg
-  exec_always --no-startup-id xrandr --output DP-3 --off --output DVI-I-1 --off --output DP-1 --off --output HDMI-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP-2 --off
+
+  # Single Work Monitor
+  # exec_always --no-startup-id xrandr --output DP-3 --off --output DVI-I-1 --off --output DP-1 --off --output HDMI-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP-2 --off
+  #
+  # Dual Work Monitor
+  exec_always --no-startup-id xrandr --output DVI-I-1 --off --output DVI-I-0 --off --output HDMI-0 \
+    --mode 1920x1080 --pos 2560x360 --rotate normal --output DP-5 --off --output DP-4 --off --output DP-3 \
+    --off --output DP-2 --off --output DP-1 --off --output DP-0 --primary --mode 2560x1440 --pos 0x0 --rotate normal
+
   exec --no-startup-id spotify
+  exec --no-startup-id gnome-terminal
   exec --no-startup-id slack
+  exec --no-startup-id nylas
   exec --no-startup-id compton -f
 
 # Keyboard
