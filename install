@@ -12,9 +12,9 @@ files=(
   '.hammerspoon'
   '.agignore'
   '.rubocop.yml'
-  '.gnupg'
   '.scripts'
   'i3/.i3blocks.conf'
+  '.gnupg'
 )
 
 if [[ $(uname) = 'Linux' ]]; then

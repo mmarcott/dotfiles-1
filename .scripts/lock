@@ -61,3 +61,4 @@ local __reduced_y=$(_calc "${__screen_y}/${__block_size}")
 # clutter the filesystem). Since `convert -scale` doesn't do blurring, scaling
 # down and then back up is an efficient method of producing a pixelated image.
 i3lock $* -i <(import -screen -window root -silent png:- | convert png:- -scale '!'"${__reduced_x}x${__reduced_y}" -scale '!'"${__screen_x}x${__screen_y}" png:-)
+playerctl stop
