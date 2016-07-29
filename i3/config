@@ -180,6 +180,5 @@
   exec --no-startup-id compton -f
 
 # Keyboard
-  exec_always xmodmap -e "clear lock" #disable caps lock switch
-  exec_always xmodmap -e "keysym Caps_Lock = Control" #set caps_lock as escape
+  exec_always setxkbmap -option "ctrl:nocaps"
   exec_always xmodmap -e "pointer = 1 2 3 5 4 7 6 8 9 10 11 12" # set 'natural' scrolling
