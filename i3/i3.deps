@@ -35,7 +35,7 @@
 
 
 # Install deps
-apt-get --allow-unauthenticated -y install fontconfig-infinality compton rofi lxappearance arc-theme arandr feh pulse-audio-utils
+apt-get --allow-unauthenticated -y install fontconfig-infinality compton rofi lxappearance arc-theme arandr feh pulse-audio-utils pavucontrol
 
 # Change System Fonts in GTK2 and GTK3 confs
 
