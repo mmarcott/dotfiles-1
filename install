@@ -49,8 +49,7 @@ if ! [[ -e '.installed' ]]; then
     brew tap caskroom/fonts
     brew install zsh git tmux vim ctags cmake python-dev
   else
-    sudo apt-get install zsh git tmux vim cmake python-dev
-    git clone git@github.com:powerline/fonts.git $HOME/.fonts
+    sudo apt-get install zsh git tmux vim cmake python-dev curl
   fi
 
   # fetch submodules

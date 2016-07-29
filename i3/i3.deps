@@ -1,0 +1,42 @@
+# This file contains the necessary files to get
+# configuration of i3 up and running
+
+# Configure some missing i3 desktop environment settings
+## Pulse Audio controls
+#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+#
+## Screen brightness controls
+#bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+#bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+#
+## Touchpad controls
+#bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
+#
+## Media player controls
+#bindsym XF86AudioPlay exec playerctl play
+#bindsym XF86AudioPause exec playerctl pause
+#bindsym XF86AudioNext exec playerctl next
+#bindsym XF86AudioPrev exec playerectl previous
+
+
+# Installs playerctl to make use of media keys
+#wget https://github.com/acrisci/playerctl/releases/download/v0.5.0/playerctl-0.5.0_amd64.deb
+#dpkg -i playerctl-0.5.0_amd64.deb
+
+
+# Setup Repos
+#echo 'deb http://download.opensuse.org/repositories/home:/Horst3180/Debian_8.0/ /' >> /etc/apt/sources.list.d/arc-theme.list 
+# echo "deb http://ppa.launchpad.net/no1wantdthisname/ppa/ubuntu trusty main" | sudo tee /etc/apt/sources.list.d/infinality.list
+# echo "deb-src http://ppa.launchpad.net/no1wantdthisname/ppa/ubuntu trusty main" | sudo tee -a /etc/apt/sources.list.d/infinality.list
+# sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E985B27B
+# apt-get update
+
+
+# Install deps
+apt-get --allow-unauthenticated -y install fontconfig-infinality compton rofi lxappearance arc-theme arandr feh pulse-audio-utils
+
+# Change System Fonts in GTK2 and GTK3 confs
+
+
