@@ -160,8 +160,12 @@
   bindsym XF86AudioNext exec playerctl next
   bindsym XF86AudioPrev exec playerctl previous
 
+## Screen brightness controls
+  bindsym XF86MonBrightnessUp exec $HOME/.scripts/brightness +10
+  bindsym XF86MonBrightnessDown exec $HOME/.scripts/brightness -10
+
 # Startup
-  exec_always --no-startup-id feh --bg-scale /home/alex/.wallpaper.jpg
+  exec_always --no-startup-id feh --bg-scale $HOME/.wallpaper.jpg
 
   # Single Work Monitor
   # exec_always --no-startup-id xrandr --output DP-3 --off --output DVI-I-1 --off --output DP-1 --off --output HDMI-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP-2 --off
