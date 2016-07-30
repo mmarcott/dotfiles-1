@@ -20,23 +20,38 @@
 #bindsym XF86AudioNext exec playerctl next
 #bindsym XF86AudioPrev exec playerectl previous
 
+# Repository lists
+arc_repo=/etc/apt/sources.list.d/arc-theme.list
+inf_repo=/etc/apt/sources.list.d/infinality.list
 
 # Installs playerctl to make use of media keys
-#wget https://github.com/acrisci/playerctl/releases/download/v0.5.0/playerctl-0.5.0_amd64.deb
-#dpkg -i playerctl-0.5.0_amd64.deb
+wget https://github.com/acrisci/playerctl/releases/download/v0.5.0/playerctl-0.5.0_amd64.deb
+dpkg -i playerctl-0.5.0_amd64.deb
 
+# Install pulseaudio control
+wget https://github.com/graysky2/pulseaudio-ctl/archive/v1.63.tar.gz
+cd pulseaudio-ctl
+make && sudo make install
 
 # Setup Repos
-#echo 'deb http://download.opensuse.org/repositories/home:/Horst3180/Debian_8.0/ /' >> /etc/apt/sources.list.d/arc-theme.list 
-# echo "deb http://ppa.launchpad.net/no1wantdthisname/ppa/ubuntu trusty main" | sudo tee /etc/apt/sources.list.d/infinality.list
-# echo "deb-src http://ppa.launchpad.net/no1wantdthisname/ppa/ubuntu trusty main" | sudo tee -a /etc/apt/sources.list.d/infinality.list
-# sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E985B27B
-# apt-get update
-
+echo 'deb http://download.opensuse.org/repositories/home:/Horst3180/Debian_8.0/ /' >> $arc_repo
+echo "deb http://ppa.launchpad.net/no1wantdthisname/ppa/ubuntu trusty main" | sudo tee $inf_repo
+echo "deb-src http://ppa.launchpad.net/no1wantdthisname/ppa/ubuntu trusty main" | sudo tee -a $inf_repo
+apt-get update
 
 # Install deps
-apt-get --allow-unauthenticated -y install fontconfig-infinality compton rofi lxappearance arc-theme arandr feh pulse-audio-utils pavucontrol
+apt-get --allow-unauthenticated -y install \
+        fontconfig-infinality \
+        compton \
+        rofi \
+        lxappearance \
+        arc-theme \
+        arandr \
+        feh \
+        pulseaudio-utils \
+        xcape \
+        pavucontrol
 
-# Change System Fonts in GTK2 and GTK3 confs
 
-
+# Remove repo entries
+sudo rm $arc_repo $inf_repo

@@ -41,12 +41,10 @@
   bindsym $mod+b split h
 # Program Settings
   bindsym $mod+Return exec i3-sensible-terminal
-  bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 400 -opacity "85" -bw 0 -bc \
-    "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "Soure Code Pro 18"
-  bindsym $mod+p exec /home/alex/.scripts/lock
+  bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 300 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "Soure Code Pro 18"
+  bindsym $mod+p exec $HOME/.scripts/lock
 # exit i3 (logs you out of your X session)
-  bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. \
-    Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+  bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 # Restart-Related Bindings
   bindsym $mod+Shift+c reload
   bindsym $mod+Shift+r restart
@@ -162,8 +160,12 @@
   bindsym XF86AudioNext exec playerctl next
   bindsym XF86AudioPrev exec playerctl previous
 
+## Screen brightness controls
+  bindsym XF86MonBrightnessUp exec $HOME/.scripts/brightness +10
+  bindsym XF86MonBrightnessDown exec $HOME/.scripts/brightness -10
+
 # Startup
-  exec_always --no-startup-id feh --bg-scale /home/alex/.wallpaper.jpg
+  exec_always --no-startup-id feh --bg-scale $HOME/.wallpaper.jpg
 
   # Single Work Monitor
   # exec_always --no-startup-id xrandr --output DP-3 --off --output DVI-I-1 --off --output DP-1 --off --output HDMI-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP-2 --off
@@ -182,3 +184,4 @@
 # Keyboard
   exec_always setxkbmap -option "ctrl:nocaps"
   exec_always xmodmap -e "pointer = 1 2 3 5 4 7 6 8 9 10 11 12" # set 'natural' scrolling
+  exec_always xcape -e 'Control_L=Escape'
