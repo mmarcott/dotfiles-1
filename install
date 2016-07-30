@@ -39,7 +39,7 @@ echo "Run: sudo curl http://winhelp2002.mvps.org/hosts.txt > /etc/hosts"
 if ! [[ -e '.installed' ]]; then
 
   # loaded modded terminal
-  tic $HOME/.dotfiles/app_configs/terminals/xterm-256color-italic.terminfo
+  tic $HOME/.dotfiles/app_configs/terminals/screen-256color-italic.terminfo
 
   if [[ `uname` == 'Darwin' ]]; then
     # install homebrew
