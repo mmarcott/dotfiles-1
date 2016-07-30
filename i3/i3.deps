@@ -50,6 +50,7 @@ apt-get --allow-unauthenticated -y install \
         feh \
         pulseaudio-utils \
         xcape \
+        i3blocks \
         pavucontrol
 
 
