@@ -1,8 +1,4 @@
-AGENT="$HOME/.gpg-agent-info"
-
-if [ -f "$AGENT" ] && [ -n "$(pgrep gpg-agent)" ]; then
-    source "$AGENT"
-    export GPG_AGENT_INFO
-else
-    eval $(gpg-agent --daemon --options ~/.gnupg/gpg-agent.conf)
+# Start the gpg-agent if not already running
+if ! pgrep -x -u "${USER}" gpg-agent >/dev/null 2>&1; then
+  eval $(gpg-agent --daemon --options ~/.gnupg/gpg-agent.conf)
 fi

@@ -133,6 +133,12 @@
   for_window [class="Seahorse"] floating enable
   for_window [class="Pavucontrol"] floating enable
 
+
+gaps inner 5
+gaps outer 0
+smart_gaps on
+
+
 # i3 Status Bar
   bar {
     font pango: Source Code Pro, FontAwesome 12
