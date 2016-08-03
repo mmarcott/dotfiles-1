@@ -42,7 +42,7 @@
 # Program Settings
   bindsym $mod+Return exec i3-sensible-terminal
   bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 300 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "Soure Code Pro 18"
-  bindsym $mod+p exec $HOME/.scripts/lock -p 30
+  bindsym $mod+p exec $HOME/.scripts/lock -p 10
   bindsym $mod+Shift+s exec scrot -s ~/Downloads/Screenshot%Y-%m-%d%H:%M:%S.png
 # exit i3 (logs you out of your X session)
   bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
@@ -55,6 +55,7 @@
   bindsym $mod+e layout toggle split
 
 # Window-Navigation Bindings
+  bindsym $mod+Shift+p focus parent
   bindsym $mod+Shift+q kill
   bindsym $mod+h focus left
   bindsym $mod+j focus down
@@ -135,14 +136,14 @@
   for_window [class="Pavucontrol"] floating enable
 
 
-gaps inner 5
-gaps outer 0
+gaps inner 10
+gaps outer 1
 smart_gaps on
 
 
 # i3 Status Bar
   bar {
-    font pango: Source Code Pro, FontAwesome 12
+    font pango: Source Code Pro, FontAwesome 14
       position top
       status_command i3blocks
       colors {

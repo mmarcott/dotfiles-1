@@ -7,7 +7,7 @@ export EDITOR="$(which vim)"
 plugins=(
   vi-mode
   clipboard
-  # docker-zsh-completion
+  docker-zsh-completion
   gpg
   zsh-autopair
   fuck
@@ -31,4 +31,4 @@ alias iedit="e ~/.config/i3/config"
 alias reload="source ~/.zshrc"
 
 # Temp aliases
-alias kedit="cd $HOME/code/keyboards/atreus-firmware/atreus; e keymap_alex.c"
+alias kedit="cd $HOME/Dropbox/Code/keyboards/atreus-firmware/atreus/; e keymap_alex.c"
