@@ -124,7 +124,7 @@ smart_gaps on
 # i3 Status Bar
   bar {
     font pango: Source Code Pro, FontAwesome 10
-      position bottom
+      position top
       status_command i3blocks
       colors {
         separator $base03
@@ -164,7 +164,7 @@ smart_gaps on
   exec --no-startup-id i3-msg 'workspace $workspace2; exec xfce-terminal; workspace $workspace1'
   exec --no-startup-id slack
   exec --no-startup-id nylas
-  exec --no-startup-id compton -f -inactive-opacity 1
+  exec --no-startup-id compton -f
 
 # Keyboard
   exec_always setxkbmap -option "ctrl:nocaps"

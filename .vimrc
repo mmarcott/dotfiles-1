@@ -92,4 +92,4 @@ vnoremap Y myY`y
 autocmd FocusLost,WinLeave * :silent! update
 autocmd CursorHold * checktime
 
-" let &colorcolumn="109,".join(range(109,999),",")
+let &colorcolumn="109,".join(range(109,999),",")

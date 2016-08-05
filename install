@@ -49,7 +49,7 @@ if ! [[ -e '.installed' ]]; then
     brew tap caskroom/fonts
     brew install zsh git tmux vim ctags cmake python-dev
   else
-    sudo apt-get install zsh git tmux vim cmake python-dev curl
+    sudo apt-get install zsh tmux vim-gtk3 cmake python-dev curl
   fi
 
   # fetch submodules

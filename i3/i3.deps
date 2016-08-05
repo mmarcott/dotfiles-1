@@ -30,6 +30,7 @@ dpkg -i playerctl-0.5.0_amd64.deb
 
 # Install pulseaudio control
 wget https://github.com/graysky2/pulseaudio-ctl/archive/v1.63.tar.gz
+tar xzf v1*
 cd pulseaudio-ctl
 make && sudo make install
 
