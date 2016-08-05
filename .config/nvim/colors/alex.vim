@@ -17,4 +17,4 @@ function! BrightHighlightOff()
 endfunction
 
 " Search results and quickfix highlights
-highlight Search cterm=NONE ctermfg=grey ctermbg=blue
+highlight Search cterm=NONE ctermfg=grey ctermbg=blue guifg=#dddddd guibg=#dddddd
