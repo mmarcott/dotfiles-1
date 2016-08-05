@@ -1,6 +1,6 @@
 #!/bin/bash
 
-HEART='❤︎ '
+HEART='♥ '
 
 if [[ `uname` == 'Linux' ]]; then
   current_charge=$(cat /sys/class/power_supply/BAT0/charge_now)
