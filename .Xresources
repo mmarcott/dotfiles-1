@@ -52,10 +52,10 @@
 URxvt.internalBorder:      10
 URxvt.externalBorder:      0
 URxvt.scrollBar:           false
-URxvt.font:                xft:Dejavu Sans Mono For Powerline:pixelsize=12
-URxvt.boldFont:            xft:Dejavu Sans Mono For Powerline:pixelsize=12:bold
-URxvt.italicFont:          xft:Dejavu Sans Mono For Powerline:pixelsize=12:italic
-URxvt.boldItalicFont:      xft:Dejavu Sans Mono For Powerline:pixelsize=12:bold:italic
+URxvt.font:                xft:Hack:pixelsize=12
+URxvt.boldFont:            xft:Hack:pixelsize=12:bold
+URxvt.italicFont:          xft:Hack:pixelsize=12:italic
+URxvt.boldItalicFont:      xft:Hack:pixelsize=12:bold:italic
 URxvt.letterSpace: -2
 
 !! Pluging go in /lib/urxvt/perl
