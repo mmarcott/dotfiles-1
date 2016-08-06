@@ -17,6 +17,7 @@ files=(
   '.gnupg'
   '.fonts'
   '.Xresources'
+  '.urxvt'
 )
 
 if [[ $(uname) = 'Linux' ]]; then
