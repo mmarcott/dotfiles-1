@@ -26,7 +26,6 @@ openvpn
 p7zip-full
 pass
 pinentry-curses
-pulseaudio-ctl
 python3-pip
 screenfetch
 scrot
@@ -38,4 +37,3 @@ xbacklight
 xcape
 xclip
 xfce4-dev-tools
-xfce4-terminal=0.6.9
