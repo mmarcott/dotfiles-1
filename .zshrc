@@ -2,7 +2,7 @@ ZSH=$HOME/.zsh
 ZSH_CUSTOM=$HOME/.dotfiles/zsh-files
 
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
-export EDITOR="$(which vim)"
+export EDITOR="$(which nvim)"
 
 plugins=(
   vi-mode
