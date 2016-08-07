@@ -32,3 +32,5 @@ alias reload="source ~/.zshrc"
 
 # Temp aliases
 alias kedit="cd $HOME/Dropbox/Code/keyboards/atreus-firmware/atreus/; e keymap_alex.c"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

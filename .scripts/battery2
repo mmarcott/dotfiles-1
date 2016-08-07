@@ -1,0 +1,3 @@
+#!/usr/bin/zsh
+echo $(( $(cat /sys/class/power_supply/bq27500-0/charge_now)/$(cat /sys/class/power_supply/bq27500-0/charge_full).0*100 )) | sed -e s/\\..\*/%/
+exit 0

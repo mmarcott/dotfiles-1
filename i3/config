@@ -18,11 +18,8 @@
   set $base0D #97bbf7
   set $base0E #c0b7f9
   set $base0F #fcc09e
-  set $bg-color    #2f343f
-  set $text-color  #f3f4f5
-
-  set $monitor1 "DVI-I-1"
-  set $monitor2 "HDMI-0"
+  set $bg-color #2f343f
+  set $text-color #f3f4f5
 
 # Widow Colours
 #                         border  background text    indicator
@@ -40,8 +37,8 @@
   bindsym $mod+v split v
   bindsym $mod+b split h
 # Program Settings
-  bindsym $mod+Return exec i3-sensible-terminal
-  bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 300 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "Soure Code Pro 18"
+  bindsym $mod+Return exec urxvt
+  bindsym $mod+d exec rofi -show run # -separator-style none -hide-scrollbar
   bindsym $mod+p exec $HOME/.scripts/lock -p 10
   bindsym $mod+Shift+s exec scrot -s ~/Downloads/Screenshot%Y-%m-%d%H:%M:%S.png
 # exit i3 (logs you out of your X session)
@@ -113,20 +110,10 @@
   bindsym $mod+Shift+9 move container to workspace $workspace9
   bindsym $mod+Shift+0 move container to workspace $workspace10
 
-# Workspace Monitor Assignment
-  workspace $workspace1 output $monitor1
-  workspace $workspace2 output $monitor1
-  workspace $workspace3 output $monitor1
-  workspace $workspace4 output $monitor1
-  workspace $workspace5 output $monitor1
-  workspace $workspace6 output $monitor1
-  workspace $workspace8 output $monitor2
-  workspace $workspace9 output $monitor2
-  workspace $workspace10 output $monitor2
 
 # Program Workspace Assignments
   assign [class="chromium-browser"] $workspace1
-  assign [class="Nylas N1"] $workspace8
+  assign [class="firefox"] $workspace1
   assign [class="Slack"] $workspace9
   assign [class="Spotify"] $workspace10
 
@@ -136,14 +123,13 @@
   for_window [class="Pavucontrol"] floating enable
 
 
-gaps inner 10
-gaps outer 1
-smart_gaps on
+gaps inner 5
+gaps outer 0
 
 
 # i3 Status Bar
   bar {
-    font pango: Source Code Pro, FontAwesome 14
+    font pango: Source Code Pro, FontAwesome 10
       position top
       status_command i3blocks
       colors {
@@ -175,18 +161,8 @@ smart_gaps on
 # Startup
   exec_always --no-startup-id feh --bg-scale $HOME/.wallpaper.jpg
 
-  # Single Work Monitor
-  # exec_always --no-startup-id xrandr --output DP-3 --off --output DVI-I-1 --off --output DP-1 --off --output HDMI-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP-2 --off
-  #
-  # Dual Work Monitor
-  exec_always --no-startup-id xrandr --output DVI-I-1 --off --output DVI-I-0 --off --output HDMI-0 \
-    --mode 1920x1080 --pos 2560x360 --rotate normal --output DP-5 --off --output DP-4 --off --output DP-3 \
-    --off --output DP-2 --off --output DP-1 --off --output DP-0 --primary --mode 2560x1440 --pos 0x0 --rotate normal
 
-  exec --no-startup-id spotify
-  exec --no-startup-id gnome-terminal
   exec --no-startup-id slack
-  exec --no-startup-id nylas
   exec --no-startup-id compton -f
 
 # Keyboard
