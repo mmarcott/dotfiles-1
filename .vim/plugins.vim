@@ -4,7 +4,6 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
 Plug 'AndrewRadev/splitjoin.vim'
-Plug 'audibleblink/vim-airline-themes', { 'branch': 'papercolor-modes' }
 Plug 'chrisbra/vim-zsh', { 'for': 'zsh' }
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
@@ -29,8 +28,7 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-sleuth'
-" Plug 'Valloric/YouCompleteMe',          { 'do': './install.py --tern-completer'  }
-Plug 'vim-airline/vim-airline'
+Plug 'Shougo/deoplete.nvim'
 
 if has('mac')
   Plug 'rizzatti/dash.vim'
@@ -99,8 +97,6 @@ filetype plugin indent on
 
 " Ultisnips Configuration
   " make YCM compatible with UltiSnips (using supertab)
-  let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-  let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
   let g:SuperTabDefaultCompletionType = '<C-n>'
 
   " better key bindings for UltiSnipsExpandTrigger
@@ -113,4 +109,4 @@ filetype plugin indent on
   "
   let g:syntastic_ruby_checkers = ['rubocop']
 
-  let g:ycm_server_python_interpreter = '/usr/bin/python'
+  let g:deoplete#enable_at_startup = 1

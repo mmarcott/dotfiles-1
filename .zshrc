@@ -35,3 +35,4 @@ alias kedit="cd $HOME/code/keyboards/atreus-firmware/atreus; e keymap_alex.c"
 
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH=${PATH}:/opt/devkitpro/devkitARM/bin/
