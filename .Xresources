@@ -15,7 +15,8 @@
 
 *.foreground:   t_foreground
 *.background:   t_background
-*.cursorColor:  #aeafad
+*.cursorColor:  #ccc
+*.cursorColor2:  #ccc
 
 ! Black / Grey
 *.color0:       #000000
@@ -58,9 +59,6 @@ URxvt.italicFont:          xft:Dejavu Sans Mono For Powerline:pixelsize=12:itali
 URxvt.boldItalicFont:      xft:Dejavu Sans Mono For Powerline:pixelsize=12:bold:italic
 URxvt.letterSpace: -2
 
-!! Pluging go in /lib/urxvt/perl
-! Font Resizing
-! https://raw.githubusercontent.com/simmel/urxvt-resize-font/master/resize-font
 URxvt.perl-ext-common:     matcher,resize-font,selection-to-clipboard,pasta
 URxvt.resize-font.smaller: C-Down
 URxvt.resize-font.bigger:  C-Up
