@@ -1,85 +1,176 @@
 #!/bin/bash -e
 
 dir=`pwd`
-files=( 
-  '.vim*'
-  '.rspec'
-  '.tmux*'
-  '.zshrc'
-  '.gitignore_global'
-  '.gitconfig'
-  '.git_template'
-  '.hammerspoon'
-  '.agignore'
-  '.rubocop.yml'
-  '.scripts'
-  'i3/.i3blocks.conf'
-  'i3/.compton.conf'
-  '.gnupg'
-  '.fonts'
-  '.Xresources'
-)
-
-if [[ $(uname) = 'Linux' ]]; then
-  mkdir -p $HOME/.config/i3
-  ln -sf $dir/i3/config $HOME/.config/i3/
-
-  mkdir -p $HOME/.config/rofi
-  ln -sf $dir/rofi/config $HOME/.config/rofi/
-fi
 
 symlink () {
-  for dotfile; do
-    # echo "Running: ln -sf $dir/$dotfile $HOME"
-    echo "Symlinking $dotfile"
-    ln -sf $dir/$dotfile $HOME
-  done
+	for dotfile; do
+		# echo "Running: ln -sf $dir/$dotfile $HOME"
+		echo "Symlinking $dotfile"
+		ln -sf $dir/$dotfile $HOME
+	done
 }
 
+files=( 
+	'.rspec'
+	'.tmux*'
+	'.zshrc'
+	'.gitignore_global'
+	'.gitconfig'
+	'.git_template'
+	'.agignore'
+	'.rubocop.yml'
+	'.gnupg'
+)
 symlink ${files[@]}
 
-# updates /etc/hosts for ad blocking
-echo "Run: sudo curl http://winhelp2002.mvps.org/hosts.txt > /etc/hosts"
+read -p "Install neovim? [Y/n] " confirm
+if [ -z $confirm ] || [ $confirm = 'y' ]; then
+	echo 'Installing Neovim'
+	if [[ $(uname) = 'Darwin' ]]; then
+		brew install neovim
+	else
+		sudo apt-get update
+		sudo apt-get install libtool libtool-bin autoconf automake cmake g++ pkg-config unzip python3-neovim python-neovim python3-pi
+		pip3 install neovim
+		git clone https://github.com/neovim/neovim.git
+		cd neovim
+		make && sudo make install 
+	fi
+	ln -sf $dir/.config/nvim $HOME/.config/
 
-# only runs once
-if ! [[ -e '.installed' ]]; then
-
-  # loaded modded terminal
-  tic $HOME/.dotfiles/app_configs/terminals/screen-256color-italic.terminfo
-
-  if [[ `uname` == 'Darwin' ]]; then
-    # install homebrew
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
-    # install the essentials
-    brew tap caskroom/fonts
-    brew install zsh git tmux vim ctags cmake python-dev
-  else
-    sudo apt-get install zsh git tmux cmake python-dev curl python3-pip
-    pip3 install neovim
-    ln -s ~/.vim ~/.config/nvim
-    ln -s ~/.vimrc ~/.config/nvim/init.vim
-  fi
-
-  # fetch submodules
-  git submodule update --init --recursive
-
-  # install vim plugins
-  curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  vim +PlugInstall +qall
-
-  # set installation file so certain commands are skipped on the next run
-  touch .installed
-
-  # TODO automate these so they're not necesary
-  echo 'POST-INSTALL TODOs'
-  echo 'Install the rbenv CTags generator'
-  echo '  - https://github.com/tpope/rbenv-ctags'
-  echo 'Install Bundler's CTags generator
-  echo '  - https://github.com/tpope/vim-bundler'
-  echo ''
-  echo "Don't forget to restore additional packages with:"
-  echo '> cat .cellar | xargs brew install'
-  echo '> cat .casks | xargs brew cask install'
-  echo '> cat .node_modules | xargs npm -g install'
+	# install vim plugins
+	curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	nvim +PlugInstall +qall
 fi
+
+if [[ $(uname) = 'Linux' ]]; then
+	echo 'Installing Linux essentals...'
+	linux_files=('.scripts' '.fonts')
+	symlink ${linux_files[@]}
+	sudo apt-get -y install  \
+		cmake \
+		ctags \
+		curl \
+		git \
+		openvpn \
+		p7zip-full \
+		pass \
+		pinentry-curses \
+		screenfetch \
+		scrot \
+		silversearcher-ag \
+		tmux \
+		tree \
+		tty-clock \
+		xbacklight \
+		xcape \
+		xclip \
+		zsh 
+
+	read -p "Install i3 Window Manager? [Y/n]" confirm
+	if [ -z $confirm ] || [ $confirm = 'y' ]; then
+		echo 'Installing i3-gaps...'
+		# Repository lists
+		arc_repo=/etc/apt/sources.list.d/arc-theme.list
+		inf_repo=/etc/apt/sources.list.d/infinality.list
+
+		# Installs playerctl to make use of media keys
+		wget https://github.com/acrisci/playerctl/releases/download/v0.5.0/playerctl-0.5.0_amd64.deb
+		sudo dpkg -i playerctl-0.5.0_amd64.deb
+
+		# Install pulseaudio control
+		wget https://github.com/graysky2/pulseaudio-ctl/archive/v1.63.tar.gz
+		tar xzf v1*
+		cd pulseaudio-ctl*
+		make && sudo make install
+
+		# Setup Repos
+		echo 'deb http://download.opensuse.org/repositories/home:/Horst3180/Debian_8.0/ /' | sudo tee $arc_repo
+		echo "deb http://ppa.launchpad.net/no1wantdthisname/ppa/ubuntu trusty main" | sudo tee $inf_repo
+		echo "deb-src http://ppa.launchpad.net/no1wantdthisname/ppa/ubuntu trusty main" | sudo tee -a $inf_repo
+		sudo apt-get update
+
+		# Install deps
+		sudo apt-get --allow-unauthenticated -y install fontconfig-infinality arc-theme
+
+		# Remove repo entries
+		sudo rm $arc_repo $inf_repo
+
+		sudo apt-get install rofi i3 i3blocks libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev libxcb-randr0-dev libev-dev libxcb-cursor-dev libxcb-xinerama0-dev libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev  compton lxappearance  arandr feh pulseaudio-utils xcape pavucontrol
+
+		# clone the repository
+		git clone https://www.github.com/Airblader/i3 i3-gaps
+		cd i3-gaps
+
+		# do this if you want the stable branch, skip it if you want the dev branch (gaps-next)
+		git checkout gaps && git pull
+
+		# compile & install
+		make
+		sudo make install
+
+		i3_files=('.config/i3/.i3blocks.conf' '.config/i3/.compton.conf')
+		symlink ${i3_files[@]}
+
+		ln -sf $dir/.config/i3 $HOME/.config/
+		ln -sf $dir/.config/rofi $HOME/.config/
+		ln -sf $dir/.config/i3/.i3blocks.conf $HOME/
+		ln -sf $dir/.config/i3/.compton.conf $HOME/
+	fi
+
+	read -p "Install urxvt? [Y/n]" confirm
+	if [ -z $confirm ] || [ $confirm = 'y' ]; then
+		echo 'Installing urxvt...'
+		sudo apt-get install libxcb1-dev libevent-dev libglib2.0-dev libperl-dev libreadline-dev libssl-dev libvte-2.91-dev libxcb1-dev libxfce4ui-2-dev
+
+		git clone https://github.com/audibleblink/rxvt-unicode-24bit.git urxvt
+		cd urxvt
+		./configure --enable-everything --enable-24-bit-color
+		make && sudo make install
+
+		urxvt_files=('.Xresources')
+		symlink ${urxvt_files[@]}
+	fi
+fi
+
+
+if [[ $(uname) = 'Darwin' ]]; then
+	#install homebrew
+	$(which brew &> /dev/null) && /usr/bin/ruby \
+		-e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+	# install the essentials
+	brew tap caskroom/fonts
+	brew install zsh git tmux ctags curl the_silver_searcher
+
+	read -p "Install hammerspoon? [Y/n]" confirm
+	if [ -z $confirm ] || [ $confirm = 'y' ]; then
+		echo 'Intsalling hammerspoon...'
+		brew cask install hammerspoon
+		symlink '.hammerspoon'
+	fi
+fi
+
+
+# fetch submodules
+git submodule update --init --recursive
+
+
+# TODO automate these so they're not necesary
+echo 'POST-INSTALL TODOs'
+echo
+# updates /etc/hosts for ad blocking
+echo "If you'd like to install ad-blocking hosts file, run:" 
+echo "sudo curl http://winhelp2002.mvps.org/hosts.txt > /etc/hosts"
+
+echo
+echo 'Install the rbenv CTags generator'
+echo '  - https://github.com/tpope/rbenv-ctags'
+echo
+echo 'Install Bundler's CTags generator
+echo '  - https://github.com/tpope/vim-bundler'
+echo
+echo "Don't forget to restore additional packages with:"
+echo '> cat .cellar | xargs brew install'
+echo '> cat .casks | xargs brew cask install'
+echo '> cat .node_modules | xargs npm -g install'

@@ -57,8 +57,9 @@ URxvt.font:                xft:Dejavu Sans Mono For Powerline:pixelsize=12
 URxvt.boldFont:            xft:Dejavu Sans Mono For Powerline:pixelsize=12:bold
 URxvt.italicFont:          xft:Dejavu Sans Mono For Powerline:pixelsize=12:italic
 URxvt.boldItalicFont:      xft:Dejavu Sans Mono For Powerline:pixelsize=12:bold:italic
-URxvt.letterSpace: -2
+URxvt.letterSpace: 	   -2
 
+URxvt.perl-lib:            /home/alex/.config/urxvt/ext/
 URxvt.perl-ext-common:     matcher,resize-font,selection-to-clipboard,pasta
 URxvt.resize-font.smaller: C-Down
 URxvt.resize-font.bigger:  C-Up
@@ -66,4 +67,4 @@ URxvt.resize-font.bigger:  C-Up
 URxvt.keysym.Control-Shift-V: perl:pasta:paste
 
 URxvt.url-launcher:        /usr/bin/firefox
-URxvt.colorUL: #7780a1
+URxvt.colorUL:		   #7780a1

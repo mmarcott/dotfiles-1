@@ -19,7 +19,7 @@ export GREP_COLOR='1;33'
 
 PROMPT='
 $(_user_host)${_current_dir} $(git_prompt_info) $(_vi_status)
-%{$fg[$CARETCOLOR]%}❯❯%{$resetcolor%} '
+%{$fg[$CARETCOLOR]%}❯❯%{$resetcolor%}  '
 RPROMPT='%{$(echotc UP 1)%}$(_git_time_since_commit) ${_return_status}%{$(echotc DO 1)%}'
 MODE_INDICATOR="%{$fg_bold[white]%}[NORMAL]%{$reset_color%}"
 PROMPT2='%{$fg[$CARETCOLOR]%}◀%{$reset_color%} '
