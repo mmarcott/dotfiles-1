@@ -4,31 +4,32 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
 Plug 'AndrewRadev/splitjoin.vim'
-Plug 'chrisbra/vim-zsh', { 'for': 'zsh' }
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
 Plug 'ervandew/supertab'
 Plug 'jiangmiao/auto-pairs'
-Plug 'junegunn/fzf',                    { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'justinmk/vim-sneak'
 Plug 'kana/vim-textobj-user' 
-Plug 'nelstrom/vim-textobj-rubyblock',  { 'for': 'ruby' }
-Plug 'mattn/emmet-vim',                 { 'for': ['html', 'javascript.jsx'] }
 Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'Shougo/deoplete.nvim'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'thoughtbot/vim-rspec',            { 'for': 'ruby' }
 Plug 'tomtom/tcomment_vim'
-Plug 'tpope/vim-bundler',               { 'for': 'ruby' }
-Plug 'tpope/vim-cucumber',              { 'for': 'ruby' }
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-surround'
 Plug 'tpope/vim-sleuth'
-Plug 'Shougo/deoplete.nvim'
+Plug 'tpope/vim-surround'
+
+Plug 'chrisbra/vim-zsh',                { 'for': 'zsh' }
+Plug 'mattn/emmet-vim',                 { 'for': ['html', 'javascript.jsx'] }
+Plug 'nelstrom/vim-textobj-rubyblock',  { 'for': 'ruby' }
+Plug 'thoughtbot/vim-rspec',            { 'for': 'ruby' }
+Plug 'tpope/vim-bundler',               { 'for': 'ruby' }
+Plug 'tpope/vim-cucumber',              { 'for': 'ruby' }
 
 if has('mac')
   Plug 'rizzatti/dash.vim'
@@ -39,9 +40,6 @@ call plug#end()
 filetype plugin indent on
 
 " Colorscheme
-  " trucolor and italics info
-  " https://deductivelabs.com/en/2016/03/using-true-color-vim-tmux/
-  " https://alexpearce.me/2014/05/italics-in-iterm2-vim-tmux/
   syntax on
   if has('termguicolors')
     set termguicolors
@@ -101,3 +99,5 @@ filetype plugin indent on
   "
   let g:syntastic_ruby_checkers = ['rubocop']
 
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1
