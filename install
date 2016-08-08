@@ -115,6 +115,8 @@ if [[ $(uname) = 'Linux' ]]; then
 
 		ln -sf $dir/.config/i3 $HOME/.config/
 		ln -sf $dir/.config/rofi $HOME/.config/
+		ln -sf $dir/.config/i3/.i3blocks.conf $HOME/
+		ln -sf $dir/.config/i3/.compton.conf $HOME/
 	fi
 
 	read -p "Install urxvt? [Y/n]" confirm
