@@ -1,5 +1,5 @@
 " VimPlug Setup
-source ~/.vim/plugins.vim
+source ~/.config/nvim/plugins.vim
 
 scriptencoding utf-8
 set mouse+=a
