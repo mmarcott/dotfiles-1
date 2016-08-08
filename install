@@ -29,13 +29,12 @@ if [ -z $confirm ] || [ $confirm = 'y' ]; then
 	if [[ $(uname) = 'Darwin' ]]; then
 		brew install neovim
 	else
-		debian_repo=/etc/apt/sources.list.d/debian.list
-		echo 'deb http://ftp.de.debian.org/debian experimental main' | sudo tee $debian_repo
 		sudo apt-get update
-		sudo apt-get install --allow-unauthenticated -y python-dev python-pip python3-dev python3-pip
-		python3-neovim python-neovim neovim && pip3 install neovim
-		sudo rm $debian_repo
-		sudo apt-get update
+		sudo apt-get install libtool libtool-bin autoconf automake cmake g++ pkg-config unzip python3-neovim python-neovim python3-pi
+		pip3 install neovim
+		git clone https://github.com/neovim/neovim.git
+		cd neovim
+		make && sudo make install 
 	fi
 	ln -sf $dir/.config/nvim $HOME/.config/
 
