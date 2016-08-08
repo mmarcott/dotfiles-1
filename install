@@ -1,6 +1,7 @@
 #!/bin/bash -e
 
 dir=`pwd`
+mkdir $HOME/.config &>/dev/null
 
 symlink () {
 	for dotfile; do
@@ -11,7 +12,6 @@ symlink () {
 }
 
 files=( 
-	'.vim*'
 	'.rspec'
 	'.tmux*'
 	'.zshrc'
@@ -37,8 +37,8 @@ if [ -z $confirm ] || [ $confirm = 'y' ]; then
 		sudo rm $debian_repo
 		sudo apt-get update
 	fi
-	[[ ! -d $HOME/.config/nvim ]] && ln -s ~/.vim ~/.config/nvim
-	[[ ! -f $HOME/.config/nvim/init.vim ]] && ln -s ~/.vimrc ~/.config/nvim/init.vim
+	ln -sf $dir/.config/nvim $HOME/.config/
+
 	# install vim plugins
 	curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	vim +PlugInstall +qall
@@ -110,14 +110,11 @@ if [[ $(uname) = 'Linux' ]]; then
 		make
 		sudo make install
 
-		i3_files=('i3/.i3blocks.conf' 'i3/.compton.conf')
+		i3_files=('.config/i3/.i3blocks.conf' '.config/i3/.compton.conf')
 		symlink ${i3_files[@]}
 
-		mkdir -p $HOME/.config/i3
-		ln -sf $dir/i3/config $HOME/.config/i3/
-
-		mkdir -p $HOME/.config/rofi
-		ln -sf $dir/i3/rofi.config $HOME/.config/rofi/config
+		ln -sf $dir/.config/i3 $HOME/.config/
+		ln -sf $dir/.config/rofi $HOME/.config/
 	fi
 
 	read -p "Install urxvt? [Y/n]" confirm
@@ -130,7 +127,7 @@ if [[ $(uname) = 'Linux' ]]; then
 		./configure --enable-everything --enable-24-bit-color
 		make && sudo make install
 
-		urxvt_files=('.urxvt' '.Xresources')
+		urxvt_files=('.Xresources')
 		symlink ${urxvt_files[@]}
 	fi
 fi
