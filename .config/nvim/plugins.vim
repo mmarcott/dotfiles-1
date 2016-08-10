@@ -1,11 +1,10 @@
 set nocompatible
 filetype off
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 
 Plug 'airblade/vim-gitgutter'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'christoomey/vim-tmux-runner'
 Plug 'ervandew/supertab'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -46,27 +45,6 @@ filetype plugin indent on
   endif
   colorscheme onedark
 
-" Vim Tmux Runner
-  let g:VtrUseVtrMaps = 1
-  " The following normal mode maps are provided when g:VtrUseVtrMaps is set to 1:
-  "   Mapping      |   Command
-  "   -----------------------------
-  "   <leader>rr   |   VtrResizeRunner<cr>
-  "   <leader>ror  |   VtrReorientRunner<cr>
-  "   <leader>sc   |   VtrSendCommandToRunner<cr>
-  "   <leader>sl   |   VtrSendLinesToRunner<cr>
-  "   <leader>or   |   VtrOpenRunner<cr>
-  "   <leader>kr   |   VtrKillRunner<cr>
-  "   <leader>fr   |   VtrFocusRunner<cr>
-  "   <leader>dr   |   VtrDetachRunner<cr>
-  "   <leader>ar   |   VtrReattachRunner<cr>
-  "   <leader>cr   |   VtrClearRunner<cr>
-  "   <leader>fc   |   VtrFlushCommand<cr>
-  "
-  "   Mapping      |   Command
-  "   -----------------------------
-  "   <leader>sv   |   VtrSendSelectedToRunner<cr>
-
 " RSpec.vim mappings
   let g:rspec_command = "VtrSendCommandToRunner! zeus rspec {spec}"
 
@@ -96,8 +74,7 @@ filetype plugin indent on
 
 
 " Syntastic
-  "
   let g:syntastic_ruby_checkers = ['rubocop']
 
 " Use deoplete.
-let g:deoplete#enable_at_startup = 1
+  let g:deoplete#enable_at_startup = 1
