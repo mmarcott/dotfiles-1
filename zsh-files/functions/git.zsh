@@ -28,7 +28,7 @@ function gd() {
   if type diff-so-fancy >/dev/null; then
     git diff --color "$@" | diff-so-fancy | less
   else
-    git diff
+    git diff "$@"
   fi
 }
 
