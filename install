@@ -29,12 +29,16 @@ if [ -z $confirm ] || [ $confirm = 'y' ]; then
 	if [[ $(uname) = 'Darwin' ]]; then
 		brew install neovim
 	else
-		sudo apt-get update
-		sudo apt-get install libtool libtool-bin autoconf automake cmake g++ pkg-config unzip python3-neovim python-neovim python3-pi
-		pip3 install neovim
-		git clone https://github.com/neovim/neovim.git
-		cd neovim
-		make && sudo make install 
+		read -p "Build from source ? [Y/n] " confirm
+		if [ -z $confirm ] || [ $confirm = 'y' ]; then
+			sudo apt-get update
+			sudo apt-get install libtool libtool-bin autoconf automake cmake g++ pkg-config unzip python3-neovim python-neovim python3-pip
+
+			pip3 install neovim
+			git clone https://github.com/neovim/neovim.git
+			cd neovim
+			make && sudo checkinstall
+		fi
 	fi
 	ln -sf $dir/.config/nvim $HOME/.config/
 
@@ -47,25 +51,29 @@ if [[ $(uname) = 'Linux' ]]; then
 	echo 'Installing Linux essentals...'
 	linux_files=('.scripts' '.fonts')
 	symlink ${linux_files[@]}
-	sudo apt-get -y install  \
-		cmake \
-		ctags \
-		curl \
-		git \
-		openvpn \
-		p7zip-full \
-		pass \
-		pinentry-curses \
-		screenfetch \
-		scrot \
-		silversearcher-ag \
-		tmux \
-		tree \
-		tty-clock \
-		xbacklight \
-		xcape \
-		xclip \
-		zsh 
+
+	read -p "Install Essentials? [Y/n] " confirm
+	if [ -z $confirm ] || [ $confirm = 'y' ]; then
+		sudo apt-get -y install  \
+			cmake \
+			ctags \
+			curl \
+			git \
+			openvpn \
+			p7zip-full \
+			pass \
+			pinentry-curses \
+			screenfetch \
+			scrot \
+			silversearcher-ag \
+			tmux \
+			tree \
+			tty-clock \
+			xbacklight \
+			xcape \
+			xclip \
+			zsh 
+	fi
 
 	read -p "Install i3 Window Manager? [Y/n]" confirm
 	if [ -z $confirm ] || [ $confirm = 'y' ]; then
@@ -107,7 +115,7 @@ if [[ $(uname) = 'Linux' ]]; then
 
 		# compile & install
 		make
-		sudo make install
+		sudo checkinstall
 
 		i3_files=('.config/i3/.i3blocks.conf' '.config/i3/.compton.conf')
 		symlink ${i3_files[@]}
@@ -116,6 +124,7 @@ if [[ $(uname) = 'Linux' ]]; then
 		ln -sf $dir/.config/rofi $HOME/.config/
 		ln -sf $dir/.config/i3/.i3blocks.conf $HOME/
 		ln -sf $dir/.config/i3/.compton.conf $HOME/
+		sudo apt-get update
 	fi
 
 	read -p "Install urxvt? [Y/n]" confirm
@@ -126,7 +135,7 @@ if [[ $(uname) = 'Linux' ]]; then
 		git clone https://github.com/audibleblink/rxvt-unicode-24bit.git urxvt
 		cd urxvt
 		./configure --enable-everything --enable-24-bit-color
-		make && sudo make install
+		make && sudo checkinstall
 
 		urxvt_files=('.Xresources')
 		symlink ${urxvt_files[@]}

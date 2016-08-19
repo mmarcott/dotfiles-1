@@ -1,5 +1,5 @@
 # Mod Key
-  set $mod Mod4
+  set $mod Mod1
 
 # Constants
   set $base00 #101218
@@ -21,9 +21,6 @@
   set $bg-color    #2f343f
   set $text-color  #f3f4f5
 
-  set $monitor1 "DVI-I-1"
-  set $monitor2 "HDMI-0"
-
 # Widow Colours
 #                         border  background text    indicator
   client.focused          $base01 $base01    $base07 $base0F
@@ -32,7 +29,7 @@
   client.urgent           $base02 $base08    $base00 $base0F
 
 # General Configuration
-  font pango:System Source Code Pro 10
+  font pango:System Source Code Pro 9
   floating_modifier $mod
   hide_edge_borders both
   new_window none
@@ -43,7 +40,8 @@
   bindsym $mod+Return exec urxvt
   bindsym $mod+d exec rofi -show run
   bindsym $mod+p exec $HOME/.config/i3/.scripts/lock -p 10
-  bindsym $mod+Shift+s exec scrot -s ~/Downloads/Screenshot%Y-%m-%d%H:%M:%S.png
+  bindsym $mod+g exec scrot ~/Dropbox/Screenshots/Screenshot%Y-%m-%d%H:%M:%S.png -e 'dropbox sharelink $f' | xclip -in -selection clipboard
+  bindsym --release $mod+Shift+g exec scrot -s ~/Dropbox/Screenshots/Screenshot%Y-%m-%d%H:%M:%S.png -e 'dropbox sharelink $f' | xclip -in -selection clipboard
 # exit i3 (logs you out of your X session)
   bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 # Restart-Related Bindings
@@ -80,7 +78,7 @@
   }
 
 # Workspace-Related Bindings
-  set $workspace1 "1: "
+  set $workspace1 "1: "
   set $workspace2 "2: "
   set $workspace3 "3: "
   set $workspace4 "4: "
@@ -113,19 +111,8 @@
   bindsym $mod+Shift+9 move container to workspace $workspace9
   bindsym $mod+Shift+0 move container to workspace $workspace10
 
-# Workspace Monitor Assignment
-  workspace $workspace1 output $monitor1
-  workspace $workspace2 output $monitor1
-  workspace $workspace3 output $monitor1
-  workspace $workspace4 output $monitor1
-  workspace $workspace5 output $monitor1
-  workspace $workspace6 output $monitor1
-  workspace $workspace8 output $monitor2
-  workspace $workspace9 output $monitor2
-  workspace $workspace10 output $monitor2
-
 # Program Workspace Assignments
-  assign [class="chromium-browser"] $workspace1
+  assign [class="firefox"] $workspace1
   assign [class="Nylas N1"] $workspace8
   assign [class="Slack"] $workspace9
   assign [class="Spotify"] $workspace10
@@ -141,7 +128,7 @@ gaps outer 1
 
 # i3 Status Bar
   bar {
-    font pango: Source Code Pro, FontAwesome 14
+    font pango: Source Code Pro, FontAwesome 8
       position top
       status_command i3blocks
       colors {
@@ -167,8 +154,8 @@ gaps outer 1
   bindsym XF86AudioPrev exec playerctl previous
 
 ## Screen brightness controls
-  bindsym XF86MonBrightnessUp exec $HOME/.scripts/brightness +10
-  bindsym XF86MonBrightnessDown exec $HOME/.scripts/brightness -10
+  bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
+  bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
 
 # Startup
   exec_always --no-startup-id feh --bg-scale $HOME/.config/i3/.wallpaper.jpg
@@ -177,12 +164,9 @@ gaps outer 1
   # exec_always --no-startup-id xrandr --output DP-3 --off --output DVI-I-1 --off --output DP-1 --off --output HDMI-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP-2 --off
   #
   # Dual Work Monitor
-  exec_always --no-startup-id xrandr --output DVI-I-1 --off --output DVI-I-0 --off --output HDMI-0 \
-    --mode 1920x1080 --pos 2560x360 --rotate normal --output DP-5 --off --output DP-4 --off --output DP-3 \
-    --off --output DP-2 --off --output DP-1 --off --output DP-0 --primary --mode 2560x1440 --pos 0x0 --rotate normal
+  exec_always --no-startup-id xrandr --dpi 220
 
   exec --no-startup-id spotify
-  exec --no-startup-id gnome-terminal
   exec --no-startup-id slack
   exec --no-startup-id nylas
   exec --no-startup-id compton -f

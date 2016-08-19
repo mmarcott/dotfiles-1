@@ -8,7 +8,7 @@ rofi.opacity:                        85
 rofi.width:                          100
 
 ! Number of lines
-rofi.lines:                          3
+rofi.lines:                          4
 
 ! Font to use
 rofi.font:                           Source Code Pro 18
@@ -23,10 +23,10 @@ rofi.color-active:                   #2f343f,#0000ff,#2f343f,#f3f4f5,#ffffff
 rofi.color-window:                   #2f343f,#2f343f
 
 ! Padding
-rofi.padding:                        300
+rofi.padding:                        200
 
 ! Y-offset relative to location
-rofi.yoffset:                        -20
+rofi.yoffset:                        -10
 
 ! Terminal to use
 rofi.terminal:                       urxvt
@@ -41,7 +41,7 @@ rofi.eh:                             3
 rofi.fuzzy:                          true
 
 ! Separator style (none, dash, solid)
-rofi.separator-style:                solid
+rofi.separator-style:                none
 
 ! Hide scroll-bar
 rofi.hide-scrollbar:                 true

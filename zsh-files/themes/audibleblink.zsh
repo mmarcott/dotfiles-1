@@ -3,8 +3,8 @@ autoload -U colors && colors
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[green]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 
-ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg[red]%}⚠︎%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_CLEAN=" %{$fg[green]%}✓%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg[red]%}%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_CLEAN=" %{$fg[green]%}%{$reset_color%}"
 
 # Colors vary depending on time lapsed.
 ZSH_THEME_GIT_TIME_SINCE_COMMIT_SHORT="%{$fg[green]%}"
@@ -19,7 +19,7 @@ export GREP_COLOR='1;33'
 
 PROMPT='
 $(_user_host)${_current_dir} $(git_prompt_info) $(_vi_status)
-%{$fg[$CARETCOLOR]%}❯❯%{$resetcolor%}  '
+%{$fg[$CARETCOLOR]%}❯❯%{$resetcolor%} '
 RPROMPT='%{$(echotc UP 1)%}$(_git_time_since_commit) ${_return_status}%{$(echotc DO 1)%}'
 MODE_INDICATOR="%{$fg_bold[white]%}[NORMAL]%{$reset_color%}"
 PROMPT2='%{$fg[$CARETCOLOR]%}◀%{$reset_color%} '

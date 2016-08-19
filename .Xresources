@@ -53,14 +53,30 @@
 URxvt.internalBorder:      10
 URxvt.externalBorder:      0
 URxvt.scrollBar:           false
-URxvt.font:                xft:Dejavu Sans Mono For Powerline:pixelsize=12
-URxvt.boldFont:            xft:Dejavu Sans Mono For Powerline:pixelsize=12:bold
-URxvt.italicFont:          xft:Dejavu Sans Mono For Powerline:pixelsize=12:italic
-URxvt.boldItalicFont:      xft:Dejavu Sans Mono For Powerline:pixelsize=12:bold:italic
-URxvt.letterSpace: 	   -2
 
-URxvt.perl-lib:            /home/alex/.config/urxvt/ext/
-URxvt.perl-ext-common:     matcher,resize-font,selection-to-clipboard,pasta
+! URxvt.font: xft:DejaVu Sans Mono for Powerline Plus Nerd File Types Mono:size=16:antialias=true:hinting=true,\
+!             xft:Terminess Powerline:antialias=true:hinting=true,\
+!             xft:Symbola
+! URxvt.boldFont: xft:DejaVu Sans Mono for Powerline Plus Nerd File Types Mono:bold:size=16:antialias=true:hinting=true,\
+!                 xft:Terminess Powerline:antialias=true:hinting=true,\
+!                 xft:Symbola
+! URxvt.italicFont: xft:DejaVu Sans Mono for Powerline Plus Nerd File Types Mono:oblique:size=16:antialias=true:hinting=true,\
+!                   xft:Terminess Powerline:antialias=true:hinting=true,\
+! xft:Symbola
+
+URxvt.font:                xft:Sauce Code Pro NF:size=16:antialias=true:hinting=true
+URxvt.boldFont:            xft:Knack:size=16:bold:antialias=true:hinting=true
+URxvt.italicFont:          xft:Knack:size=16:italic:antialias=true:hinting=true
+URxvt.boldItalicFont:      xft:Knack:size=16:bold:italic:antialias=true:hinting=true
+! URxvt.font:                xft:Hack:size=16:antialias=true:hinting=true
+! URxvt.boldFont:            xft:Hack:size=16:bold:antialias=true:hinting=true
+! URxvt.italicFont:          xft:Hack:size=16:italic:antialias=true:hinting=true
+! URxvt.boldItalicFont:      xft:Hack:size=16:bold:italic:antialias=true:hinting=true
+URxvt.letterSpace: 	   -1
+
+URxvt.perl-lib:            /home/red/.config/urxvt/ext/
+URxvt.perl-ext-common:     default,matcher,resize-font,selection-to-clipboard,pasta
+urxvt*matcher.button:      1
 URxvt.resize-font.smaller: C-Down
 URxvt.resize-font.bigger:  C-Up
 

@@ -11,7 +11,7 @@ function zinstall {
 }
 
 function zupdate {
-  git submodule update --recursive
+  git submodule update --init --recursive
 }
 
 function is_plugin {
