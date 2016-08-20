@@ -18,12 +18,13 @@
   set $base0D #97bbf7
   set $base0E #c0b7f9
   set $base0F #fcc09e
-  set $bg-color    #2f343f
-  set $text-color  #f3f4f5
+  set $border  #6699cc
+  # set $bg-color    #2f343f
+  # set $text-color  #f3f4f5
 
 # Widow Colours
 #                         border  background text    indicator
-  client.focused          $base01 $base01    $base07 $base0F
+  client.focused          $base01 $border    $base07 $base0F
   client.focused_inactive $base02 $base02    $base03 $base0F
   client.unfocused        $base02 $base02    $base03 $base0F
   client.urgent           $base02 $base08    $base00 $base0F
@@ -32,7 +33,8 @@
   font pango:System Source Code Pro 9
   floating_modifier $mod
   hide_edge_borders both
-  new_window none
+  new_window pixel 1px
+
 # Set orientation of next split
   bindsym $mod+v split v
   bindsym $mod+b split h

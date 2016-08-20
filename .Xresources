@@ -79,7 +79,9 @@ URxvt.perl-ext-common:     default,matcher,resize-font,selection-to-clipboard,pa
 urxvt*matcher.button:      1
 URxvt.resize-font.smaller: C-Down
 URxvt.resize-font.bigger:  C-Up
-
+URxvt.visualBell:          true
+URxvt.cursorBlink:         true
+URxvt.scrollWithBuffer:    false
 URxvt.keysym.Control-Super-V: perl:pasta:paste
 
 URxvt.url-launcher:        /usr/bin/firefox
