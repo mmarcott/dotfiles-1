@@ -79,7 +79,7 @@ if has('mac')
   nnoremap  <Leader>u "*p
 else
   vnoremap  <Leader>y  "+y
-  nnoremap  <Leader>u  "+u
+  nnoremap  <Leader>u  "+p
 endif
 
 " Make Yank behave

@@ -2,7 +2,7 @@
 rofi.modi:                           run
 
 ! Window opacity
-rofi.opacity:                        85
+rofi.opacity:                        90
 
 ! Window width
 rofi.width:                          100
@@ -11,7 +11,7 @@ rofi.width:                          100
 rofi.lines:                          3
 
 ! Font to use
-rofi.font:                           Source Code Pro 18
+rofi.font:                           Source Code Pro 20
 
 ! Color scheme for normal row
 rofi.color-normal:                   #2f343f,#cccccc,#2f343f,#2f343f,#f99157
@@ -23,10 +23,10 @@ rofi.color-active:                   #2f343f,#0000ff,#2f343f,#f3f4f5,#ffffff
 rofi.color-window:                   #2f343f,#2f343f
 
 ! Padding
-rofi.padding:                        300
+rofi.padding:                        200
 
 ! Y-offset relative to location
-rofi.yoffset:                        -20
+! rofi.yoffset:                        -70
 
 ! Terminal to use
 rofi.terminal:                       urxvt
@@ -35,7 +35,7 @@ rofi.terminal:                       urxvt
 rofi.run-command:                    {cmd}
 
 ! Row height (in chars)
-rofi.eh:                             3
+rofi.eh:                             2
 
 ! Do a more fuzzy matching
 rofi.fuzzy:                          true
