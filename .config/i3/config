@@ -18,15 +18,14 @@
   set $base0D #97bbf7
   set $base0E #c0b7f9
   set $base0F #fcc09e
-  set $bg-color    #2f343f
-  set $text-color  #f3f4f5
+  set $border #f99157
 
   set $monitor1 "DVI-I-1"
   set $monitor2 "HDMI-0"
 
 # Widow Colours
 #                         border  background text    indicator
-  client.focused          $base01 $base01    $base07 $base0F
+  client.focused          $base01 $border    $base07 $base0F
   client.focused_inactive $base02 $base02    $base03 $base0F
   client.unfocused        $base02 $base02    $base03 $base0F
   client.urgent           $base02 $base08    $base00 $base0F
@@ -35,7 +34,8 @@
   font pango:System Source Code Pro 10
   floating_modifier $mod
   hide_edge_borders both
-  new_window none
+  new_window pixel 2px
+  workspace_auto_back_and_forth yes
 # Set orientation of next split
   bindsym $mod+v split v
   bindsym $mod+b split h
@@ -138,6 +138,7 @@
 
 gaps inner 10
 gaps outer 1
+smart_gaps on
 
 # i3 Status Bar
   bar {
@@ -167,22 +168,18 @@ gaps outer 1
   bindsym XF86AudioPrev exec playerctl previous
 
 ## Screen brightness controls
-  bindsym XF86MonBrightnessUp exec $HOME/.scripts/brightness +10
-  bindsym XF86MonBrightnessDown exec $HOME/.scripts/brightness -10
+  # bindsym XF86MonBrightnessUp exec $HOME/.scripts/brightness +10
+  # bindsym XF86MonBrightnessDown exec $HOME/.scripts/brightness -10
 
 # Startup
   exec_always --no-startup-id feh --bg-scale $HOME/.config/i3/.wallpaper.jpg
 
-  # Single Work Monitor
-  # exec_always --no-startup-id xrandr --output DP-3 --off --output DVI-I-1 --off --output DP-1 --off --output HDMI-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP-2 --off
-  #
   # Dual Work Monitor
   exec_always --no-startup-id xrandr --output DVI-I-1 --off --output DVI-I-0 --off --output HDMI-0 \
     --mode 1920x1080 --pos 2560x360 --rotate normal --output DP-5 --off --output DP-4 --off --output DP-3 \
     --off --output DP-2 --off --output DP-1 --off --output DP-0 --primary --mode 2560x1440 --pos 0x0 --rotate normal
 
   exec --no-startup-id spotify
-  exec --no-startup-id gnome-terminal
   exec --no-startup-id slack
   exec --no-startup-id nylas
   exec --no-startup-id compton -f
