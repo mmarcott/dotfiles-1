@@ -22,6 +22,7 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
+Plug 'junegunn/goyo.vim'
 
 Plug 'chrisbra/vim-zsh',                { 'for': 'zsh' }
 Plug 'mattn/emmet-vim',                 { 'for': ['html', 'javascript.jsx'] }
