@@ -35,8 +35,8 @@
   workspace_auto_back_and_forth yes
 
 # Set orientation of next split
-  bindsym $mod+v split v
-  bindsym $mod+b split h
+  bindsym $mod+minus split v
+  bindsym $mod+backslash split h
 # Program Settings
   bindsym $mod+Return exec urxvt
   bindsym $mod+d exec rofi -show run
@@ -151,9 +151,9 @@ smart_gaps on
   bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # Media player controls
-  bindsym XF86AudioPlay exec playerctl play-pause
-  bindsym XF86AudioNext exec playerctl next
-  bindsym XF86AudioPrev exec playerctl previous
+  bindsym XF86Search  exec playerctl play-pause
+  bindsym XF86LaunchA exec playerctl next
+  bindsym XF86Tools   exec playerctl previous
 
 ## Screen brightness controls
   bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
