@@ -12,6 +12,7 @@ plugins=(
   zsh-autopair
   fuck
   fzf
+  todo
   #must be last
   history-substring-search
   zsh-syntax-highlighting
