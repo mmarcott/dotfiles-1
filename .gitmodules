@@ -27,4 +27,4 @@
 	url = git@github.com:hlissner/zsh-autopair.git
 [submodule "zsh-files/plugins/docker-zsh-completion"]
 	path = zsh-files/plugins/docker-zsh-completion
-	url = git@github.com:felixr/docker-zsh-completion.git
+	url = https://github.com/felixr/docker-zsh-completion.git
